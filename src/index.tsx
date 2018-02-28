@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom"
 import { onSnapshot } from 'mobx-state-tree';
 import { TodoStore, ITodoStore } from './models/TodoStore';
 import { AppStore } from './models/AppStore';
-import App from './App';
+import AppLayout from './Layout';
 
 // Import the main stylesheet which imports other stylesheets
 import './../css/style.scss';
@@ -38,7 +38,7 @@ if (localStorage.getItem("todolistapp")) {
 
 // Create store from initial state
 // The appStore is a 'store of stores'
-let appStore = AppStore.create({ chartStore: {}, todoStore: initialState });
+let appStore = AppStore.create({todoStore: initialState});
 
 // Listen for changes to the store and write to storage each time tree changes
 // Snapshots are "free" to obtain
@@ -49,7 +49,7 @@ onSnapshot(appStore.todoStore, snapshot => {
 // Render application
 function renderApp() {
   ReactDOM.render(
-    <Router><App appStore={appStore} /></Router>, document.getElementById('root')
+    <Router><AppLayout appStore={appStore} /></Router>, document.getElementById('root')
   );
 }
 

@@ -19,7 +19,7 @@ interface IMenuItem {
 
 class MainNavigation extends React.Component<IMainNavProps, undefined>{
   items: Array<IMenuItem> = [
-    { key: "1", path: "/", icon: "line-chart", label: "Dashboard" },
+    { key: "1", path: "/dashboard", icon: "line-chart", label: "Dashboard" },
     { key: "3", path: "/task", icon: "check-circle-o", label: "Tasks" },
     { key: "4", path: "/fail", icon: "star-o", label: "Sample 404" },
   ]

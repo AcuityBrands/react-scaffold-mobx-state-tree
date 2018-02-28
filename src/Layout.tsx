@@ -1,46 +1,50 @@
 import * as React from "react";
-import { Route, Switch, withRouter } from 'react-router-dom';
-import MainNavigation from './components/MainNavigation'
-import DashboardPage from './containers/DashboardPage'
-import TodoPage from './containers/TodoPage'
-import NotFoundPage from './containers/NotFoundPage'
-import AboutPage from './containers/AboutPage'
-import { IAppStore } from './models/AppStore'
+import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import { Provider } from "mobx-react";
-import Breadcrumbs from './components/Breadcrumbs';
-
+import { IAppStore } from './models/AppStore'
+import { DashboardPage, TodoPage, NotFoundPage, AboutPage, LoginPage} from './containers';
+import {MainNavigation, BreadCrumbs, PrivateRoute} from './components';
 import { Layout, Menu, Icon, Avatar, Badge, Dropdown } from 'antd';
+
 const { Header, Sider, Content, Footer } = Layout;
 
-const menu = (
-  <Menu>
-    <Menu.Item>
-      <a target="_blank" rel="noopener noreferrer" href="#"><Icon type="profile" /> Manage Profile</a>
-    </Menu.Item>
-    <Menu.Divider />
-    <Menu.Item>
-      <a target="_blank" rel="noopener noreferrer" href="#"><Icon type="lock" /> Sign Out</a>
-    </Menu.Item>
-  </Menu>
-);
-
-interface IAppProps {
-  appStore: IAppStore
+interface ILayoutProps {
+  appStore: IAppStore,
+  match: any,
+  location: any,
+  history: any
 }
 
 // This page creates the basic layout of the application
 // along with the various routes (pages) used within the app.
 
-export default class App extends React.Component<IAppProps, {}> {
-  
+class AppLayout extends React.Component<ILayoutProps, {}> {
+
   state = {
     collapsed: false,
   };
+
+  menu = (
+    <Menu style={{background:'#fff'}}>
+      <Menu.Item>
+        <a target="_blank" rel="noopener noreferrer" href="#"><Icon type="profile" /> Manage Profile</a>
+      </Menu.Item>
+      <Menu.Divider />
+      <Menu.Item>
+        <a href="javascript:void(0)" onClick={() => { this.logout() }}><Icon type="lock" /> Sign Out</a>
+      </Menu.Item>
+    </Menu>
+  )
 
   toggle = () => {
     this.setState({
       collapsed: !this.state.collapsed
     });
+  }
+
+  logout = () => {
+    this.props.appStore.logout();
+    this.props.history.push("/");
   }
 
   render() {
@@ -53,7 +57,6 @@ export default class App extends React.Component<IAppProps, {}> {
         </Sider>
 
         <Layout>
-
           <Header className="header">
             <div className="icon-button" onClick={this.toggle}>
               <Icon
@@ -65,7 +68,7 @@ export default class App extends React.Component<IAppProps, {}> {
               <div className="icon-button">
                 <Icon type="mail" />
               </div>
-              <Dropdown overlay={menu}>
+              <Dropdown overlay={this.menu}>
                 <div className="icon-button">
                   <Avatar icon="user" />
                 </div>
@@ -74,12 +77,14 @@ export default class App extends React.Component<IAppProps, {}> {
           </Header>
 
           <Content>
-            <Breadcrumbs></Breadcrumbs>
+            <BreadCrumbs></BreadCrumbs>
             <Provider appStore={this.props.appStore}>
               <Switch>
-                <Route path='/' exact component={DashboardPage} />
-                <Route path='/task' component={TodoPage} />
-                <Route path='/about' component={AboutPage} />
+                <Route path='/login' component={LoginPage} />
+                <Route exact path='/' render={() => (<Redirect to="/dashboard" />)} />
+                <PrivateRoute path='/dashboard' component={DashboardPage} />
+                <PrivateRoute path='/task' component={TodoPage} />
+                <PrivateRoute path='/about' component={AboutPage} />
                 <Route path='*' component={NotFoundPage} />
               </Switch>
             </Provider>
@@ -89,6 +94,9 @@ export default class App extends React.Component<IAppProps, {}> {
 
         </Layout>
       </Layout>
-    );
+    )
+
   }
 }
+
+export default withRouter(AppLayout);
