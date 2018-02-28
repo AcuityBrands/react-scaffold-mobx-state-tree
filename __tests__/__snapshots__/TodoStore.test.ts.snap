@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`can add new items - track patches 1`] = `
+Array [
+  Object {
+    "op": "add",
+    "path": "/todos/0",
+    "value": Object {
+      "completed": false,
+      "id": 1,
+      "title": "Test Todo",
+      "userId": 1,
+    },
+  },
+  Object {
+    "op": "replace",
+    "path": "/todos/0/title",
+    "value": "New Label",
+  },
+]
+`;
+
+exports[`can add new todos - track snapshots 1`] = `
+Object {
+  "loading": false,
+  "todos": Array [
+    Object {
+      "completed": false,
+      "id": 1,
+      "title": "Test Todo",
+      "userId": 1,
+    },
+  ],
+}
+`;
+
+exports[`can add new todos - track snapshots 2`] = `
+Array [
+  Object {
+    "loading": false,
+    "todos": Array [
+      Object {
+        "completed": false,
+        "id": 1,
+        "title": "Test Todo",
+        "userId": 1,
+      },
+    ],
+  },
+]
+`;
