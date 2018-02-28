@@ -24,8 +24,6 @@ export const AppStore = types
     },
     afterCreate() {
       //Load the sales data, but delay to simulate HTTP delay
-      setTimeout(() => {
-        self.chartStore.getSales();
-      }, 1000);
+      self.chartStore.getSales();
     }
   }))

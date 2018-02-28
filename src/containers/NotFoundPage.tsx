@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Link } from 'react-router-dom';
-import { Card, Row, Col } from 'antd';
+import { Button, Row, Col } from 'antd';
 
 export default class NotFoundPage extends React.Component {
   render() {
@@ -8,9 +8,9 @@ export default class NotFoundPage extends React.Component {
       <div className="content-wrapper">
         <Row type="flex" justify="center">
           <Col sm={24} md={17} lg={12}>
-            <Card bordered={false}>
+            <div className="card">
               <h1>404</h1>
-              <h3>Whatever you were trying to do, it didn't work</h3>
+              <h3 className="mt10">Whatever you were trying to do, it didn't work</h3>
               <p className="mt20">
                 Once upon a midnight dreary, While I websurfed, weak and weary,
                 Over many a strange and spurious website of data galore,
@@ -32,9 +32,10 @@ export default class NotFoundPage extends React.Component {
                 Came its answer, dark and dreary: Quoth the server, 404
               </p>
               <p className="mt20">
-                <Link to="/">Take me back to where it's warm and safe.</Link>
+                <Button><Link to="/">Take me back to where it's warm and safe</Link></Button>
+                {/* <Link to="/">.</Link> */}
               </p>
-            </Card>
+            </div>
           </Col>
           <Col sm={24} md={5} lg={5} offset={1}>
             <h3 className="mt20">About This Page</h3>

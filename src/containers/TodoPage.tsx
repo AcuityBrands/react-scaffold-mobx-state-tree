@@ -1,7 +1,7 @@
 import * as React from "react";
 import { observable } from "mobx";
 import { observer, inject } from "mobx-react";
-import { Row, Col, Input, Button, message, InputNumber, Icon, Card } from 'antd';
+import { Row, Col, Input, Button, message, InputNumber, Icon } from 'antd';
 import { TodoItem } from '../models/TodoStore'
 import { IAppStore } from '../models/AppStore'
 import TodoList from '../components/TodoList'
@@ -44,8 +44,10 @@ export default class TodoPage extends React.Component<ITodoPageProps, undefined>
       <div className="content-wrapper">
         <Row >
           <Col span={16}>
-            <Card bordered={false} className="p20">
-              <h2>Your Tasks</h2>
+            <div className="card">
+              <div className="card-header">
+                <h2>Your Tasks</h2>
+              </div>
               <p className="mb30">
                 Vestibulum in nibh nec odio lobortis tempus sed in dolor.
                 Aenean viverra interdum ante, <strong>vel consectetur lorem eleifend</strong> eget. Vestibulum
@@ -73,17 +75,17 @@ export default class TodoPage extends React.Component<ITodoPageProps, undefined>
                   </Button>
                 </ButtonGroup>
               </div>
-            </Card>
+            </div>
           </Col>
           <Col span={6} offset={1}>
             <h3 className="mt20">Managing Tasks</h3>
             <p className="mt10 light">
-              Tasks are a set of work items that must be done each business day.  A task should not be
-              longer than 8 hours or should be broken up into smaller tasks.
+              Tasks are automatically saved to your local storage (assuming it's available) by using 
+              a nifty feature of mobx-state-tree called snapshotting.
             </p>
             <p className="mt10 light">
               Create new tasks by typing a task title into the input box.  Complete the task by clicking
-              the task title.  If you run out of work, simply click the "Suggest Tasks" button.
+              the task title.  If you run out of work, simply click the "Suggest Tasks" button. 
             </p>
             <h3 className="mt30">Undo / Redo</h3>
             <p className="mt20 light">

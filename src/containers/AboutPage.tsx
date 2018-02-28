@@ -1,16 +1,16 @@
 import * as React from "react";
 import { Link } from 'react-router-dom';
-import { Card, Row, Col } from 'antd';
+import { Row, Col } from 'antd';
 
 export default class AboutPage extends React.Component {
   render() {
     return (
       <div className="content-wrapper">
         <Row type="flex" align="middle" justify="center">
-          <Col sm={24} md={18} lg={10}>
-            <Card bordered={false} className="text-center">
+          <Col sm={24} md={18} lg={12}>
+            <div className="card text-center" style={{padding: 80}}>
               <h1>About</h1>
-              <h3>Tech Stack Used For This App</h3>
+              <h3 className="mt20">Tech Stack Used For This App</h3>
               <ul className="mt30">
                 <li><a href="https://ant.design/docs/react/introduce">Ant Design Components</a></li>
                 <li><a href="http://www.chartjs.org/samples/latest/">Chart-JS</a></li>
@@ -25,7 +25,7 @@ export default class AboutPage extends React.Component {
                 <li><a href="https://nodejs.org/en/docs/">Node</a></li>
               </ul>
               <Link to="/">Go back to the main page</Link>
-            </Card>
+            </div>
           </Col>
         </Row>
       </div>
