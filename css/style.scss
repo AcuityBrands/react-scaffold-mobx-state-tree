@@ -45,6 +45,7 @@ p { margin: 0; padding: 0; line-height: 1.7em; font-size:15px; }
 .light { color: #aaa; }
 
 .hbox { display: flex; flex-direction: row; }
+.align-center { align-items: center; }
 
 .green { color: green; }
 .red { color: red; }
@@ -66,7 +67,7 @@ p { margin: 0; padding: 0; line-height: 1.7em; font-size:15px; }
     flex-direction: column;
     flex: 1;
 }
-.header { display: flex; justify-content: space-between; font-size: 1.3rem; }
+.header { display: flex; justify-content: space-between; align-items: center; font-size: 1.3rem; }
 .content-wrapper { margin-top: 30px; }
 
 #map-container { width: 100%; height: 500px; }
@@ -128,7 +129,9 @@ p { margin: 0; padding: 0; line-height: 1.7em; font-size:15px; }
 .icon-button{
     width: 64px;
     height: 64px;
-    text-align: center;
+    display:flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
     -webkit-transition: all .3s ease-out;
     -o-transition: all .3s ease-out;
@@ -163,7 +166,7 @@ p { margin: 0; padding: 0; line-height: 1.7em; font-size:15px; }
 /* *** ANT *** */
 /* ************** */
 .ant-layout-sider { background: #333E48; }
-.ant-layout-header { border-bottom: 1px solid #efefef; }
+.ant-layout-header { border-bottom: 1px solid #efefef; line-height: inherit; }
 .ant-layout-footer { background: #e6e9ed; padding: 15px 15px;}
 .ant-menu-inline, .ant-menu-vertical, .ant-menu-vertical-left { background: #333E48; border-right: none; }
 .ant-layout-header { background: #fff; padding: 0 16px 0 0;}

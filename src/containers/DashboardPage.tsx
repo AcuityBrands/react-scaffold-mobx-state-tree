@@ -1,7 +1,7 @@
 import * as React from "react";
 import { observable } from "mobx";
 import { observer, inject } from "mobx-react";
-import { IAppStore } from '../models/AppStore'
+import { IAppStore } from '../stores'
 import { Slider, Row, Col, Divider, DatePicker, Icon, Button} from 'antd';
 import {SparkChart, BarChart, Map} from '../components'
 const { RangePicker } = DatePicker;

@@ -1,12 +1,13 @@
 import * as React from "react";
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import { Provider } from "mobx-react";
-import { IAppStore } from './models/AppStore'
+import { IAppStore } from './stores'
 import { DashboardPage, TodoPage, NotFoundPage, AboutPage, LoginPage} from './containers';
 import {MainNavigation, BreadCrumbs, PrivateRoute} from './components';
-import { Layout, Menu, Icon, Avatar, Badge, Dropdown } from 'antd';
+import { Layout, Input, Menu, Icon, Avatar, Badge, Dropdown } from 'antd';
 
 const { Header, Sider, Content, Footer } = Layout;
+const Search = Input.Search;
 
 interface ILayoutProps {
   appStore: IAppStore,
@@ -58,13 +59,20 @@ class AppLayout extends React.Component<ILayoutProps, {}> {
 
         <Layout>
           <Header className="header">
-            <div className="icon-button" onClick={this.toggle}>
-              <Icon
-                className="trigger"
-                type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
+            <div className="hbox align-center">
+              <div className="icon-button" onClick={this.toggle}>
+                <Icon
+                  className="trigger"
+                  type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
+                />
+              </div>
+              <Search
+                placeholder="Find Something Interesting"
+                className="bump"
+                style={{ width: 300, height:40 }}
               />
             </div>
-            <div className="hbox">
+            <div className="hbox align-center">
               <div className="icon-button">
                 <Icon type="mail" />
               </div>
