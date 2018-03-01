@@ -9,17 +9,17 @@ module.exports = merge(common, {
     rules: [
       // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
       { test: /\.tsx?$/, loader: "awesome-typescript-loader", exclude:[/node_modules/, /__tests__/]},
-
+      
       // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-      // { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
-
+      { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
+      
       {
         test: /\.(s*)css$/,
         loaders: ["style-loader", "css-loader", "sass-loader"]
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-        use: ['file-loader']
+        use: ['url-loader']
       }
     ]
   },
@@ -27,6 +27,7 @@ module.exports = merge(common, {
   devServer: {
     host: 'localhost',
     port: 8080,
+    open: true,
 
     historyApiFallback: true,
     // respond to 404s with index.html

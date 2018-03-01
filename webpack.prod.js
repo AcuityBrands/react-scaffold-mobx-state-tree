@@ -13,8 +13,12 @@ module.exports = merge(common, {
       { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
 
       // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-      //{ enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
+      { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
 
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: ['url-loader']
+      },
       {
         test: /\.(s*)css$/,
         use: ExtractTextPlugin.extract({
