@@ -1,8 +1,8 @@
 import * as React from "react";
 import { observer, inject } from "mobx-react";
-import {IAppStore} from '../models/AppStore'
-import TodoListItem from './TodoListItem';
+import {IAppStore} from '../stores'
 import { Progress } from 'antd';
+import TodoListItem from './TodoListItem';
 
 interface ITodoListProps {
   appStore?: IAppStore

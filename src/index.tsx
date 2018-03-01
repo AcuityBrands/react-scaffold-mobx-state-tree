@@ -2,8 +2,7 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom"
 import { onSnapshot } from 'mobx-state-tree';
-import { TodoStore, ITodoStore } from './models/TodoStore';
-import { AppStore, IAppStore } from './models/AppStore';
+import { TodoStore, ITodoStore, AppStore, IAppStore } from './stores';
 import AppLayout from './Layout';
 
 // Import the main stylesheet which imports other stylesheets

@@ -2,8 +2,7 @@ import * as React from "react";
 import { observable } from "mobx";
 import { observer, inject } from "mobx-react";
 import { Row, Col, Input, Button, message, InputNumber, Icon } from 'antd';
-import { TodoItem } from '../models/TodoStore'
-import { IAppStore } from '../models/AppStore'
+import { TodoItem, IAppStore } from '../stores'
 import TodoList from '../components/TodoList'
 
 const NewItem = Input.Search;
