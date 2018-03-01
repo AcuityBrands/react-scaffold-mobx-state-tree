@@ -5,15 +5,15 @@ import { observer } from "mobx-react";
 
 interface ILineChartProps {
   id: string,
-  updateSpeed:number,
-  title: string,
-  height: number
+  label: string,
+  height: number,
+  renderSpeed:number,
 }
 
 // WARNING: This is a contrived example with limited utility
 
 @observer
-export default class LineChart extends React.Component<ILineChartProps, null> {
+export default class SparkChart extends React.Component<ILineChartProps, null> {
   
   chartData: Array<number> = [
     12, 19, 3, 5, 2, 3, 8, 5, 4, 
@@ -31,7 +31,7 @@ export default class LineChart extends React.Component<ILineChartProps, null> {
     this.renderChart();
 
     //Randomize the data, update if the rendering speed changes
-    this.disposer = autorun(() => this.randomizeData(this.props.updateSpeed));
+    this.disposer = autorun(() => this.randomizeData(this.props.renderSpeed));
   }
 
   componentWillUnmount() {
@@ -49,7 +49,7 @@ export default class LineChart extends React.Component<ILineChartProps, null> {
       data: {
         labels: this.labels,
         datasets: [{
-          label: this.props.title,
+          label: this.props.label,
           data: this.chartData,
           backgroundColor: this.getRandomColor(),
           pointRadius: 0,
@@ -58,12 +58,21 @@ export default class LineChart extends React.Component<ILineChartProps, null> {
       },
       options: {
         legend: { display: false },
+        layout: {
+          padding: {
+            left: -10
+          }
+        },
         scales: {
           xAxes: [{
             display: false
           }],
           yAxes: [{
-            display: false
+            ticks: { display: false },
+            gridLines: {
+                borderDash: [2,2],
+                drawBorder: false
+            }
           }]
         }
       }

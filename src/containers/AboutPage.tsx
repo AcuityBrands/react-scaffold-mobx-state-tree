@@ -24,7 +24,7 @@ export default class AboutPage extends React.Component {
                 <li><a href="http://airbnb.io/enzyme/docs/api/">Enzyme</a></li>
                 <li><a href="https://nodejs.org/en/docs/">Node</a></li>
               </ul>
-              <Button><Link to="/dashboard">Go back to the home page</Link></Button>
+              <Button className="mt20"><Link to="/dashboard">Go back to the home page</Link></Button>
             </div>
           </Col>
         </Row>

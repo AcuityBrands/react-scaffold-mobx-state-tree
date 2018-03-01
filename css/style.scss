@@ -35,14 +35,19 @@ p { margin: 0; padding: 0; line-height: 1.7em; font-size:15px; }
 .mt10 { margin-top: 1rem; }
 .mt20 { margin-top: 1.5rem; }
 .mt30 { margin-top: 1.7rem; }
+.mb10 { margin-bottom: 1rem; }
 .mb30 { margin-bottom: 1.7rem; }
 .p30 { padding: 2rem; }
 .p20 { padding: 1rem 1.5rem; }
+.bump { margin-left: .4rem;}
 .text-center { text-align: center; }
 .highlight { color: #75be75; }
 .light { color: #aaa; }
 
 .hbox { display: flex; flex-direction: row; }
+
+.green { color: green; }
+.red { color: red; }
 
 /* ************** */
 /* CONTAINERS */

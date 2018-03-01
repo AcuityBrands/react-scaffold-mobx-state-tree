@@ -1,6 +1,6 @@
-import Barchart from './BarChart'
+import BarChart from './BarChart'
 import BreadCrumbs from './Breadcrumbs';
-import LineChart from './LineChart';
+import SparkChart from './SparkChart';
 import MainNavigation from './MainNavigation';
 import Map from './Map';
 import PrivateRoute from './PrivateRoute';
@@ -8,9 +8,9 @@ import TodoList from './TodoList';
 import TodoListItem from './TodoListItem';
 
 export { 
-  Barchart, 
+  BarChart, 
   BreadCrumbs,
-  LineChart,
+  SparkChart,
   MainNavigation,
   Map,
   PrivateRoute,

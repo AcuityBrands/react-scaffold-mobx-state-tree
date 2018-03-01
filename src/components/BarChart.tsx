@@ -1,11 +1,15 @@
+/**
+ * Bar Chart Component
+ * 
+ * Renders input dataset as basic bar chart
+ */
+
 import * as React from "react";
 import * as Chart from "chart.js";
-import { autorun } from "mobx";
-import { observer } from "mobx-react";
 
-interface ILineChartProps {
+interface IBarChartProps {
   id: string,
-  title: string,
+  label: string,
   height: number,
   data: IChartData
 }
@@ -15,8 +19,7 @@ interface IChartData {
   values: Array<number>
 }
 
-@observer
-export default class BarChart extends React.Component<ILineChartProps, null> {
+export default class BarChart extends React.Component<IBarChartProps, null> {
   
   componentDidMount() {
     this.renderChart();
@@ -25,7 +28,6 @@ export default class BarChart extends React.Component<ILineChartProps, null> {
   renderChart() {
     //Chart globals
     Chart.defaults.global.legend.position = "bottom"
-    Chart.defaults.global.elements.rectangle.borderWidth = 1;
 
     // TODO: Figure out why chart data won't use 
     // props without a clone of the array
@@ -36,7 +38,7 @@ export default class BarChart extends React.Component<ILineChartProps, null> {
       data: {
         labels: this.props.data.labels,
         datasets: [{
-          label: this.props.title,
+          label: this.props.label,
           data: this.props.data.values.slice(),
           backgroundColor: this.getRandomColor(),
           pointRadius: 0,
@@ -44,7 +46,24 @@ export default class BarChart extends React.Component<ILineChartProps, null> {
         }]
       },
       options: {
-        legend: { display: false }
+        legend: { display: false },
+        scales: {
+          xAxes: [{
+              gridLines: {
+                  display: false
+              }
+          }],
+          yAxes: [{
+            gridLines: {
+                borderDash: [2,2]
+            }
+          }]
+        },
+        tooltips: {
+          xPadding: 10,
+          yPadding: 10,
+          titleMarginBottom: 8
+        }
       }
     });
   }

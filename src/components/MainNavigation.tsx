@@ -1,3 +1,12 @@
+/**
+ * Primary Navigation Menu
+ * 
+ * This component will listen for changes to the router location
+ * and highlight the appropriate menu keys appropriately
+ * 
+ * Warning: Dependent on dom router
+ */
+
 import * as React from "react";
 import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';

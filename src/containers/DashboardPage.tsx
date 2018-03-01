@@ -2,10 +2,8 @@ import * as React from "react";
 import { observable } from "mobx";
 import { observer, inject } from "mobx-react";
 import { IAppStore } from '../models/AppStore'
-import { Slider, Row, Col, Divider, DatePicker } from 'antd';
-import LineChart from '../components/LineChart'
-import BarChart from '../components/BarChart'
-import Map from '../components/Map';
+import { Slider, Row, Col, Divider, DatePicker, Icon} from 'antd';
+import {SparkChart, BarChart, Map} from '../components'
 const { RangePicker } = DatePicker;
 
 interface IDashboardProps {
@@ -31,26 +29,26 @@ export default class DashboardPage extends React.Component<IDashboardProps, unde
         <Row gutter={24}>
           <Col sm={12} lg={6}>
             <div className="card">
-              <h3>Writes / Minute</h3>
-              <LineChart id="chartA" title="A" updateSpeed={this.sliderValue} height={100}></LineChart>
+              <h3 className="mb10">Writes / Minute</h3>
+              <SparkChart id="chartA" label="Writes/Min" renderSpeed={this.sliderValue} height={110}></SparkChart>
               <Divider />
-              <p><span className="light">Avg Daily Writes:</span> <strong>1,409</strong></p>
+              <p><span className="light">Avg Daily Writes:</span> <strong>1,409</strong ><Icon type="caret-up" className="green bump"/></p>
             </div>
           </Col>
           <Col sm={12} lg={6}>
             <div className="card">
-              <h3>Success Rate</h3>
-              <LineChart id="chartB" title="B" updateSpeed={this.sliderValue} height={100}></LineChart>
+              <h3 className="mb10">Success Rate</h3>
+              <SparkChart id="chartB" label="Success Rate" renderSpeed={this.sliderValue} height={110}></SparkChart>
               <Divider />
-              <p><span className="light">Avg Daily Success:</span> <strong>3,456</strong></p>
+              <p><span className="light">Avg Daily Success:</span> <strong>3,456</strong><Icon type="caret-down" className="red bump"/></p>
             </div>
           </Col>
           <Col sm={12} lg={6}>
             <div className="card">
-              <h3>Response Time</h3>
-              <LineChart id="chartC" title="C" updateSpeed={this.sliderValue} height={100}></LineChart>
+              <h3 className="mb10">Response Time</h3>
+              <SparkChart id="chartC" label="Response Time" renderSpeed={this.sliderValue} height={110}></SparkChart>
               <Divider />
-              <p><span className="light">Avg Response Time: </span><strong>14ms</strong></p>
+              <p><span className="light">Avg Response Time: </span><strong>14ms</strong><Icon type="caret-up" className="green bump"/></p>
             </div>
           </Col>
           <Col sm={12} lg={6}>
@@ -64,12 +62,12 @@ export default class DashboardPage extends React.Component<IDashboardProps, unde
           <Col span={24}>
             <div className="card">
               <div className="card-header">
-                <h3>Sales Volume</h3>
+                <h3>Monthly Sales Volume</h3>
                 <RangePicker />
               </div>
               <Row type="flex" align="middle">
                 <Col span={18}>
-                  <BarChart id="chartE" title="E" height={80} data={chartStore.salesData} />
+                  <BarChart id="chartE" label="Monthy Sales" height={80} data={chartStore.salesData} />
                 </Col>
                 <Col span={5} offset={1}>
                   <h1>$21,271</h1>

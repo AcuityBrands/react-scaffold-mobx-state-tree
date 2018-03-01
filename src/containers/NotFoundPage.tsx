@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Link } from 'react-router-dom';
-import { Button, Row, Col } from 'antd';
+import { Button, Row, Col, Icon } from 'antd';
 
 export default class NotFoundPage extends React.Component {
   render() {
@@ -9,11 +9,11 @@ export default class NotFoundPage extends React.Component {
         <Row type="flex" justify="center">
           <Col sm={24} md={17} lg={12}>
             <div className="card">
-              <h1>404</h1>
+              <h1>Oh, Hello 404</h1>
               <h3 className="mt10">Whatever you were trying to do, it didn't work</h3>
               <p className="mt20">
                 Once upon a midnight dreary, While I websurfed, weak and weary,
-                Over many a strange and spurious website of data galore,
+                Over many a strange and spurious websites of blogs galore,
               </p>
               <p className="mt20">
                 While I clicked my fav'rite bookmark, Suddenly there came a warning,
@@ -25,13 +25,13 @@ export default class NotFoundPage extends React.Component {
               </p>
               <p className="mt20">
                 With a scream, I was defeated, For my cookies were deleted, So i
-                begged, no longer seated, "Give me back my charts hardcore!"
+                begged, no longer seated, "Give me back my hrefs once more!"
               </p>
               <p className="mt20">
                 Then, in answer to my query, Through the net I loved so dearly,
                 Came its answer, dark and dreary: Quoth the server, 404
               </p>
-              <p className="mt20">
+              <p className="mt20 text-center">
                 <Button><Link to="/">Take me back to where it's warm and safe</Link></Button>
                 {/* <Link to="/">.</Link> */}
               </p>
@@ -44,7 +44,7 @@ export default class NotFoundPage extends React.Component {
               and you'll be brought right back here.  BOOM!
             </p>
             <p className="mt10 light">
-              Just in case you have a hard time navigating your way around, here's a poem 
+              Just in case you're having a hard time navigating your way around, here's a poem 
               to brighten your mood.
             </p>
           </Col>
