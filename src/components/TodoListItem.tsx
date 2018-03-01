@@ -1,6 +1,6 @@
 import * as React from "react";
 import { observer } from "mobx-react";
-import {ITodoItem} from '../models/TodoStore'
+import {ITodoItem} from '../stores'
 import { Checkbox, Popconfirm } from 'antd';
 
 interface ITodoListItemProps {

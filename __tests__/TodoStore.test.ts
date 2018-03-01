@@ -1,5 +1,5 @@
 import { getSnapshot, onSnapshot, onPatch } from 'mobx-state-tree'
-import { TodoItem, TodoStore, ITodoItem, ITodoStore } from '../src/models/TodoStore'
+import { TodoItem, TodoStore, ITodoItem, ITodoStore } from '../src/stores'
 import * as fetchMock from 'fetch-mock'
 
 afterEach(function () {

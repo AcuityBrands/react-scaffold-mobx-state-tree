@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Route, Redirect } from 'react-router-dom';
 import { inject } from "mobx-react";
-import { IAppStore } from '../models/AppStore'
+import { IAppStore } from '../stores'
 
 interface IPrivateRouteProps {
   component: any,
