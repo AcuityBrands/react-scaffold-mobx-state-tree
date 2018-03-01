@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Link } from 'react-router-dom';
-import { Row, Col } from 'antd';
+import { Row, Col, Button } from 'antd';
 
 export default class AboutPage extends React.Component {
   render() {
@@ -24,7 +24,7 @@ export default class AboutPage extends React.Component {
                 <li><a href="http://airbnb.io/enzyme/docs/api/">Enzyme</a></li>
                 <li><a href="https://nodejs.org/en/docs/">Node</a></li>
               </ul>
-              <Link to="/">Go back to the main page</Link>
+              <Button><Link to="/dashboard">Go back to the home page</Link></Button>
             </div>
           </Col>
         </Row>
