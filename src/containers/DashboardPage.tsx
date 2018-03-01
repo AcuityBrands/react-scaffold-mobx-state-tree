@@ -2,7 +2,7 @@ import * as React from "react";
 import { observable } from "mobx";
 import { observer, inject } from "mobx-react";
 import { IAppStore } from '../models/AppStore'
-import { Slider, Row, Col, Divider, DatePicker, Icon} from 'antd';
+import { Slider, Row, Col, Divider, DatePicker, Icon, Button} from 'antd';
 import {SparkChart, BarChart, Map} from '../components'
 const { RangePicker } = DatePicker;
 
@@ -15,9 +15,14 @@ interface IDashboardProps {
 export default class DashboardPage extends React.Component<IDashboardProps, undefined> {
 
   @observable sliderValue = 1000;
+  private mapComponent:any;
 
   updateSpeed = (value: number) => {
     this.sliderValue = value;
+  }
+
+  recenterMap = () => {
+    this.mapComponent.recenterMap();
   }
 
   render() {
@@ -82,14 +87,23 @@ export default class DashboardPage extends React.Component<IDashboardProps, unde
           </Col>
         </Row>
         <Row gutter={24}>
-          <Col span={18}>
+          <Col span={16}>
             <div className="card">
-              <Map height={400}></Map>
+              <Map height={400} ref={(c) => { this.mapComponent = c; }}></Map>
             </div>
           </Col>
-          <Col span={6}>
+          <Col span={8}>
             <div className="card">
-
+              <h3>Using This Map</h3>
+              <p className="mt20">
+                This is a standard geojson dataset that is extruded using the MapBox GL javascript framework.
+              </p>
+              <ul className="mt10">
+                <li><strong>Zoom</strong> mouse wheel or shift + left-click drag</li>
+                <li><strong>Pan</strong> left-click and drag</li>
+                <li><strong>Rotate</strong> ctrl + left-click and drag</li>
+              </ul>
+              <Button onClick={this.recenterMap}>Recenter Map</Button>
             </div>
           </Col>
         </Row>
@@ -97,12 +111,3 @@ export default class DashboardPage extends React.Component<IDashboardProps, unde
     );
   }
 }
-
-// <Row>
-// <Col span={20}>
-
-// </Col>
-// <Col span={4}>
-//   
-// </Col>
-// </Row>
