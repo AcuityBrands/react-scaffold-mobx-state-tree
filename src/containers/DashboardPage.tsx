@@ -15,7 +15,7 @@ interface IDashboardProps {
 export default class DashboardPage extends React.Component<IDashboardProps, undefined> {
 
   @observable sliderValue = 1000;
-  private mapComponent:any;
+  private mapComponent:Map;
 
   updateSpeed = (value: number) => {
     this.sliderValue = value;
@@ -72,7 +72,7 @@ export default class DashboardPage extends React.Component<IDashboardProps, unde
               </div>
               <Row type="flex" align="middle">
                 <Col span={18}>
-                  <BarChart id="chartE" label="Monthy Sales" height={80} data={chartStore.salesData} />
+                  <BarChart id="chartE" label="Monthy Sales" height={80} data={chartStore.salesData}/>
                 </Col>
                 <Col span={5} offset={1}>
                   <h1>$21,271</h1>
@@ -96,7 +96,7 @@ export default class DashboardPage extends React.Component<IDashboardProps, unde
             <div className="card">
               <h3>Using This Map</h3>
               <p className="mt20">
-                This is a standard geojson dataset that is extruded using the MapBox GL javascript framework.
+                This is a standard geojson dataset that is extruded using the MapBox GL javascript framework (using properties on the features).
               </p>
               <ul className="mt10">
                 <li><strong>Zoom</strong> mouse wheel or shift + left-click drag</li>
