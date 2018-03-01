@@ -7,7 +7,7 @@ import {SparkChart, BarChart, Map} from '../components'
 const { RangePicker } = DatePicker;
 
 interface IDashboardProps {
-  appStore: IAppStore
+  appStore?: IAppStore
 }
 
 @inject("appStore")

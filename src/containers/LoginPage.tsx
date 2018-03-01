@@ -1,12 +1,12 @@
 import * as React from "react";
 import { inject } from "mobx-react";
-import { IAppStore } from '../models/AppStore'
+import { IAppStore } from '../stores'
 import { Redirect } from 'react-router-dom';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 const FormItem = Form.Item;
 
 interface ILoginPageProps {
-  appStore: IAppStore
+  appStore?: IAppStore
   form: any,
   location?: any
 }

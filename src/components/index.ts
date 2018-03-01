@@ -6,6 +6,7 @@ import Map from './Map';
 import PrivateRoute from './PrivateRoute';
 import TodoList from './TodoList';
 import TodoListItem from './TodoListItem';
+import TabNavigation from './TabNavigation';
 
 export { 
   BarChart, 
@@ -15,5 +16,6 @@ export {
   Map,
   PrivateRoute,
   TodoList,
-  TodoListItem
+  TodoListItem,
+  TabNavigation
 };

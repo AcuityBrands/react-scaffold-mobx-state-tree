@@ -141,6 +141,21 @@ p { margin: 0; padding: 0; line-height: 1.7em; font-size:15px; }
     color: #1890ff;
     background-color: rgba(24,144,255,.15);  
 }
+.custom-tabs .ant-tabs-tab{
+    background: none !important;
+    border: none !important;
+    border-radius: none !important;
+}
+.custom-tabs .ant-tabs-ink-bar{
+    visibility: inherit !important;
+    bottom: 0px !important;
+}
+.custom-tabs .ant-tabs-tab-active{
+    font-weight: inherit !important;
+}
+.custom-tabs .ant-tabs-content {
+    padding: 0 30px;
+}
 
 
 /* ************** */
@@ -170,7 +185,7 @@ p { margin: 0; padding: 0; line-height: 1.7em; font-size:15px; }
 .ant-layout-footer { background: #e6e9ed; padding: 15px 15px;}
 .ant-menu-inline, .ant-menu-vertical, .ant-menu-vertical-left { background: #333E48; border-right: none; }
 .ant-layout-header { background: #fff; padding: 0 16px 0 0;}
-.ant-layout-content { padding: 30px 30px 10px 30px; }
+.ant-layout-content { padding: 0px; }
 .ant-card {
     margin-bottom:24px;
     -webkit-box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.04);

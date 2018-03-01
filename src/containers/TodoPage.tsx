@@ -9,7 +9,7 @@ const NewItem = Input.Search;
 const ButtonGroup = Button.Group;
 
 interface ITodoPageProps {
-  appStore: IAppStore
+  appStore?: IAppStore
 }
 
 @inject("appStore")

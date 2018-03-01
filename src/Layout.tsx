@@ -2,8 +2,8 @@ import * as React from "react";
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import { Provider } from "mobx-react";
 import { IAppStore } from './stores'
-import { DashboardPage, TodoPage, NotFoundPage, AboutPage, LoginPage} from './containers';
-import {MainNavigation, BreadCrumbs, PrivateRoute} from './components';
+import { DashboardPage, TodoPage, NotFoundPage, AboutPage, LoginPage, Sandbox} from './containers';
+import { MainNavigation, BreadCrumbs, PrivateRoute, TabNavigation } from './components';
 import { Layout, Input, Menu, Icon, Avatar, Badge, Dropdown } from 'antd';
 
 const { Header, Sider, Content, Footer } = Layout;
@@ -85,6 +85,12 @@ class AppLayout extends React.Component<ILayoutProps, {}> {
           </Header>
 
           <Content>
+            <Provider appStore={this.props.appStore}>
+              <TabNavigation></TabNavigation>
+            </Provider>
+          </Content>
+
+          {/* <Content>
             <BreadCrumbs></BreadCrumbs>
             <Provider appStore={this.props.appStore}>
               <Switch>
@@ -93,10 +99,11 @@ class AppLayout extends React.Component<ILayoutProps, {}> {
                 <PrivateRoute path='/dashboard' component={DashboardPage} />
                 <PrivateRoute path='/task' component={TodoPage} />
                 <PrivateRoute path='/about' component={AboutPage} />
+                <Route path='/sandbox' component={Sandbox} />
                 <Route path='*' component={NotFoundPage} />
               </Switch>
             </Provider>
-          </Content>
+          </Content> */}
 
           <Footer style={{ textAlign: 'center' }}>Acuity Technology Group 2018 ©, All Rights Reserved</Footer>
 
