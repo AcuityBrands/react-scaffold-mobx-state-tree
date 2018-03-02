@@ -4,7 +4,7 @@ import { Button, Row, Col } from 'antd';
 export default class NotFoundPage extends React.Component {
   render() {
     return (
-      <div style={{display:'flex', alignItems:'center', justifyContent:'center', flex: 1}}>
+      <div style={{display:'flex', alignItems:'center', justifyContent:'center', flex: 1, background:'#f7f7f7'}}>
         <Row type="flex" justify="center" align="middle">
           <Col xs={23} sm={20} md={18} lg={16}>
             <div className="card">

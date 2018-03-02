@@ -1,4 +1,5 @@
 import * as React from "react";
+import { inject } from "mobx-react";
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import { Provider } from "mobx-react";
 import { IAppStore } from '../stores'
@@ -18,6 +19,7 @@ interface IChromeProps {
 // This page creates the basic layout of the application
 // along with the various routes (pages) used within the app.
 
+@inject("appStore")
 class AppChrome extends React.Component<IChromeProps, {}> {
 
   state = {
