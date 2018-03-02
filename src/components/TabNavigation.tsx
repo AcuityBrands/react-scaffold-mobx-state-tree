@@ -2,8 +2,8 @@ import * as React from "react";
 import { inject } from "mobx-react";
 import { withRouter } from 'react-router-dom';
 import { Tabs } from 'antd';
-import { IAppStore} from '../stores';
-import { DashboardPage, TodoPage, NotFoundPage, AboutPage, LoginPage, Sandbox} from '../containers';
+import { IAppStore } from '../stores';
+import { DashboardPage, TodoPage, AboutPage } from '../containers';
 const TabPane = Tabs.TabPane;
 
 interface ITabNavProps {
@@ -16,7 +16,8 @@ interface ITabNavProps {
 interface IPane {
   title: string,
   content: any,
-  key: string
+  key: string,
+  disabled: boolean
 }
 
 interface ITabState {
@@ -25,22 +26,20 @@ interface ITabState {
 }
 
 
-const items = [
-  { path: "/dashboard", label: "Dashboard", component: <DashboardPage />},
-  { path: "/task", label: "Tasks", component: <TodoPage />},
-  { path: "/about", label: "About App", component: <AboutPage />}
-]
-
 @inject("appStore")
 class TabNavigation extends React.Component<ITabNavProps, {}>{
-  state:ITabState
-  
-  private unlisten:any;
-  private newTabIndex:number;
+  state: ITabState
+  unlisten: any;
 
-  constructor(props:any) {
+  // TODO: Figure out a better way to store this config and reuse
+  pathConfig = [
+    { path: "/dashboard", label: "Dashboard", component: <DashboardPage/>},
+    { path: "/task", label: "Tasks", component: <TodoPage/>},
+    { path: "/about", label: "About App", component: <AboutPage/>}
+  ]
+
+  constructor(props: any) {
     super(props);
-    this.newTabIndex = 0;
     this.state = {
       activeKey: '',
       panes: []
@@ -49,29 +48,29 @@ class TabNavigation extends React.Component<ITabNavProps, {}>{
 
   componentDidMount() {
     this.renderComponent(this.props.location);
-    this.unlisten = this.props.history.listen((location:any, action:any)=>{
+    this.unlisten = this.props.history.listen((location: any, action: any) => {
       this.renderComponent(location);
     });
   }
 
-  onEdit = (targetKey:string, action:string) => {
-    if(action === 'remove') this.remove(targetKey);
+  onEdit = (targetKey: string, action: string) => {
+    if (action === 'remove') this.remove(targetKey);
   }
 
-  onChange = (activeKey:string) => {
-    this.setState({activeKey:activeKey});
+  onChange = (activeKey: string) => {
+    this.setState({ activeKey: activeKey });
     this.props.history.push(activeKey);
   }
 
-  renderComponent = (location:any) => {
+  renderComponent = (location: any) => {
     const panes = this.state.panes;
-    
+
     // Determine if tab is already open
     // if so, set the active tab to the open tab
-    for(let x = 0; x < panes.length; x++) {
+    for (let x = 0; x < panes.length; x++) {
       let p = panes[x] as IPane;
-      if(p.key === location.pathname) {
-        this.setState({activeKey:p.key});
+      if (p.key === location.pathname) {
+        this.setState({ activeKey: p.key });
         return false;
       }
     }
@@ -79,35 +78,56 @@ class TabNavigation extends React.Component<ITabNavProps, {}>{
     // Lookup the pane content given the
     // router location
     let item;
-    let pathFound:boolean = false;
-    for(let i = 0; i < items.length; i++) {
-      item = items[i];
-      if(item.path === location.pathname) {
+    let pathFound: boolean = false;
+    for (let i = 0; i < this.pathConfig.length; i++) {
+      item = this.pathConfig[i];
+      if (item.path === location.pathname) {
         pathFound = true;
         break;
       }
     }
 
     // If the path is found, create a new tab
-    if(pathFound){
-      panes.push({ title: item.label, content: item.component, key: item.path });
-      this.setState({ panes, activeKey:item.path });
+    if (pathFound) {
+      panes.push({ title: item.label, content: item.component, key: item.path, disabled: true });
+      if (panes.length > 1) {
+        panes.map(p => p.disabled = false);
+      }
+      this.setState({ panes, activeKey: item.path });
     }
-    
+
   }
 
-  remove = (targetKey:string) => {
+  remove = (targetKey: string) => {
+    let keyIndex: number = -1;
     let activeKey = this.state.activeKey;
-    let lastIndex = 0;
-    this.state.panes.forEach((pane:IPane, i:number) => {
-      if (pane.key === targetKey) {
-        lastIndex = i - 1;
+
+    // Find the index of the deleted key
+    for (let i = 0; i < this.state.panes.length; i++) {
+      let p = this.state.panes[i];
+      if (p.key == targetKey) {
+        keyIndex = i;
+        break;
       }
-    });
-    const panes = this.state.panes.filter((pane:IPane) => pane.key !== targetKey);
-    if (lastIndex >= 0 && activeKey === targetKey) {
-      activeKey = panes[lastIndex].key;
     }
+
+    // Remove the deleted key from the panes
+    const panes = this.state.panes.filter(e => e.key != targetKey);
+
+    // If tab removed was the first tab
+    if (keyIndex == 0 && targetKey == activeKey && panes.length > 0)
+      activeKey = panes[0].key;
+
+    // If tab removed was the last tab
+    if (keyIndex == panes.length && panes.length > 0)
+      activeKey = panes[panes.length - 1].key
+
+    // Disable tabs if only 1 tab remains
+    if (panes.length <= 1) {
+      panes.map(p => p.disabled = true);
+    }
+
+    // Update State
     this.setState({ panes, activeKey });
     this.props.history.push(activeKey);
   }
@@ -115,7 +135,7 @@ class TabNavigation extends React.Component<ITabNavProps, {}>{
   render() {
     return (
       <div className="tab-wrapper">
-        <Tabs 
+        <Tabs
           hideAdd
           activeKey={this.state.activeKey}
           type="editable-card"
@@ -123,11 +143,11 @@ class TabNavigation extends React.Component<ITabNavProps, {}>{
           onChange={this.onChange}
           className="custom-tabs"
         >
-          {this.state.panes.map((pane:IPane) => <TabPane tab={pane.title} key={pane.key}>{pane.content}</TabPane>)}
+          {this.state.panes.map((pane: IPane) => <TabPane disabled={pane.disabled} tab={pane.title} key={pane.key}>{pane.content}</TabPane>)}
         </Tabs>
       </div>
     );
-  }  
+  }
 }
-  
+
 export default withRouter(TabNavigation);

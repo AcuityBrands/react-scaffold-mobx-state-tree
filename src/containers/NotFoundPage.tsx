@@ -1,13 +1,12 @@
 import * as React from "react";
-import { Link } from 'react-router-dom';
-import { Button, Row, Col, Icon } from 'antd';
+import { Button, Row, Col } from 'antd';
 
 export default class NotFoundPage extends React.Component {
   render() {
     return (
-      <div className="content-wrapper">
-        <Row type="flex" justify="center">
-          <Col sm={24} md={17} lg={12}>
+      <div style={{display:'flex', alignItems:'center', justifyContent:'center', flex: 1}}>
+        <Row type="flex" justify="center" align="middle">
+          <Col xs={23} sm={20} md={18} lg={16}>
             <div className="card">
               <h1>Oh, Hello 404</h1>
               <h3 className="mt10">Whatever you were trying to do, it didn't work</h3>
@@ -31,22 +30,7 @@ export default class NotFoundPage extends React.Component {
                 Then, in answer to my query, Through the net I loved so dearly,
                 Came its answer, dark and dreary: Quoth the server, 404
               </p>
-              <p className="mt20 text-center">
-                <Button><Link to="/">Take me back to where it's warm and safe</Link></Button>
-                {/* <Link to="/">.</Link> */}
-              </p>
             </div>
-          </Col>
-          <Col sm={24} md={5} lg={5} offset={1}>
-            <h3 className="mt20">About This Page</h3>
-            <p className="mt10 light">
-              This is a catch-all page.  Go ahead, try throwing a random url into the browser
-              and you'll be brought right back here.  BOOM!
-            </p>
-            <p className="mt10 light">
-              Just in case you're having a hard time navigating your way around, here's a poem 
-              to brighten your mood.
-            </p>
           </Col>
         </Row>
       </div>

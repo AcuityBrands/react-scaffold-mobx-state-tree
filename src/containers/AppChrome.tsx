@@ -1,15 +1,14 @@
 import * as React from "react";
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import { Provider } from "mobx-react";
-import { IAppStore } from './stores'
-import { DashboardPage, TodoPage, NotFoundPage, AboutPage, LoginPage, Sandbox} from './containers';
-import { MainNavigation, BreadCrumbs, PrivateRoute, TabNavigation } from './components';
+import { IAppStore } from '../stores'
+import { MainNavigation, TabNavigation } from '../components';
 import { Layout, Input, Menu, Icon, Avatar, Badge, Dropdown } from 'antd';
 
 const { Header, Sider, Content, Footer } = Layout;
 const Search = Input.Search;
 
-interface ILayoutProps {
+interface IChromeProps {
   appStore: IAppStore,
   match: any,
   location: any,
@@ -19,14 +18,14 @@ interface ILayoutProps {
 // This page creates the basic layout of the application
 // along with the various routes (pages) used within the app.
 
-class AppLayout extends React.Component<ILayoutProps, {}> {
+class AppChrome extends React.Component<IChromeProps, {}> {
 
   state = {
     collapsed: false,
   };
 
   menu = (
-    <Menu style={{background:'#fff'}}>
+    <Menu style={{ background: '#fff' }}>
       <Menu.Item>
         <a target="_blank" rel="noopener noreferrer" href="#"><Icon type="profile" /> Manage Profile</a>
       </Menu.Item>
@@ -45,7 +44,7 @@ class AppLayout extends React.Component<ILayoutProps, {}> {
 
   logout = () => {
     this.props.appStore.logout();
-    this.props.history.push("/");
+    this.props.history.push("/login");
   }
 
   render() {
@@ -58,6 +57,7 @@ class AppLayout extends React.Component<ILayoutProps, {}> {
         </Sider>
 
         <Layout>
+
           <Header className="header">
             <div className="hbox align-center">
               <div className="icon-button" onClick={this.toggle}>
@@ -69,7 +69,7 @@ class AppLayout extends React.Component<ILayoutProps, {}> {
               <Search
                 placeholder="Find Something Interesting"
                 className="bump"
-                style={{ width: 300, height:40 }}
+                style={{ width: 300, height: 40 }}
               />
             </div>
             <div className="hbox align-center">
@@ -85,33 +85,15 @@ class AppLayout extends React.Component<ILayoutProps, {}> {
           </Header>
 
           <Content>
-            <Provider appStore={this.props.appStore}>
-              <TabNavigation></TabNavigation>
-            </Provider>
+            <TabNavigation></TabNavigation>
           </Content>
-
-          {/* <Content>
-            <BreadCrumbs></BreadCrumbs>
-            <Provider appStore={this.props.appStore}>
-              <Switch>
-                <Route path='/login' component={LoginPage} />
-                <Route exact path='/' render={() => (<Redirect to="/dashboard" />)} />
-                <PrivateRoute path='/dashboard' component={DashboardPage} />
-                <PrivateRoute path='/task' component={TodoPage} />
-                <PrivateRoute path='/about' component={AboutPage} />
-                <Route path='/sandbox' component={Sandbox} />
-                <Route path='*' component={NotFoundPage} />
-              </Switch>
-            </Provider>
-          </Content> */}
 
           <Footer style={{ textAlign: 'center' }}>Acuity Technology Group 2018 ©, All Rights Reserved</Footer>
 
         </Layout>
       </Layout>
     )
-
   }
 }
 
-export default withRouter(AppLayout);
+export default withRouter(AppChrome);

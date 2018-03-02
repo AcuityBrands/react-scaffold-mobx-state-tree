@@ -10,7 +10,7 @@ export default class AboutPage extends React.Component {
           <Col sm={24} md={18} lg={12}>
             <div className="card text-center" style={{padding: 80}}>
               <h1>About</h1>
-              <h3 className="mt20">Tech Stack Used For This App</h3>
+              <h3>Tech Stack Used For This App</h3>
               <ul className="mt30">
                 <li><a href="https://ant.design/docs/react/introduce">Ant Design Components</a></li>
                 <li><a href="http://www.chartjs.org/samples/latest/">Chart-JS</a></li>

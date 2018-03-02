@@ -2,8 +2,9 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom"
 import { onSnapshot } from 'mobx-state-tree';
+import { Provider } from "mobx-react";
 import { TodoStore, ITodoStore, AppStore, IAppStore } from './stores';
-import AppLayout from './Layout';
+import Routes from './Routes';
 
 // Import the main stylesheet which imports other stylesheets
 import './../css/style.scss';
@@ -50,7 +51,12 @@ onSnapshot(appStore, snapshot => {
 // Render application
 function renderApp() {
   ReactDOM.render(
-    <Router><AppLayout appStore={appStore} /></Router>, document.getElementById('root')
+    <Router>
+      <Provider appStore={appStore}>
+        <Routes />
+      </Provider>
+    </Router>,
+    document.getElementById('root')
   );
 }
 

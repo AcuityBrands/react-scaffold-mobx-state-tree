@@ -4,8 +4,8 @@ import { inject } from "mobx-react";
 import { IAppStore } from '../stores'
 
 interface IPrivateRouteProps {
-  component: any,
   path: any,
+  component?: any,
   appStore?: IAppStore
 }
 

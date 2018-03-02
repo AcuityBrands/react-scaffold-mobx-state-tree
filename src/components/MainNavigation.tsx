@@ -27,10 +27,9 @@ interface IMenuItem {
 }
 
 class MainNavigation extends React.Component<IMainNavProps, undefined>{
-  items: Array<IMenuItem> = [
+  menuConfig: Array<IMenuItem> = [
     { key: "1", path: "/dashboard", icon: "line-chart", label: "Dashboard" },
-    { key: "2", path: "/task", icon: "check-circle-o", label: "Tasks" },
-    { key: "3", path: "/fail", icon: "star-o", label: "Sample 404" }
+    { key: "2", path: "/task", icon: "check-circle-o", label: "Tasks" }
   ]
   selectedKeys:Array<string> = [];
   unlisten:any;
@@ -44,7 +43,7 @@ class MainNavigation extends React.Component<IMainNavProps, undefined>{
 
   selectKey = (location:any) => {
     this.selectedKeys = [];
-    this.items.map(i => {
+    this.menuConfig.map(i => {
       if(location.pathname == i.path){
         this.selectedKeys.push(i.key);
       }
@@ -62,7 +61,7 @@ class MainNavigation extends React.Component<IMainNavProps, undefined>{
         theme="dark"
         selectedKeys={this.selectedKeys}
       >
-        {this.items.map((i) => {
+        {this.menuConfig.map((i) => {
           return <Menu.Item key={i.key}>
             <Link to={i.path}><Icon type={i.icon} /><span>{i.label}</span></Link>
           </Menu.Item>
