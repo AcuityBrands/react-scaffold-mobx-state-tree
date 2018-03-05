@@ -1,3 +1,14 @@
+/**
+ * History Model
+ * 
+ * This is a simple middleware created to track patch history
+ * Can be composed with other models to add history capabilities to stores
+ * 
+ * A bit primitive, but function expects array of patch paths
+ * that should not be logged in the heap.  For example when using a
+ * loading boolean for UI side effects.
+ */
+
 import { types, onPatch, IJsonPatch, applyPatch } from 'mobx-state-tree';
 
 interface IPatchHeap {
@@ -5,12 +16,6 @@ interface IPatchHeap {
   inversePatch: IJsonPatch
 }
 
-// This is a simple middleware created to track patch history
-// Can be composed with other models to add history capabilities to stores
-
-// A bit primitive, but function expects array of patch paths
-// that should not be logged in the heap.  For example when using a
-// loading boolean for UI side effects.
 export function createHistory(excludes?: string[]) {
 
   return types.model({}).actions(self => {

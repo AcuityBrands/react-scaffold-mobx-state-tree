@@ -1,3 +1,8 @@
+/**
+ * TodoList Component
+ * 
+ * Renders a list of TodoListItem(s)
+ */
 import * as React from "react";
 import { observer, inject } from "mobx-react";
 import {IAppStore} from '../stores'

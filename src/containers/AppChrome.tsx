@@ -1,3 +1,8 @@
+/**
+ * AppChrome Container
+ * 
+ * Primary layout of the application chrome
+ */
 import * as React from "react";
 import { inject } from "mobx-react";
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
@@ -15,9 +20,6 @@ interface IChromeProps {
   location: any,
   history: any
 }
-
-// This page creates the basic layout of the application
-// along with the various routes (pages) used within the app.
 
 @inject("appStore")
 class AppChrome extends React.Component<IChromeProps, {}> {

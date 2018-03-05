@@ -1,3 +1,12 @@
+/**
+ * Routes Component
+ * 
+ * Contains basic routes defined for application.
+ * Notice that some routes are Public (Routes) and
+ * other routes are private (PrivateRoutes).  PrivateRoutes
+ * require the application state to contain a true
+ * 'isAuthenticated' boolean.
+ */
 import * as React from "react";
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { LoginPage, AppChrome, NotFoundPage } from './containers';

@@ -1,10 +1,11 @@
 /**
- * Primary Navigation Menu
+ * MainNavigation Component
  * 
  * This component will listen for changes to the router location
  * and highlight the appropriate menu keys appropriately
+ * Creates a set of menu items for the left side of dashboard
  * 
- * Warning: Dependent on dom router
+ * WARNING: Dependent on DOM router
  */
 
 import * as React from "react";
@@ -27,14 +28,18 @@ interface IMenuItem {
 }
 
 class MainNavigation extends React.Component<IMainNavProps, undefined>{
+  // TODO: move configuration to common file 
   menuConfig: Array<IMenuItem> = [
     { key: "1", path: "/dashboard", icon: "line-chart", label: "Dashboard" },
     { key: "2", path: "/task", icon: "check-circle-o", label: "Tasks" }
   ]
   selectedKeys:Array<string> = [];
+
+  // Disposer used to disconnect from router changes when component unmounts
   unlisten:any;
 
   componentDidMount() {
+    // Create listener to the route and change selected key on change
     this.selectKey(this.props.location);
     this.unlisten = this.props.history.listen((location:any, action:any)=>{
       this.selectKey(location);
@@ -75,5 +80,4 @@ class MainNavigation extends React.Component<IMainNavProps, undefined>{
     }
   }
   
-  //TODO: This has a dependency on the react-router
   export default withRouter(MainNavigation);

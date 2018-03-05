@@ -1,3 +1,9 @@
+/**
+ * AppStore Model
+ * 
+ * Contains a store of stores.  Bundles application
+ * state into a transportable object.
+ */
 import { types, getEnv } from "mobx-state-tree"
 import { ChartStore } from "./ChartStore"
 import { TodoStore } from "./TodoStore"

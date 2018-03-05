@@ -68,12 +68,14 @@ export default class BarChart extends React.Component<IBarChartProps, null> {
     });
   }
 
+  // Create canvas to render chart
   render() {
     return (
       <canvas id={this.props.id} height={this.props.height}></canvas>
     );
   }
 
+  // Randomizes the color of the chart - hardcoded opacity level
   getRandomColor() {
     const o = Math.round, r = Math.random, s = 255;
     return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',0.7)';

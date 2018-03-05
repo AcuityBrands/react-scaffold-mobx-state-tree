@@ -1,3 +1,9 @@
+/**
+ * TodoListItem Compent
+ * 
+ * Renders LI element with checkbox, label, and prompt when 
+ * interacting with the todo list
+ */
 import * as React from "react";
 import { observer } from "mobx-react";
 import {ITodoItem} from '../stores'

@@ -1,3 +1,12 @@
+/**
+ * TabNavigation Component
+ * 
+ * Primary content render engine for application.  This component
+ * Will listen to changes to the browser location and render
+ * a new tab (or reuse an existing one).
+ * 
+ * WARNING: Dependent on DOM router
+ */
 import * as React from "react";
 import { inject } from "mobx-react";
 import { withRouter } from 'react-router-dom';
@@ -31,7 +40,7 @@ class TabNavigation extends React.Component<ITabNavProps, {}>{
   state: ITabState
   unlisten: any;
 
-  // TODO: Figure out a better way to store this config and reuse
+  // TODO: Move route configurations to common file for reusability
   pathConfig = [
     { path: "/dashboard", label: "Dashboard", component: <DashboardPage/>},
     { path: "/task", label: "Tasks", component: <TodoPage/>},

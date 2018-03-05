@@ -1,3 +1,10 @@
+/**
+ * PrivateRoute Component
+ * 
+ * Mimics the interface of a Route (from react-router-dom) and 
+ * validates the user is authenticating before rendering, otherwise
+ * redirects to the login route path
+ */
 import * as React from "react";
 import { Route, Redirect } from 'react-router-dom';
 import { inject } from "mobx-react";

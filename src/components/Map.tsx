@@ -1,3 +1,9 @@
+/**
+ * Map
+ * 
+ * Creates contrived map component.  This component is currently
+ * fairly limited in configurability and scope.
+ */
 import * as React from "react";
 import mapboxgl = require('mapbox-gl');
 

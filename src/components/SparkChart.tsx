@@ -1,3 +1,9 @@
+/**
+ * SparkChart Component
+ * 
+ * Contrived example. Loads a hardcoded set of values on load
+ * then randomly updates the chart every XX milliseconds.
+ */
 import * as React from "react";
 import * as Chart from "chart.js";
 import { autorun } from "mobx";
