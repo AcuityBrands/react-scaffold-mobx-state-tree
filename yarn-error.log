@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js run dev
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js run test
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -21,7 +21,7 @@ npm manifest:
     "author": "Daniel Bradshaw",
     "license": "MIT",
     "scripts": {
-      "dev": "webpack-dev-server --history-api-fallback --open --config webpack.dev.js",
+      "dev": "webpack-dev-server --history-api-fallback --config webpack.dev.js",
       "build": "NODE_ENV=production ./node_modules/.bin/webpack --config webpack.prod.js",
       "test": "jest"
     },
@@ -7797,7 +7797,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c webpack-dev-server --history-api-fallback --open --config webpack.dev.js
+  Arguments: -c jest
   Directory: /Users/danielbradshaw/Projects/sandbox/react-starter-mst
   Output:
   

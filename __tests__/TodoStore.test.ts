@@ -38,7 +38,7 @@ it("can create an instance of a todo store", () => {
 // Use async/await to test mocked api call since the mock
 // returns a promise
 it("can load a set of suggested todos", async () => {
-  fetchMock.mock("https://jsonplaceholder.typicode.com/todos", {
+  fetchMock.mock("data/todos.json", {
     status: 200,
     body: [{
       "userId": 1,
