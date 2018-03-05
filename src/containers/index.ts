@@ -4,7 +4,6 @@ import DashboardPage from './DashboardPage';
 import LoginPage from './LoginPage';
 import NotFoundPage from './NotFoundPage';
 import TodoPage from './TodoPage';
-import Sandbox from './Sandbox';
 
 export { 
   AppChrome,
@@ -12,6 +11,5 @@ export {
   DashboardPage,
   LoginPage,
   NotFoundPage,
-  TodoPage,
-  Sandbox
+  TodoPage
 };
