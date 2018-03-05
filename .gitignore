@@ -3,3 +3,6 @@ node_modules/
 
 # Build directory
 dist/
+
+# Test Snapshots directory
+__tests__/__snapshots/

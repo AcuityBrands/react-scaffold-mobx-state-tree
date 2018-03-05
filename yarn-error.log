@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js run test
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js run jest
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -7797,8 +7797,8 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c jest
-  Directory: /Users/danielbradshaw/Projects/sandbox/react-starter-mst
+  Arguments: -c /Users/danielbradshaw/Projects/react-scaffold-mobx-state-tree/node_modules/.bin/jest
+  Directory: /Users/danielbradshaw/Projects/react-scaffold-mobx-state-tree
   Output:
   
       at ProcessTermError.MessageError (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:186:110)

@@ -2,7 +2,7 @@ import { types, getParent, destroy, flow, getSnapshot } from "mobx-state-tree"
 
 export const ChartStore = types
   .model("ChartStore", {
-    salesData: types.frozen,
+    salesData: types.optional(types.frozen, {}),
     loading: types.optional(types.boolean, true)
   })
   .actions(self => ({

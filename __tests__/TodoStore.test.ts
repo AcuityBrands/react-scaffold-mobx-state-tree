@@ -2,12 +2,24 @@ import { getSnapshot, onSnapshot, onPatch } from 'mobx-state-tree'
 import { TodoItem, TodoStore, ITodoItem, ITodoStore } from '../src/stores'
 import * as fetchMock from 'fetch-mock'
 
-afterEach(function () {
+afterEach(() => {
   // Restore the fetch to native implementation after each mock
-  afterEach(fetchMock.restore);
+  fetchMock.restore();
 })
 
-it("can create an instance of a todo", () => {
+it("can create an instance of a todo store", () => {
+  const store = TodoStore.create({
+    todos: [{
+      id: 1,
+      title: "Test Todo"
+    }]
+  })
+
+  expect(store.todos.length).toBe(1);
+  expect(store.todos[0].title).toBe("Test Todo");
+})
+
+it("can create an instance of a todo item", () => {
   const todo = TodoItem.create({
     id: 1,
     title: "Test Todo",
@@ -21,18 +33,6 @@ it("can create an instance of a todo", () => {
 
   expect(todo.title).toBe("New Label");
   expect(todo.completed).toBe(true);
-})
-
-it("can create an instance of a todo store", () => {
-  const store = TodoStore.create({
-    todos: [{
-      id: 1,
-      title: "Test Todo"
-    }]
-  })
-
-  expect(store.todos.length).toBe(1);
-  expect(store.todos[0].title).toBe("Test Todo");
 })
 
 // Use async/await to test mocked api call since the mock
@@ -53,7 +53,7 @@ it("can load a set of suggested todos", async () => {
   expect(store.todos[0].title).toBe("todo1");
 })
 
-it("can add new todos - track snapshots", () => {
+it("can add new todos and track snapshots", () => {
   const store = TodoStore.create();
   const states = [];
 
@@ -82,7 +82,7 @@ it("can add new todos - track snapshots", () => {
   expect(states).toMatchSnapshot();
 })
 
-it("can add new items - track patches", () => {
+it("can add new items and track patches", () => {
   const store = TodoStore.create();
   const patches = [];
 
