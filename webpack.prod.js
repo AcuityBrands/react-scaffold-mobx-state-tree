@@ -49,7 +49,6 @@ module.exports = merge(common, {
 
     // Minimize Javascript
     new webpack.optimize.UglifyJsPlugin(),
-
     new webpack.HashedModuleIdsPlugin(),
 
     // Compile and extract styles.css file
