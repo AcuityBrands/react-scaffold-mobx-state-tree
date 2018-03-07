@@ -1,28 +1,42 @@
+const webpack = require('webpack');
+const path = require('path');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = merge(common, {
   // Enable sourcemaps for debugging webpack's output.
   devtool: "eval",
 
+  output: {
+    path: path.join(__dirname, 'dist'),
+    filename: '[name].[hash].js',
+    publicPath: ''
+  },
+
   module: {
     rules: [
-      // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
-      { test: /\.tsx?$/, loader: "awesome-typescript-loader", exclude:[/node_modules/, /__tests__/]},
-      
-      // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-      { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
-      
+      // Compiles and inlines sass or css
       {
         test: /\.(s*)css$/,
         loaders: ["style-loader", "css-loader", "sass-loader"]
-      },
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: ['url-loader']
       }
     ]
   },
+
+  plugins: [
+    //new BundleAnalyzerPlugin(),
+
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('development')
+    }),
+
+    new webpack.HotModuleReplacementPlugin(),
+    // enable HMR globally
+
+    new webpack.NamedModulesPlugin(),
+    // prints more readable module names in the browser console on HMR updates
+  ],
 
   devServer: {
     host: 'localhost',

@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/",
+    "jsx": "preserve",
+    // resolve modules as you would expect
+    "moduleResolution": "node",
+    // leave imports as they are
+    "module": "esnext",
+    // do not transpile stuff like classes, async/await, ...
+    "target": "esnext",
+    // produce a source map
     "sourceMap": true,
-    "noImplicitAny": true,
-    "module": "commonjs",
-    "target": "es5",
-    "jsx": "react",
+    // allow decorators
     "experimentalDecorators": true
-  },
-  "include": [
-    "./src/**/*"
-  ]
+  }
 }

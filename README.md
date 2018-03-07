@@ -42,17 +42,17 @@ By default, running the application will start an instance of the WebPack Develo
 
 **Important**: Depending on your preferred development style, you may want to modify the souce-map type specified in the _webpack.dev.js_ file.  For full source-map support, you may choose to use `devtool: source-map`.  However, for the fastest compiles, you may opt for `devtool: none`.  React itself does a fairly decent job of identify the source file of errors and you may opt for faster compile times during development (default). [More on source-map options.](https://webpack.js.org/configuration/devtool/)
 
-- `yarn (or npm) run dev`
+- `yarn (or npm) start`
 
 ## Building
 
 Building the application may not be compatible with every operating system.  Most Windows command prompts will choke when you set environment variables with `NODE_ENV=production`.
 
-- `yarn (or npm) run build`
+- `yarn (or npm) build`
 
 ## Testing
 
-- `yarn (or npm) run test`
+- `yarn (or npm) test`
 
 
 

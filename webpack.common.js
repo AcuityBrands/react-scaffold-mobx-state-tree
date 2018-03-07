@@ -1,13 +1,15 @@
 const webpack = require('webpack');
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const path = require("path");
+
+const sourcePath = path.join(__dirname, 'src');
+const buildPath = path.join(__dirname, 'dist');
 
 module.exports = {
-  entry: "./src/index.tsx",
-  output: {
-    filename: "bundle.js",
-    path: __dirname + "/dist"
+
+  entry: {
+    app:  path.resolve(sourcePath, 'index.tsx')
   },
 
   resolve: {
@@ -15,22 +17,28 @@ module.exports = {
     extensions: [".ts", ".tsx", ".js", ".json"]
   },
 
-  // When importing a module whose path matches one of the following, just
-  // assume a corresponding global variable exists and use that instead.
-  // This is important because it allows us to avoid bundling all of our
-  // dependencies, which allows browsers to cache those libraries between builds.
-  externals: {
-    "react": "React",
-    "react-dom": "ReactDOM"
+  module: {
+    rules: [
+      // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
+      { test: /\.tsx?$/, loaders:["babel-loader","awesome-typescript-loader"]},
+
+      // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
+      { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
+
+      // Loads URLs specified in CSS files
+      /*{
+        test: /\.(png|svg|jpg|gif)$/,
+        use: ['url-loader']
+      }*/
+      {
+        test:/\.(png|jpe?g|gif)$/,
+        exclude:/node_modules/
+        ,loader: 'url-loader?limit=1024&name=/assets/[name].[ext]'
+      }
+    ]
   },
 
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    // enable HMR globally
-
-    new webpack.NamedModulesPlugin(),
-    // prints more readable module names in the browser console on HMR updates
-
     new HtmlWebpackPlugin({
       inject: true,
       template: 'src/app.html',
@@ -38,7 +46,7 @@ module.exports = {
     }),
 
     new CopyWebpackPlugin([
-      { from: 'assets', to: 'assets' },
+      //{ from: 'assets', to: 'assets' },
       { from: 'data', to: 'data' }
     ])
   ]

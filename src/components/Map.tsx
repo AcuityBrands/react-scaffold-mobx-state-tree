@@ -5,7 +5,7 @@
  * fairly limited in configurability and scope.
  */
 import * as React from "react";
-import mapboxgl = require('mapbox-gl');
+const mapboxgl = require('mapbox-gl');
 
 interface IMapProps {
   height?: number

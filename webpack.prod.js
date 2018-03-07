@@ -1,43 +1,70 @@
 const webpack = require('webpack');
 const merge = require('webpack-merge');
+const path = require('path');
 const common = require('./webpack.common.js');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CompressionPlugin = require("compress-webpack-plugin");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = merge(common, {
-  devtool: 'source-map',
+  devtool: 'cheap-module-source-map',
+
+  output: {
+    path: path.join(__dirname, 'dist'),
+    filename: '[name].[chunkhash].js',
+    publicPath: ''
+  },
 
   module: {
     rules: [
-      // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
-      { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
-
-      // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-      { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
-
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: ['url-loader']
-      },
       {
         test: /\.(s*)css$/,
         use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
           use: "css-loader?sourceMap!sass-loader?sourceMap"
         })
       }
     ]
   },
+  
 
   plugins: [
-    new UglifyJSPlugin({
-      sourceMap: true
-    }),
+    // Analyze bundle
+    new BundleAnalyzerPlugin(),
 
+    // Set node environment to production
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
+        'process.env.NODE_ENV': JSON.stringify('production')
+    }),
+    
+    // Enable scope hoisting
+    new webpack.optimize.ModuleConcatenationPlugin(),
+    
+    // Split node_modules into vendor chunk
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      filename: 'vendor.[chunkhash].js',
+      minChunks: (module) => module.context && module.context.indexOf('node_modules') >= 0
     }),
 
-    new ExtractTextPlugin('style.css')
+    // Minimize Javascript
+    new webpack.optimize.UglifyJsPlugin(),
+
+    new webpack.HashedModuleIdsPlugin(),
+
+    // Compile and extract styles.css file
+    new ExtractTextPlugin('style.css'),
+
+    // Ignore unneeded modules
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+
+    // GZip the output
+    new CompressionPlugin({
+      asset: '[path].gz[query]',
+      algorithm: 'gzip',
+      test: /\.js$|\.css$|\.html$|\.eot?.+$|\.ttf?.+$|\.woff?.+$|\.svg?.+$/,
+      threshold: 10240,
+      minRatio: 0.8
+    })
   ]
 });
