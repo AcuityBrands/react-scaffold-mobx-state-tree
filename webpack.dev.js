@@ -2,17 +2,10 @@ const webpack = require('webpack');
 const path = require('path');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = merge(common, {
   // Enable sourcemaps for debugging webpack's output.
   devtool: "eval",
-
-  output: {
-    path: path.join(__dirname, 'dist'),
-    filename: '[name].[hash].js',
-    publicPath: ''
-  },
 
   module: {
     rules: [
@@ -25,7 +18,6 @@ module.exports = merge(common, {
   },
 
   plugins: [
-    //new BundleAnalyzerPlugin(),
 
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
@@ -42,11 +34,7 @@ module.exports = merge(common, {
     host: 'localhost',
     port: 8080,
     open: true,
-
     historyApiFallback: true,
-    // respond to 404s with index.html
-
-    hot: true,
-    // enable HMR on the server
+    hot: true
   }
 });

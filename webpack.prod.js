@@ -8,13 +8,7 @@ const CompressionPlugin = require("compress-webpack-plugin");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = merge(common, {
-  devtool: 'cheap-module-source-map',
-
-  output: {
-    path: path.join(__dirname, 'dist'),
-    filename: '[name].[chunkhash].js',
-    publicPath: ''
-  },
+  devtool: 'none',
 
   module: {
     rules: [
@@ -30,25 +24,27 @@ module.exports = merge(common, {
 
   plugins: [
     // Analyze bundle
-    new BundleAnalyzerPlugin(),
+    // new BundleAnalyzerPlugin(),
 
     // Set node environment to production
     new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify('production')
     }),
     
-    // Enable scope hoisting
+    // Enable scope hoisting - faster browser execution
     new webpack.optimize.ModuleConcatenationPlugin(),
     
     // Split node_modules into vendor chunk
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      filename: 'vendor.[chunkhash].js',
+      filename: 'vendor.[hash].js',
       minChunks: (module) => module.context && module.context.indexOf('node_modules') >= 0
     }),
 
     // Minimize Javascript
     new webpack.optimize.UglifyJsPlugin(),
+
+    // Hashes to be based on the relative path of the module
     new webpack.HashedModuleIdsPlugin(),
 
     // Compile and extract styles.css file

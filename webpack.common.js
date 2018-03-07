@@ -12,6 +12,12 @@ module.exports = {
     app:  path.resolve(sourcePath, 'index.tsx')
   },
 
+  output: {
+    path: path.join(__dirname, 'dist'),
+    filename: '[name].[hash].js',
+    publicPath: ''
+  },
+
   resolve: {
     // Add '.ts' and '.tsx' as resolvable extensions.
     extensions: [".ts", ".tsx", ".js", ".json"]
