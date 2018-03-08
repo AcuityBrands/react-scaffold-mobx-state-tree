@@ -5,7 +5,7 @@ import { IAppStore } from '../stores/AppStore'
 import { Slider, Row, Col, Divider, DatePicker, Icon, Button} from 'antd';
 import { SparkChart } from '../components/SparkChart';
 import { BarChart } from '../components/BarChart';
-import { Map } from '../components/Map';
+import { LazyMap } from '../components/LazyMap';
 const { RangePicker } = DatePicker;
 
 interface IDashboardProps {
@@ -14,17 +14,13 @@ interface IDashboardProps {
 
 @inject("appStore")
 @observer
-export default class DashboardPage extends React.Component<IDashboardProps, undefined> {
+export class DashboardPage extends React.Component<IDashboardProps, undefined> {
 
   @observable sliderValue = 1000;
-  private mapComponent:Map;
+  private mapComponent:any;
 
   updateSpeed = (value: number) => {
     this.sliderValue = value;
-  }
-
-  recenterMap = () => {
-    this.mapComponent.recenterMap();
   }
 
   render() {
@@ -91,7 +87,7 @@ export default class DashboardPage extends React.Component<IDashboardProps, unde
         <Row gutter={24}>
           <Col span={16}>
             <div className="card">
-              <Map height={400} ref={(c) => { this.mapComponent = c; }}></Map>
+              <LazyMap height={400}></LazyMap>
             </div>
           </Col>
           <Col span={8}>
@@ -105,7 +101,6 @@ export default class DashboardPage extends React.Component<IDashboardProps, unde
                 <li><strong>Pan</strong> left-click and drag</li>
                 <li><strong>Rotate</strong> ctrl + left-click and drag</li>
               </ul>
-              <Button onClick={this.recenterMap}>Recenter Map</Button>
             </div>
           </Col>
         </Row>

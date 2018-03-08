@@ -12,9 +12,9 @@ import { inject } from "mobx-react";
 import { withRouter } from 'react-router-dom';
 import { Tabs } from 'antd';
 import { IAppStore } from '../stores/AppStore';
-import { LazyDashboard } from '../containers/LazyDashboard'
-import { LazyAbout } from '../containers/LazyAbout'
-import { LazyTodo } from '../containers/LazyTodo'
+import { DashboardPage } from './DashboardPage'
+import { LazyAbout } from './LazyAbout'
+import { LazyTodo } from './LazyTodo'
 const TabPane = Tabs.TabPane;
 
 interface ITabNavProps {
@@ -44,7 +44,7 @@ class TabContainer extends React.Component<ITabNavProps, {}>{
 
   // TODO: Move route configurations to common file for reusability
   pathConfig = [
-    { path: "/dashboard", label: "Dashboard", component: <LazyDashboard/>},
+    { path: "/dashboard", label: "Dashboard", component: <DashboardPage/>},
     { path: "/task", label: "Tasks", component: <LazyTodo/>},
     { path: "/about", label: "About App", component: <LazyAbout/>}
   ]

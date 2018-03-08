@@ -34,12 +34,23 @@ module.exports = merge(common, {
     // Enable scope hoisting - faster browser execution
     new webpack.optimize.ModuleConcatenationPlugin(),
     
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: 'extras',
+    //   filename: 'extras.bundle.js'
+    // }),
     // Split node_modules into vendor chunk
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
+      name:'vendor',
       filename: 'vendor.bundle.js',
+      chunks:["app"],
       minChunks: (module) => module.context && module.context.indexOf('node_modules') >= 0
     }),
+    // Find any common dependencies in async bundles and seperate the code
+    /*new webpack.optimize.CommonsChunkPlugin({
+      async: true,
+      children: true,
+      minChunks: 3
+    }),*/
 
     // Minimize Javascript
     new webpack.optimize.UglifyJsPlugin(),

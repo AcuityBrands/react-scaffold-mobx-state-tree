@@ -24,6 +24,10 @@ export default class AboutPage extends React.Component {
                 <li><a href="http://airbnb.io/enzyme/docs/api/">Enzyme</a></li>
                 <li><a href="https://nodejs.org/en/docs/">Node</a></li>
               </ul>
+              <p className="mt20">
+                You'll also find interesting features such as persistant state (saving to local storage),
+                browser history and routing, lazy loading, and protected vs unprotected routes.  Check it out!
+              </p>
               <Button className="mt20"><Link to="/dashboard">Go back to the home page</Link></Button>
             </div>
           </Col>

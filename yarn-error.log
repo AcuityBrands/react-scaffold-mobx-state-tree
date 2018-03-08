@@ -22,7 +22,7 @@ npm manifest:
     "license": "MIT",
     "scripts": {
       "start": "./node_modules/.bin/webpack-dev-server --config webpack.dev.js",
-      "build": "./node_modules/.bin/webpack --config webpack.config.js",
+      "build": "./node_modules/.bin/webpack --config webpack.prod.js",
       "test": "jest"
     },
     "dependencies": {
@@ -8385,9 +8385,9 @@ Lockfile:
 
 Trace: 
   Error: Command failed.
-  Exit code: 2
+  Exit code: 1
   Command: sh
-  Arguments: -c ./node_modules/.bin/webpack --config webpack.config.js
+  Arguments: -c ./node_modules/.bin/webpack --config webpack.prod.js
   Directory: /Users/danielbradshaw/Projects/react-scaffold-mobx-state-tree
   Output:
   

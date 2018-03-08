@@ -1,4 +1,4 @@
-import '../es6-polyfill'; // Import cherry picked polyfills
+import './es6-polyfill'; // Import cherry picked polyfills
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom"

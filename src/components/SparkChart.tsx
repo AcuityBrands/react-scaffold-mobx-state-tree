@@ -5,7 +5,7 @@
  * then randomly updates the chart every XX milliseconds.
  */
 import * as React from "react";
-import * as Chart from "chart.js";
+import * as Chart from 'chart.js/dist/Chart.js'
 import { autorun } from "mobx";
 import { observer } from "mobx-react";
 

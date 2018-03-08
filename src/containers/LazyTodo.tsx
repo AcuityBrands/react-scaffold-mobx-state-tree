@@ -5,5 +5,6 @@ const Loadable = require('react-loadable');
 export const LazyTodo = Loadable({
   loader: () => import(/* webpackChunkName: 'todo' */ './TodoPage'),
   loading: Loading,
-  timeout: 10000
+  timeout: 10000,
+  delay: 150
 });

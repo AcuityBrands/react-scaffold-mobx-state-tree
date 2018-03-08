@@ -5,7 +5,7 @@
  */
 
 import * as React from "react";
-import * as Chart from "chart.js";
+import * as Chart from 'chart.js/dist/Chart.js'
 
 interface IBarChartProps {
   id: string,
