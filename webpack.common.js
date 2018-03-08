@@ -28,7 +28,8 @@ module.exports = {
 
   module: {
     rules: [
-      // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
+      // All files with a '.ts' or '.tsx' extension will be compiled by 'awesome-typescript-loader'.
+      // Then Babel will transpile the es6 javascript to es5.  Babel has better support for tree-shaking
       { 
         test: /\.tsx?$/, 
         loaders:["babel-loader","awesome-typescript-loader"]
