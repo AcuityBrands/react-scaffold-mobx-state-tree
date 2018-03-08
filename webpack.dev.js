@@ -10,6 +10,7 @@ module.exports = merge(common, {
   module: {
     rules: [
       // Compiles and inlines sass or css
+      // Inline is better for hot module reloading
       {
         test: /\.(s*)css$/,
         loaders: ["style-loader", "css-loader", "sass-loader"]
@@ -19,17 +20,20 @@ module.exports = merge(common, {
 
   plugins: [
 
+    // Set the node environment
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
     }),
 
+    // Enable HMR globally
     new webpack.HotModuleReplacementPlugin(),
-    // enable HMR globally
-
+    
+    // Prints more readable module names in the browser console on HMR updates
     new webpack.NamedModulesPlugin(),
-    // prints more readable module names in the browser console on HMR updates
+    
   ],
 
+  // Setup development server
   devServer: {
     host: 'localhost',
     port: 8080,

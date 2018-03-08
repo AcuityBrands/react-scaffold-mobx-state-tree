@@ -8,10 +8,12 @@ const buildPath = path.join(__dirname, 'dist');
 
 module.exports = {
 
+  // Entry point to the application
   entry: {
     app:  path.resolve(sourcePath, 'index.tsx')
   },
 
+  // Application output location
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].bundle.js',
@@ -19,20 +21,20 @@ module.exports = {
     publicPath: ''
   },
 
+  // Resolve these files during bundling
   resolve: {
-    // Add '.ts' and '.tsx' as resolvable extensions.
     extensions: [".ts", ".tsx", ".js", ".json"]
   },
 
   module: {
     rules: [
       // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
-      { test: /\.tsx?$/, loaders:["babel-loader","awesome-typescript-loader"]},
+      { 
+        test: /\.tsx?$/, 
+        loaders:["babel-loader","awesome-typescript-loader"]
+      },
 
-      // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-      //{ enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
-
-      // Loads URLs specified in CSS files
+      // Load images into assets folder on output
       {
         test:/\.(png|jpe?g|gif)$/,
         exclude:/node_modules/,

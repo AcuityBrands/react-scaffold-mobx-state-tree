@@ -54,5 +54,11 @@ Building the application may not be compatible with every operating system.  Mos
 
 - `yarn (or npm) test`
 
+# Code Splitting and Lazy Loading
+
+This application features support for code splitting and lazy loading using built-in Webpack 2+ functionality.  To accomplish this, certain components are initialized using the proposed *dynamic import* specificiation (a tc39 proposal currently at stage3). Webpack automatically identifies components imported using this specification and will create a seperate chunk for the component.
+
+There is an option configuration in the `webpack.prod.js` to create a common chunk if any of the deferred components duplicate a common dependency.
+
 
 

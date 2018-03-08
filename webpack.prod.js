@@ -8,6 +8,7 @@ const CompressionPlugin = require("compress-webpack-plugin");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = merge(common, {
+
   devtool: 'none',
 
   module: {
@@ -21,10 +22,9 @@ module.exports = merge(common, {
     ]
   },
   
-
   plugins: [
     // Analyze bundle
-    new BundleAnalyzerPlugin(),
+    //new BundleAnalyzerPlugin(),
 
     // Set node environment to production
     new webpack.DefinePlugin({
@@ -34,23 +34,20 @@ module.exports = merge(common, {
     // Enable scope hoisting - faster browser execution
     new webpack.optimize.ModuleConcatenationPlugin(),
     
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   name: 'extras',
-    //   filename: 'extras.bundle.js'
-    // }),
-    // Split node_modules into vendor chunk
+    // Create implicit vendor bundle
     new webpack.optimize.CommonsChunkPlugin({
       name:'vendor',
       filename: 'vendor.bundle.js',
-      chunks:["app"],
       minChunks: (module) => module.context && module.context.indexOf('node_modules') >= 0
     }),
-    // Find any common dependencies in async bundles and seperate the code
-    /*new webpack.optimize.CommonsChunkPlugin({
-      async: true,
-      children: true,
-      minChunks: 3
-    }),*/
+
+    // OPTIONAL - Pull common dependencies out of deferred (async) modules/bundles
+    // Dependency must be common among XX (minChunks) modules
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   async: true,
+    //   children: true, 
+    //   minChunks: 3
+    // })
 
     // Minimize Javascript
     new webpack.optimize.UglifyJsPlugin(),
@@ -62,9 +59,10 @@ module.exports = merge(common, {
     new ExtractTextPlugin('style.css'),
 
     // Ignore unneeded modules
+    // Targetting locales in moment.js
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
 
-    // GZip the output
+    // Compress the output
     new CompressionPlugin({
       asset: '[path].gz[query]',
       algorithm: 'gzip',
