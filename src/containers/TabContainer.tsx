@@ -11,8 +11,10 @@ import * as React from "react";
 import { inject } from "mobx-react";
 import { withRouter } from 'react-router-dom';
 import { Tabs } from 'antd';
-import { IAppStore } from '../stores';
-import { DashboardPage, TodoPage, AboutPage } from '../containers';
+import { IAppStore } from '../stores/AppStore';
+import { LazyDashboard } from '../containers/LazyDashboard'
+import { LazyAbout } from '../containers/LazyAbout'
+import { LazyTodo } from '../containers/LazyTodo'
 const TabPane = Tabs.TabPane;
 
 interface ITabNavProps {
@@ -36,15 +38,15 @@ interface ITabState {
 
 
 @inject("appStore")
-class TabNavigation extends React.Component<ITabNavProps, {}>{
+class TabContainer extends React.Component<ITabNavProps, {}>{
   state: ITabState
   unlisten: any;
 
   // TODO: Move route configurations to common file for reusability
   pathConfig = [
-    { path: "/dashboard", label: "Dashboard", component: <DashboardPage/>},
-    { path: "/task", label: "Tasks", component: <TodoPage/>},
-    { path: "/about", label: "About App", component: <AboutPage/>}
+    { path: "/dashboard", label: "Dashboard", component: <LazyDashboard/>},
+    { path: "/task", label: "Tasks", component: <LazyTodo/>},
+    { path: "/about", label: "About App", component: <LazyAbout/>}
   ]
 
   constructor(props: any) {
@@ -159,4 +161,4 @@ class TabNavigation extends React.Component<ITabNavProps, {}>{
   }
 }
 
-export default withRouter(TabNavigation);
+export default withRouter(TabContainer);

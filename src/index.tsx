@@ -4,7 +4,8 @@ import * as ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom"
 import { onSnapshot } from 'mobx-state-tree';
 import { Provider } from "mobx-react";
-import { TodoStore, ITodoStore, AppStore, IAppStore } from './stores';
+import { TodoStore, ITodoStore } from './stores/TodoStore';
+import { AppStore, IAppStore } from './stores/AppStore';
 import Routes from './Routes';
 
 // Import the main stylesheet which imports other stylesheets

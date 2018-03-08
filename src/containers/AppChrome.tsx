@@ -7,8 +7,9 @@ import * as React from "react";
 import { inject } from "mobx-react";
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import { Provider } from "mobx-react";
-import { IAppStore } from '../stores'
-import { MainNavigation, TabNavigation } from '../components';
+import { IAppStore } from '../stores/AppStore'
+import MainNavigation from '../components/MainNavigation';
+import TabContainer from './TabContainer';
 import { Layout, Input, Menu, Icon, Avatar, Badge, Dropdown } from 'antd';
 
 const { Header, Sider, Content, Footer } = Layout;
@@ -89,7 +90,7 @@ class AppChrome extends React.Component<IChromeProps, {}> {
           </Header>
 
           <Content>
-            <TabNavigation></TabNavigation>
+            <TabContainer></TabContainer>
           </Content>
 
           <Footer style={{ textAlign: 'center' }}>Acuity Technology Group 2018 ©, All Rights Reserved</Footer>

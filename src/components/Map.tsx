@@ -11,7 +11,7 @@ interface IMapProps {
   height?: number
 }
 
-export default class Map extends React.Component<IMapProps, null> {
+export class Map extends React.Component<IMapProps, null> {
 
   private map:mapboxgl.Map;
 

@@ -14,7 +14,8 @@ module.exports = {
 
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: '[name].[hash].js',
+    filename: '[name].bundle.js',
+    chunkFilename: '[name].chunk.js',
     publicPath: ''
   },
 
@@ -29,7 +30,7 @@ module.exports = {
       { test: /\.tsx?$/, loaders:["babel-loader","awesome-typescript-loader"]},
 
       // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-      { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
+      //{ enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
 
       // Loads URLs specified in CSS files
       {
@@ -54,7 +55,7 @@ module.exports = {
     // Inject the bundles into the distribution index.html
     new HtmlWebpackPlugin({
       inject: true,
-      template: 'src/app.html',
+      template: 'src/template.html',
       filename: 'index.html'
     }),
 

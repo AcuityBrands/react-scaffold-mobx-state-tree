@@ -9,8 +9,10 @@
  */
 import * as React from "react";
 import { Route, Switch, Redirect } from 'react-router-dom';
-import { LoginPage, AppChrome, NotFoundPage } from './containers';
-import { PrivateRoute } from './components';
+import { PrivateRoute } from './components/PrivateRoute';
+import LoginPage from './containers/LoginPage'
+import NotFoundPage from './containers/NotFoundPage'
+import AppChrome from './containers/AppChrome';
 
 class Routes extends React.Component {
   render() {

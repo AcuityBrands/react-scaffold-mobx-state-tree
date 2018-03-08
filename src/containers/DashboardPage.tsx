@@ -1,9 +1,11 @@
 import * as React from "react";
 import { observable } from "mobx";
 import { observer, inject } from "mobx-react";
-import { IAppStore } from '../stores'
+import { IAppStore } from '../stores/AppStore'
 import { Slider, Row, Col, Divider, DatePicker, Icon, Button} from 'antd';
-import {SparkChart, BarChart, Map} from '../components'
+import { SparkChart } from '../components/SparkChart';
+import { BarChart } from '../components/BarChart';
+import { Map } from '../components/Map';
 const { RangePicker } = DatePicker;
 
 interface IDashboardProps {

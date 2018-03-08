@@ -4,20 +4,19 @@
  * Renders a list of TodoListItem(s)
  */
 import * as React from "react";
-import { observer, inject } from "mobx-react";
-import {IAppStore} from '../stores'
+import { observer } from "mobx-react";
+import { ITodoStore } from '../stores/TodoStore'
 import { Progress } from 'antd';
-import TodoListItem from './TodoListItem';
+import { TodoListItem  }from './TodoListItem';
 
 interface ITodoListProps {
-  appStore?: IAppStore
+  todoStore: ITodoStore
 }
 
-@inject("appStore")
 @observer
-export default class TodoList extends React.Component<ITodoListProps, undefined>{
+export class TodoList extends React.Component<ITodoListProps, undefined>{
   render() {
-    const { todoStore } = this.props.appStore;
+    const { todoStore } = this.props;
     return (
       <React.Fragment>
         <ul className="todo-list">

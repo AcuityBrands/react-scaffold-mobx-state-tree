@@ -8,7 +8,7 @@
 import * as React from "react";
 import { Route, Redirect } from 'react-router-dom';
 import { inject } from "mobx-react";
-import { IAppStore } from '../stores'
+import { IAppStore } from '../stores/AppStore'
 
 interface IPrivateRouteProps {
   path: any,
@@ -16,7 +16,7 @@ interface IPrivateRouteProps {
   appStore?: IAppStore
 }
 
-const PrivateRoute = inject("appStore")((p:IPrivateRouteProps) => (
+export const PrivateRoute = inject("appStore")((p:IPrivateRouteProps) => (
   <Route
     path={p.path}
     render={props =>
@@ -32,5 +32,3 @@ const PrivateRoute = inject("appStore")((p:IPrivateRouteProps) => (
       )}
   />
 ));
-
-export default PrivateRoute

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { inject } from "mobx-react";
-import { IAppStore } from '../stores'
+import { IAppStore } from '../stores/AppStore'
 import { Redirect } from 'react-router-dom';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 const FormItem = Form.Item;

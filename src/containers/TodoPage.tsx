@@ -2,8 +2,9 @@ import * as React from "react";
 import { observable } from "mobx";
 import { observer, inject } from "mobx-react";
 import { Row, Col, Input, Button, message, InputNumber, Icon } from 'antd';
-import { TodoItem, IAppStore } from '../stores'
-import TodoList from '../components/TodoList'
+import { IAppStore } from '../stores/AppStore'
+import { TodoItem } from '../stores/TodoStore'
+import { TodoList } from '../components/TodoList'
 
 const NewItem = Input.Search;
 const ButtonGroup = Button.Group;
@@ -67,7 +68,7 @@ export default class TodoPage extends React.Component<ITodoPageProps, undefined>
                 value={this.todoValue}
                 onChange={this.onTitleChange}
                 size="large" />
-              <TodoList></TodoList>
+              <TodoList todoStore={todoStore}></TodoList>
               <div className="text-center">
                 <div className="mt20">
                   <Button onClick={this.onGetSuggestions} loading={todoStore.loading}>Suggest Tasks</Button>

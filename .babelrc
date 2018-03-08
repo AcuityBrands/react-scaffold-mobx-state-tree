@@ -5,14 +5,13 @@
       "targets": {
         "browsers": ["last 2 versions", "safari > 8", "not ie < 11"]
       },
-      "loose": true,
       "modules": false
     }]
   ],
   "plugins": [
-    "syntax-dynamic-import",
-    "syntax-async-functions",
-    "transform-regenerator",
-    ["import", {"libraryName": "antd"}]
+    "babel-plugin-syntax-dynamic-import",
+    "babel-plugin-syntax-async-functions",
+    "babel-plugin-transform-regenerator",
+    ["babel-plugin-import", {"libraryName": "antd"}]
   ]
 }

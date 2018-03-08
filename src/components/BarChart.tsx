@@ -19,7 +19,7 @@ interface IChartData {
   values: Array<number>
 }
 
-export default class BarChart extends React.Component<IBarChartProps, null> {
+export class BarChart extends React.Component<IBarChartProps, null> {
   
   componentDidMount() {
     this.renderChart();

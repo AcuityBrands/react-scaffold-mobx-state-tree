@@ -24,7 +24,7 @@ module.exports = merge(common, {
 
   plugins: [
     // Analyze bundle
-    // new BundleAnalyzerPlugin(),
+    new BundleAnalyzerPlugin(),
 
     // Set node environment to production
     new webpack.DefinePlugin({
@@ -37,7 +37,7 @@ module.exports = merge(common, {
     // Split node_modules into vendor chunk
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      filename: 'vendor.[hash].js',
+      filename: 'vendor.bundle.js',
       minChunks: (module) => module.context && module.context.indexOf('node_modules') >= 0
     }),
 
@@ -57,9 +57,7 @@ module.exports = merge(common, {
     new CompressionPlugin({
       asset: '[path].gz[query]',
       algorithm: 'gzip',
-      test: /\.js$|\.css$|\.html$|\.eot?.+$|\.ttf?.+$|\.woff?.+$|\.svg?.+$/,
-      threshold: 10240,
-      minRatio: 0.8
+      test: /\.js$|\.css$|\.html$|\.eot?.+$|\.ttf?.+$|\.woff?.+$|\.svg?.+$/
     })
   ]
 });

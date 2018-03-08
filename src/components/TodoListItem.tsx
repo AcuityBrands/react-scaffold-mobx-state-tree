@@ -6,7 +6,7 @@
  */
 import * as React from "react";
 import { observer } from "mobx-react";
-import {ITodoItem} from '../stores'
+import { ITodoItem } from '../stores/TodoStore'
 import { Checkbox, Popconfirm } from 'antd';
 
 interface ITodoListItemProps {
@@ -14,7 +14,7 @@ interface ITodoListItemProps {
 }
 
 @observer
-export default class TodoListItem extends React.Component<ITodoListItemProps, undefined>{
+export class TodoListItem extends React.Component<ITodoListItemProps, undefined>{
   render() {
     const todo = this.props.todo;
     return (
