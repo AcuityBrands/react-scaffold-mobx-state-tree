@@ -1,4 +1,4 @@
-import { UserStore, IUserStore } from '../src/stores/UserStore'
+import { UserStore, IUserStore } from '../UserStore'
 import * as fetchMock from 'fetch-mock'
 
 let userStore: IUserStore;

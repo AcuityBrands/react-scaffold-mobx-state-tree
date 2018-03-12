@@ -1,4 +1,4 @@
-import { AppStore, IAppStore } from '../src/stores/AppStore'
+import { AppStore, IAppStore } from '../AppStore'
 import * as fetchMock from 'fetch-mock'
 
 let appStore: IAppStore;

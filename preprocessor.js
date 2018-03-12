@@ -1,5 +1,5 @@
 const tsc = require('typescript');  
-const tsConfig = require('./__tests__/testconfig.json');
+const tsConfig = require('./testconfig.json');
 
 // This file compiles the typescript to javascript
 // to be used with the jest engine
