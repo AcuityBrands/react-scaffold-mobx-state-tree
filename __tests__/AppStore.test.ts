@@ -33,3 +33,19 @@ it("can create an instance of the app store with default values", () => {
   expect(appStore.userStore.user.id).toBe(-1);
   expect(appStore.chartStore.salesData.values[0]).toBe(1);
 })
+
+it("can login via the appStore through the userStore", () => {
+  //Replace the spied function with a jest mock function
+  Object.defineProperty(appStore.userStore, 'login', {value: jest.fn(), writable: true});
+  const spy = jest.spyOn(appStore.userStore, 'login');
+  appStore.login();
+  expect(spy).toHaveBeenCalled();
+})
+
+it("can logoff via the appStore through the userStore", () => {
+  //Replace the spied function with a jest mock function
+  Object.defineProperty(appStore.userStore, 'logout', {value: jest.fn(), writable: true});
+  const spy = jest.spyOn(appStore.userStore, 'logout');
+  appStore.logout();
+  expect(spy).toHaveBeenCalled();
+})

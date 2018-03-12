@@ -38,7 +38,7 @@ It is assumed you already have a node package manager installed (NPM or Yarn).  
 
 ## Running
 
-By default, running the application will start an instance of the WebPack Development Server on localhost:8080.  This application also features compatibility with HMR [Hot Module Reloading] and will automatically update without full refresh when source files are saved.  [More information on HMR.](https://webpack.js.org/concepts/hot-module-replacement/_)
+By default, running the application will start an instance of the WebPack Development Server on `localhost:8080`.  This application also features compatibility with HMR [Hot Module Reloading] and will automatically update without full refresh when source files are saved.  [More information on HMR.](https://webpack.js.org/concepts/hot-module-replacement/_)
 
 **Important**: Depending on your preferred development style, you may want to modify the souce-map type specified in the _webpack.dev.js_ file.  For full source-map support, you may choose to use `devtool: source-map`.  However, for the fastest compiles, you may opt for `devtool: none`.  React itself does a fairly decent job of identify the source file of errors and you may opt for faster compile times during development (default). [More on source-map options.](https://webpack.js.org/configuration/devtool/)
 
