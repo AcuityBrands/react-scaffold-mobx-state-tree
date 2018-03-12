@@ -44,6 +44,8 @@
     "compress-webpack-plugin": "^1.0.6",
     "copy-webpack-plugin": "^4.4.1",
     "css-loader": "^0.28.9",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "extract-text-webpack-plugin": "^3.0.2",
     "fetch-mock": "^6.0.0",
     "file-loader": "^1.1.11",

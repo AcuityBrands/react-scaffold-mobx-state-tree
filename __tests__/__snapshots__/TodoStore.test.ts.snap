@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`can add new items and track patches 1`] = `
+exports[`TodoStore Model can add new items and track patches 1`] = `
 Array [
   Object {
     "op": "add",
@@ -20,7 +20,7 @@ Array [
 ]
 `;
 
-exports[`can add new todos and track snapshots 1`] = `
+exports[`TodoStore Model can add new todos and track snapshots 1`] = `
 Object {
   "loading": false,
   "todos": Array [
@@ -34,7 +34,7 @@ Object {
 }
 `;
 
-exports[`can add new todos and track snapshots 2`] = `
+exports[`TodoStore Model can add new todos and track snapshots 2`] = `
 Array [
   Object {
     "loading": false,
