@@ -44,6 +44,7 @@ describe('AppStore Model', () => {
     const spy = jest.spyOn(appStore.userStore, 'login');
     appStore.login();
     expect(spy).toHaveBeenCalled();
+    spy.mockClear();
   })
 
   it("can logoff via the appStore through the userStore", () => {
@@ -52,6 +53,7 @@ describe('AppStore Model', () => {
     const spy = jest.spyOn(appStore.userStore, 'logout');
     appStore.logout();
     expect(spy).toHaveBeenCalled();
+    spy.mockClear();
   })
 
 })

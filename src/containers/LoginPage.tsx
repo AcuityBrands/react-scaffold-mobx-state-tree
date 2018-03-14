@@ -11,24 +11,34 @@ interface ILoginPageProps {
   location?: any
 }
 
-@inject("appStore")
-class LoginPage extends React.Component<ILoginPageProps, {}> {
-  state = {
-    redirectToReferrer: false
-  };
+interface ILoginPageState {
+  redirectToReferrer: boolean
+}
 
-  login = (e: any) => {
+@inject("appStore")
+class LoginPage extends React.Component<ILoginPageProps, ILoginPageState> {
+  constructor(props) {
+    super(props);
+    this.state = {
+      redirectToReferrer: false
+    };
+    this.login = this.login.bind(this);
+  }
+
+  login(e:any) {
     e.preventDefault();
     this.props.form.validateFields((err:any, values:Array<any>) => {
       if (!err) {
         console.log('Received values of form: ', values);
+        this.props.appStore.login().then(()=>{
+          this.setState(() => ({
+            redirectToReferrer: true
+          }))
+        })
+      } else {
+        //Do anything?
       }
     });
-    this.props.appStore.login().then(()=>{
-      this.setState(() => ({
-        redirectToReferrer: true
-      }))
-    })
   }
 
   render() {

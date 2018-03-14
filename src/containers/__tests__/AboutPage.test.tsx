@@ -5,8 +5,6 @@ import AboutPage from '../AboutPage';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-let wrapper:any;
-
 const setup = propOverrides => {
   const props = Object.assign({}, propOverrides)
   const wrapper = Enzyme.shallow(<AboutPage {...props} />)
