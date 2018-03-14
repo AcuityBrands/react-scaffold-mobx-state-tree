@@ -11,17 +11,13 @@ import * as React from "react";
 import { inject } from "mobx-react";
 import { withRouter } from 'react-router-dom';
 import { Tabs } from 'antd';
-import { IAppStore } from '../stores/AppStore';
-import { DashboardPage } from './DashboardPage'
-import { LazyAbout } from './LazyAbout'
-import { LazyTodo } from './LazyTodo'
 const TabPane = Tabs.TabPane;
 
-interface ITabNavProps {
+export interface ITabNavProps {
+  config: any,
   match: any,
   location: any,
-  history: any,
-  appStore: IAppStore
+  history: any
 }
 
 interface IPane {
@@ -36,25 +32,11 @@ interface ITabState {
   panes: Array<IPane>
 }
 
-
-@inject("appStore")
-class TabContainer extends React.Component<ITabNavProps, {}>{
-  state: ITabState
+export class TabContainer extends React.Component<ITabNavProps, ITabState>{
   unlisten: any;
-
-  // TODO: Move route configurations to common file for reusability
-  pathConfig = [
-    { path: "/dashboard", label: "Dashboard", component: <DashboardPage/>},
-    { path: "/task", label: "Tasks", component: <LazyTodo/>},
-    { path: "/about", label: "About App", component: <LazyAbout/>}
-  ]
-
-  constructor(props: any) {
-    super(props);
-    this.state = {
-      activeKey: '',
-      panes: []
-    };
+  state = {
+    activeKey: '',
+    panes: []
   }
 
   componentDidMount() {
@@ -90,8 +72,8 @@ class TabContainer extends React.Component<ITabNavProps, {}>{
     // router location
     let item;
     let pathFound: boolean = false;
-    for (let i = 0; i < this.pathConfig.length; i++) {
-      item = this.pathConfig[i];
+    for (let i = 0; i < this.props.config.length; i++) {
+      item = this.props.config[i];
       if (item.path === location.pathname) {
         pathFound = true;
         break;

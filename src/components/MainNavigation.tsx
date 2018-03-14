@@ -17,7 +17,8 @@ import MenuItem from "antd/lib/menu/MenuItem";
 interface IMainNavProps {
   match: any,
   location: any,
-  history: any
+  history: any,
+  config: any
 }
 
 interface IMenuItem {
@@ -27,16 +28,12 @@ interface IMenuItem {
   label: string
 }
 
-class MainNavigation extends React.Component<IMainNavProps, undefined>{
-  // TODO: move configuration to common file 
-  menuConfig: Array<IMenuItem> = [
-    { key: "1", path: "/dashboard", icon: "line-chart", label: "Dashboard" },
-    { key: "2", path: "/task", icon: "check-circle-o", label: "Tasks" }
-  ]
-  selectedKeys:Array<string> = [];
+// This class has both a default export as well class export.  The default export
+// is wrapped with router.  The class export is used strictly for testing
 
-  // Disposer used to disconnect from router changes when component unmounts
-  unlisten:any;
+export class MainNavigation extends React.Component<IMainNavProps, undefined>{
+  selectedKeys:Array<string> = []; // Array of the currently selected key(s)
+  unlisten:any; // Disposer used to disconnect from router changes when component unmounts
 
   componentDidMount() {
     // Create listener to the route and change selected key on change
@@ -48,7 +45,7 @@ class MainNavigation extends React.Component<IMainNavProps, undefined>{
 
   selectKey = (location:any) => {
     this.selectedKeys = [];
-    this.menuConfig.map(i => {
+    this.props.config.map(i => {
       if(location.pathname == i.path){
         this.selectedKeys.push(i.key);
       }
@@ -66,15 +63,15 @@ class MainNavigation extends React.Component<IMainNavProps, undefined>{
         theme="dark"
         selectedKeys={this.selectedKeys}
       >
-        {this.menuConfig.map((i) => {
-          return <Menu.Item key={i.key}>
-            <Link to={i.path}><Icon type={i.icon} /><span>{i.label}</span></Link>
-          </Menu.Item>
+        {this.props.config.map((i) => {
+          if(i.component == "Divider") {
+            return <Menu.Divider className="nav-divider" key={i.key}/>
+          } else {
+            return <Menu.Item key={i.key}>
+              <Link to={i.path}><Icon type={i.icon} /><span>{i.label}</span></Link>
+            </Menu.Item>
+          }
         })}
-        <Menu.Divider className="nav-divider"/>
-        <Menu.Item key="99">
-          <Link to="/about"><Icon type="info-circle-o" /><span>About Application</span></Link>
-        </Menu.Item>
       </Menu>
       );
     }

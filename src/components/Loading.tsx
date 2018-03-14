@@ -4,7 +4,7 @@ import { Icon } from 'antd';
 const Loading = (props:any) => {
   if (props.error) {
     return (
-      <div className="blurb-container">
+      <div className="blurb-container error">
         <div className="blurb-wrapper">
           <Icon type="warning" /><br/>
           <p className="mt10">Oh snap! This didn't load properly.</p>
@@ -14,7 +14,7 @@ const Loading = (props:any) => {
     )
   } else if (props.pastDelay) {
     return (
-      <div className="blurb-container">
+      <div className="blurb-container loading">
         <div className="blurb-wrapper">
           <Icon type="loading" /><br/>
           <p className="mt10">One moment while we get things ready.</p>
@@ -24,7 +24,7 @@ const Loading = (props:any) => {
     )
   } else if (props.timedOut) {
     return (
-      <div className="blurb-container">
+      <div className="blurb-container timeout">
         <div className="blurb-wrapper">
           <Icon type="clock-circle-o" /><br/>
           <p className="mt10">Tick-tock.  This is taking awhile...</p>

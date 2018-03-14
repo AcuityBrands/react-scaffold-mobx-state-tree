@@ -22,10 +22,9 @@ class LoginPage extends React.Component<ILoginPageProps, ILoginPageState> {
     this.state = {
       redirectToReferrer: false
     };
-    this.login = this.login.bind(this);
   }
 
-  login(e:any) {
+  login = (e:any) => {
     e.preventDefault();
     this.props.form.validateFields((err:any, values:Array<any>) => {
       if (!err) {

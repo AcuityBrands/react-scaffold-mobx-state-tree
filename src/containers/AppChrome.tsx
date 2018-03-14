@@ -12,8 +12,18 @@ import MainNavigation from '../components/MainNavigation';
 import TabContainer from './TabContainer';
 import { Layout, Input, Menu, Icon, Avatar, Badge, Dropdown } from 'antd';
 
+import { DashboardPage } from './DashboardPage'
+import { LazyAbout } from './LazyAbout'
+import { LazyTodo } from './LazyTodo'
+
 const { Header, Sider, Content, Footer } = Layout;
 const Search = Input.Search;
+const tabConfig = [
+  { key: "1", path: "/dashboard", icon: "line-chart", label: "Dashboard", component: <DashboardPage/>},
+  { key: "2", path: "/task", icon: "check-circle-o", label: "Tasks", component: <LazyTodo/>},
+  { key: "3", component: "Divider"},
+  { key: "4", path: "/about", icon:"info-circle-o", label: "About App", component: <LazyAbout/>}
+]
 
 interface IChromeProps {
   appStore: IAppStore,
@@ -23,7 +33,7 @@ interface IChromeProps {
 }
 
 @inject("appStore")
-class AppChrome extends React.Component<IChromeProps, {}> {
+class AppChrome extends React.Component<IChromeProps, any> {
 
   state = {
     collapsed: false,
@@ -58,7 +68,7 @@ class AppChrome extends React.Component<IChromeProps, {}> {
 
         <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
           <div className="logo" />
-          <MainNavigation></MainNavigation>
+          <MainNavigation config={tabConfig}></MainNavigation>
         </Sider>
 
         <Layout>
@@ -90,7 +100,7 @@ class AppChrome extends React.Component<IChromeProps, {}> {
           </Header>
 
           <Content>
-            <TabContainer></TabContainer>
+            <TabContainer config={tabConfig}></TabContainer>
           </Content>
 
           <Footer style={{ textAlign: 'center' }}>Acuity Technology Group 2018 ©, All Rights Reserved</Footer>

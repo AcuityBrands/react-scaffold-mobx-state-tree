@@ -18,7 +18,7 @@ const setup = propOverrides => {
   // Typically we'll shallow mount the component, but because this is a HOC
   // there are too many dependencies to mock.  So using a full mount.
   const wrapper = Enzyme.mount(<LoginPage {...props} />);
-  
+
   return {
     props,
     wrapper,
@@ -42,7 +42,7 @@ describe('Login Component', () => {
     comp.instance().login = jest.fn();
 
     // Create spy on the login method
-    const spy = spyOn(comp.instance(), "login");
+    const spy = jest.spyOn(comp.instance(), "login");
 
     // Update the instance with the spy info
     comp.instance().forceUpdate();
@@ -52,5 +52,8 @@ describe('Login Component', () => {
 
     // Assert that our login function was called
     expect(spy).toHaveBeenCalled();
+
+    // Cleanup
+    spy.mockClear();
   })
 })
