@@ -127,9 +127,9 @@ export class TabContainer extends React.Component<ITabNavProps, undefined>{
           onChange={this.onChange}
           className="custom-tabs"
         >
-          {this.panes.map((pane: IPane) => 
-            <TabPane disabled={pane.disabled} tab={pane.title} key={pane.key}>{pane.content}</TabPane>
-          )}
+          {this.panes.map((pane: IPane) => {
+            return <TabPane disabled={pane.disabled} tab={pane.title} key={pane.key}>{pane.content}</TabPane>
+          })}
         </Tabs>
       </div>
     );

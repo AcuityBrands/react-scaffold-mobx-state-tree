@@ -17,13 +17,15 @@ const setup = propOverrides => {
       pathname: "/dashboard"
     },
     history: {
-      listen: jest.fn()
+      listen: jest.fn(),
+      push: jest.fn()
     }
   }, propOverrides)
   const wrapper = Enzyme.shallow(<TabContainer {...props} />);
   return {
     props,
-    wrapper
+    wrapper,
+    tabs: wrapper.find("Tabs")
   }
 }
 
@@ -35,22 +37,28 @@ describe('TabContainer Component', () => {
   })
 
   it("contains a root Tab component", () => {
-    const { wrapper } = setup({});
-    expect(wrapper.find('Tabs').length).toBe(1);
+    const { wrapper, tabs } = setup({});
+    expect(tabs.length).toBe(1);
   })
 
   it("will create a pane if location matches config", () => {
-    const { wrapper, props } = setup({});
-    expect(wrapper.find("TabPane").children().length).toBe(1);
+    const { wrapper, props, tabs } = setup({});
+    expect(tabs.children().length).toBe(1);
   })
 
   it("will not create a pane if location does not match config", () => {
-    const { wrapper, props } = setup({location:{pathname:"/garbage"}});
-    expect(wrapper.find("TabPane").children().length).toBe(0);
+    const { wrapper, props, tabs } = setup({location:{pathname:"/garbage"}});
+    expect(tabs.children().length).toBe(0);
   })
 
-  it("will maintain the active key (active tab)", () => {
-    const { wrapper, props } = setup({});
-    expect(wrapper.instance().activeKey).toEqual("/dashboard");
+  it("remove a pane if removed via click", () => {
+    const { wrapper, props, tabs } = setup({});
+    tabs.simulate('edit', "/dashboard", "remove");
+    // Calling these in this specific order to force a re-render
+    // https://github.com/airbnb/enzyme/issues/1229
+    wrapper.instance().forceUpdate();
+    wrapper.update();
+    // =========================================
+    expect(wrapper.find("Tabs").children().length).toBe(0);
   })
 })
