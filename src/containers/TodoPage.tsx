@@ -23,7 +23,7 @@ interface ITodoPageProps {
 @inject("appStore")
 @observer
 export default class TodoPage extends React.Component<ITodoPageProps, undefined>{
-  
+
   @observable todoValue: string = "";
   @observable suggestionCount: number = 5
 
@@ -43,7 +43,8 @@ export default class TodoPage extends React.Component<ITodoPageProps, undefined>
   }
 
   onGetSuggestions = (e: any) => {
-    this.props.appStore.todoStore.getSuggestions(this.suggestionCount);
+    const { todoStore } = this.props.appStore;
+    todoStore.getSuggestions(this.suggestionCount);
   }
 
   render() {
@@ -56,10 +57,10 @@ export default class TodoPage extends React.Component<ITodoPageProps, undefined>
               <div className="card-header">
                 <h2>Your Tasks</h2>
                 <ButtonGroup>
-                  <Button onClick={todoStore.undo}>
+                  <Button className="todo-undo-button" onClick={todoStore.undo}>
                     <Icon type="left" /> Undo
                   </Button>
-                  <Button onClick={todoStore.redo}>
+                  <Button className="todo-redo-button" onClick={todoStore.redo}>
                     Redo <Icon type="right" />
                   </Button>
                 </ButtonGroup>
@@ -70,6 +71,7 @@ export default class TodoPage extends React.Component<ITodoPageProps, undefined>
                 fringilla <a href="#">magna lorem.</a>
               </p>
               <NewItem
+                className="todo-input"
                 placeholder="create new task"
                 enterButton="Add Task"
                 onSearch={this.onAddItem}
@@ -79,7 +81,7 @@ export default class TodoPage extends React.Component<ITodoPageProps, undefined>
               <TodoList todoStore={todoStore}></TodoList>
               <div className="text-center">
                 <div className="mt20">
-                  <Button onClick={this.onGetSuggestions} loading={todoStore.loading}>Suggest Tasks</Button>
+                  <Button onClick={this.onGetSuggestions} loading={todoStore.loading} className="todo-get-suggestions">Suggest Tasks</Button>
                   <InputNumber min={1} max={100} defaultValue={this.suggestionCount} onChange={this.onCountChange} style={{ marginLeft: '5px' }} />
                 </div>
               </div>
