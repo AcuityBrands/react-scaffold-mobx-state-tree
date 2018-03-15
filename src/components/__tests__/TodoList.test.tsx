@@ -6,7 +6,6 @@ import { TodoList } from '../TodoList';
 Enzyme.configure({ adapter: new Adapter() });
 
 const setup = propOverrides => {
-  let spy
   const props = Object.assign({
     todoStore: {
       todos: [
@@ -27,18 +26,18 @@ const setup = propOverrides => {
 describe('Todo List Component', () => {
   // Minimal component test confirms component rendered
   it("can render", () => {
-    const { wrapper, props } = setup({});
+    const { wrapper } = setup({});
     expect(wrapper.exists()).toBe(true);
   })
 
   it("will render a todo list item for each todo", () => {
-    const { wrapper, props } = setup({});
+    const { wrapper } = setup({});
     const items = wrapper.find("ul").children();
     expect(items.length).toBe(2);
   })
 
   it("will notify the user of number of completed items", () => {
-    const { wrapper, props } = setup({});
+    const { wrapper } = setup({});
     expect(wrapper.find("div").text()).toEqual("1 of 2 completed");
   })
 })

@@ -19,12 +19,12 @@ const setup = propOverrides => {
 describe('Map Component', () => {
   // Minimal component test confirms component rendered
   it("can render", () => {
-    const { wrapper, props} = setup({});
+    const { wrapper } = setup({});
     expect(wrapper.exists()).toBe(true);
   })
 
   it("creates a root container div", () => {
-    const { wrapper, props} = setup({});
+    const { wrapper } = setup({});
     const div = wrapper.find("div");
     expect(div.length).toBeGreaterThan(0);
   })
