@@ -2,9 +2,9 @@ import * as React from "react";
 import { observable } from "mobx";
 import { observer, inject } from "mobx-react";
 import { Row, Col, Input, Button, message, InputNumber, Icon } from 'antd';
-import { IAppStore } from '../stores/AppStore'
-import { TodoItem } from '../stores/TodoStore'
+import { TodoItem, ITodoStore } from '../stores/TodoStore'
 import { TodoList } from '../components/TodoList'
+import { IAppStore } from "../stores/AppStore";
 
 const NewItem = Input.Search;
 const ButtonGroup = Button.Group;
@@ -13,9 +13,17 @@ interface ITodoPageProps {
   appStore?: IAppStore
 }
 
+// In this example, we cherry-pick which store we want
+// from the injected object
+// Commented out because I had a hard time using this method with testing
+// =====================
+// @inject((i:any) => {
+//   return {todoStore: i.appStore.todoStore as ITodoStore}
+// })
 @inject("appStore")
 @observer
 export default class TodoPage extends React.Component<ITodoPageProps, undefined>{
+  
   @observable todoValue: string = "";
   @observable suggestionCount: number = 5
 

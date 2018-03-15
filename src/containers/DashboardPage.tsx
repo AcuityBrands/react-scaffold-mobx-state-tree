@@ -12,8 +12,7 @@ interface IDashboardProps {
   appStore?: IAppStore
 }
 
-@inject("appStore")
-@observer
+@inject("appStore") @observer
 export class DashboardPage extends React.Component<IDashboardProps, undefined> {
 
   @observable sliderValue = 1000;

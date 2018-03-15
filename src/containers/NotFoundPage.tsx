@@ -12,7 +12,7 @@ export default class NotFoundPage extends React.Component {
               <h3 className="mt10">Whatever you were trying to do, it didn't work</h3>
               <p className="mt20">
                 Once upon a midnight dreary, While I websurfed, weak and weary,
-                Over many a strange and spurious websites of blogs galore,
+                Over many a strange and spurious websites or blogs galore,
               </p>
               <p className="mt20">
                 While I clicked my fav'rite bookmark, Suddenly there came a warning,

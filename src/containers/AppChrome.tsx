@@ -4,9 +4,9 @@
  * Primary layout of the application chrome
  */
 import * as React from "react";
-import { inject } from "mobx-react";
+import { observable } from "mobx";
+import { inject, Provider, observer } from "mobx-react";
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
-import { Provider } from "mobx-react";
 import { IAppStore } from '../stores/AppStore'
 import MainNavigation from '../components/MainNavigation';
 import TabContainer from './TabContainer';
@@ -18,6 +18,9 @@ import { LazyTodo } from './LazyTodo'
 
 const { Header, Sider, Content, Footer } = Layout;
 const Search = Input.Search;
+
+// This configuration is used for both the left menu as well as
+// the tab engine
 const tabConfig = [
   { key: "1", path: "/dashboard", icon: "line-chart", label: "Dashboard", component: <DashboardPage/>},
   { key: "2", path: "/task", icon: "check-circle-o", label: "Tasks", component: <LazyTodo/>},
@@ -32,14 +35,12 @@ interface IChromeProps {
   history: any
 }
 
-@inject("appStore")
+@inject("appStore") @observer
 class AppChrome extends React.Component<IChromeProps, any> {
+  @observable collapsed:boolean = false;
 
-  state = {
-    collapsed: false,
-  };
-
-  menu = (
+  // Primary header menu
+  private menu = (
     <Menu style={{ background: '#fff' }}>
       <Menu.Item>
         <a target="_blank" rel="noopener noreferrer" href="#"><Icon type="profile" /> Manage Profile</a>
@@ -52,9 +53,7 @@ class AppChrome extends React.Component<IChromeProps, any> {
   )
 
   toggle = () => {
-    this.setState({
-      collapsed: !this.state.collapsed
-    });
+    this.collapsed = !this.collapsed
   }
 
   logout = () => {
@@ -66,7 +65,7 @@ class AppChrome extends React.Component<IChromeProps, any> {
     return (
       <Layout>
 
-        <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
+        <Sider trigger={null} collapsible collapsed={this.collapsed}>
           <div className="logo" />
           <MainNavigation config={tabConfig}></MainNavigation>
         </Sider>
@@ -78,7 +77,7 @@ class AppChrome extends React.Component<IChromeProps, any> {
               <div className="icon-button" onClick={this.toggle}>
                 <Icon
                   className="trigger"
-                  type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
+                  type={this.collapsed ? 'menu-unfold' : 'menu-fold'}
                 />
               </div>
               <Search
