@@ -3,7 +3,9 @@
  * 
  * Primary content render engine for application.  This component
  * Will listen to changes to the browser location and render
- * a new tab (or reuse an existing one).
+ * a new tab (or reuse an existing one). Originally built because
+ * I was dissatisfied that I had to take the overhead to re-mount/render
+ * components that had previously mounted.
  * 
  * WARNING: Dependent on DOM router
  */
@@ -27,19 +29,12 @@ interface IPane {
   disabled: boolean
 }
 
-interface ITabState {
-  activeKey: string,
-  panes: Array<IPane>
-}
-
-export class TabContainer extends React.Component<ITabNavProps, ITabState>{
+export class TabContainer extends React.Component<ITabNavProps, undefined>{
   unlisten: any;
-  state = {
-    activeKey: '',
-    panes: []
-  }
+  activeKey: string = '';
+  panes: Array<IPane> = [];
 
-  componentDidMount() {
+  componentWillMount() {
     this.renderComponent(this.props.location);
     this.unlisten = this.props.history.listen((location: any, action: any) => {
       this.renderComponent(location);
@@ -56,14 +51,12 @@ export class TabContainer extends React.Component<ITabNavProps, ITabState>{
   }
 
   renderComponent = (location: any) => {
-    const panes = this.state.panes;
-
     // Determine if tab is already open
     // if so, set the active tab to the open tab
-    for (let x = 0; x < panes.length; x++) {
-      let p = panes[x] as IPane;
+    for (let x = 0; x < this.panes.length; x++) {
+      let p = this.panes[x] as IPane;
       if (p.key === location.pathname) {
-        this.setState({ activeKey: p.key });
+        this.activeKey = p.key;
         return false;
       }
     }
@@ -82,22 +75,21 @@ export class TabContainer extends React.Component<ITabNavProps, ITabState>{
 
     // If the path is found, create a new tab
     if (pathFound) {
-      panes.push({ title: item.label, content: item.component, key: item.path, disabled: true });
-      if (panes.length > 1) {
-        panes.map(p => p.disabled = false);
+      this.panes.push({ title: item.label, content: item.component, key: item.path, disabled: true });
+      if (this.panes.length > 1) {
+        this.panes.map(p => p.disabled = false);
       }
-      this.setState({ panes, activeKey: item.path });
+      this.activeKey = item.path;
     }
 
   }
 
   remove = (targetKey: string) => {
     let keyIndex: number = -1;
-    let activeKey = this.state.activeKey;
 
     // Find the index of the deleted key
-    for (let i = 0; i < this.state.panes.length; i++) {
-      let p = this.state.panes[i];
+    for (let i = 0; i < this.panes.length; i++) {
+      let p = this.panes[i];
       if (p.key == targetKey) {
         keyIndex = i;
         break;
@@ -105,24 +97,23 @@ export class TabContainer extends React.Component<ITabNavProps, ITabState>{
     }
 
     // Remove the deleted key from the panes
-    const panes = this.state.panes.filter(e => e.key != targetKey);
+    this.panes = this.panes.filter(e => e.key != targetKey);
 
     // If tab removed was the first tab
-    if (keyIndex == 0 && targetKey == activeKey && panes.length > 0)
-      activeKey = panes[0].key;
+    if (keyIndex == 0 && targetKey == this.activeKey && this.panes.length > 0)
+      this.activeKey = this.panes[0].key;
 
     // If tab removed was the last tab
-    if (keyIndex == panes.length && panes.length > 0)
-      activeKey = panes[panes.length - 1].key
+    if (keyIndex == this.panes.length && this.panes.length > 0)
+      this.activeKey = this.panes[this.panes.length - 1].key
 
     // Disable tabs if only 1 tab remains
-    if (panes.length <= 1) {
-      panes.map(p => p.disabled = true);
+    if (this.panes.length <= 1) {
+      this.panes.map(p => p.disabled = true);
     }
 
-    // Update State
-    this.setState({ panes, activeKey });
-    this.props.history.push(activeKey);
+    // Update history
+    this.props.history.push(this.activeKey);
   }
 
   render() {
@@ -130,13 +121,15 @@ export class TabContainer extends React.Component<ITabNavProps, ITabState>{
       <div className="tab-wrapper">
         <Tabs
           hideAdd
-          activeKey={this.state.activeKey}
+          activeKey={this.activeKey}
           type="editable-card"
           onEdit={this.onEdit}
           onChange={this.onChange}
           className="custom-tabs"
         >
-          {this.state.panes.map((pane: IPane) => <TabPane disabled={pane.disabled} tab={pane.title} key={pane.key}>{pane.content}</TabPane>)}
+          {this.panes.map((pane: IPane) => 
+            <TabPane disabled={pane.disabled} tab={pane.title} key={pane.key}>{pane.content}</TabPane>
+          )}
         </Tabs>
       </div>
     );
