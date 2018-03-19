@@ -1,15 +1,10 @@
 {
   "compilerOptions": {
-    "jsx": "preserve",
-    // resolve modules as you would expect
-    "moduleResolution": "node",
-    // leave imports as they are
-    "module": "esnext",
-    // do not transpile stuff like classes, async/await, ...
-    "target": "esnext",
-    // produce a source map
-    "sourceMap": true,
-    // allow decorators
-    "experimentalDecorators": true
+    "jsx": "preserve", // preserve jsx formatting - let Babel handle it
+    "moduleResolution": "node", // resolve modules as node modules
+    "module": "esnext", // leave imports as they are
+    "target": "esnext", // do not transpile stuff like classes, async/await, ...
+    "sourceMap": true, // produce a source map
+    "experimentalDecorators": true // allow decorators
   }
 }
