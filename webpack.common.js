@@ -32,7 +32,7 @@ module.exports = {
       // Then Babel will transpile the es6 javascript to es5.  Babel has better support for tree-shaking
       { 
         test: /\.tsx?$/, 
-        loaders:["babel-loader","awesome-typescript-loader"]
+        loaders:["babel-loader","ts-loader"]
       },
 
       // Load images into assets folder on output
