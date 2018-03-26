@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const path = require('path');
 const common = require('./webpack.common.js');
+
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UglifyWebpackPlugin = require("uglifyjs-webpack-plugin");
 const CompressionPlugin = require("compress-webpack-plugin");
@@ -64,14 +65,6 @@ module.exports = merge(common, {
       filename: "[name].css",
       chunkFilename: "[id].css"
     }),
-
-    // OPTIONAL - Pull common dependencies out of deferred (async) modules/bundles
-    // Dependency must be common among XX (minChunks) modules
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   async: true,
-    //   children: true, 
-    //   minChunks: 3
-    // })
 
     // Hashes to be based on the relative path of the module
     new webpack.HashedModuleIdsPlugin(),
