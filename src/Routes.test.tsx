@@ -6,18 +6,14 @@ import { MemoryRouter } from "react-router-dom"
 import Routes from './Routes';
 import AppChrome from './containers/AppChrome';
 import DashboardPage from './containers/DashboardPage';
-import {LazyTodo} from './containers/LazyTodo';
 import LoginPage from './containers/LoginPage';
 import NotFoundPage from './containers/NotFoundPage';
 import { SparkChart } from './components/SparkChart';
 import { BarChart } from './components/BarChart';
 import TodoPage from "./containers/TodoPage";
+import AboutPage from "./containers/AboutPage";
 
 Enzyme.configure({ adapter: new Adapter() });
-
-const asyncFlush = () => new Promise(resolve => setTimeout(() => {
-  console.log("HEREss")
-}, 200));
 
 // Mock the Chart component(s) since they contain a canvas element
 // that doesn't play well with Enzyme's virtual DOM (JSDOM)
@@ -92,6 +88,23 @@ describe('Routes [App] Component', () => {
     process.nextTick(()=>{
       wrapper.update(); // Update the wrapper since it has been asynchronously changed
       expect(wrapper.find(TodoPage)).toHaveLength(1);
+    })
+  })
+
+  it("should render the about page (if authenticated)", () => {
+    const { wrapper } = setup({
+      appStore: {
+        todoStore: {todos: [{userId: 1, id: 1, title: "test", completed: false}], loading: false},
+        userStore: { user: { id: 1, name: "Bob Billford" }, isAuthenticated: true, authenticating: false },
+        chartStore: { salesData: { labels: [], values: [] } }
+      },
+      initialEntries: ['/about']
+    });
+
+    // WARNING: If this fails, it will terminate the process prematurely
+    process.nextTick(()=>{
+      wrapper.update(); // Update the wrapper since it has been asynchronously changed
+      expect(wrapper.find(AboutPage)).toHaveLength(1);
     })
   })
 })
