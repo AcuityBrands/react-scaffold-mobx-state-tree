@@ -20,7 +20,7 @@ const asyncFlush = () => new Promise(resolve => setTimeout(() => {
 }, 200));
 
 // Mock the Chart component(s) since they contain a canvas element
-// that doesn't play well with Enzyme's virtual DOM
+// that doesn't play well with Enzyme's virtual DOM (JSDOM)
 jest.mock("./components/SparkChart");
 jest.mock("./components/BarChart");
 
