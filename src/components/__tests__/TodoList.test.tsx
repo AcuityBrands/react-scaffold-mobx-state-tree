@@ -30,6 +30,11 @@ describe('Todo List Component', () => {
     expect(wrapper.exists()).toBe(true);
   })
 
+  it("matches the snapshot", () => {
+    const { wrapper } = setup({});
+    expect(wrapper).toMatchSnapshot();
+  })
+
   it("will render a todo list item for each todo", () => {
     const { wrapper } = setup({});
     const items = wrapper.find("ul").children();

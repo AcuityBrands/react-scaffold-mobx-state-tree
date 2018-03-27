@@ -21,6 +21,11 @@ describe('Loading Component', () => {
     expect(wrapper.exists()).toBe(true);
   })
 
+  it("matches the snapshot", () => {
+    const { wrapper } = setup({});
+    expect(wrapper).toMatchSnapshot();
+  })
+
   it("will display error message", () => {
     const { wrapper } = setup({error:true});
     expect(wrapper.find('.error').length).toBe(1);

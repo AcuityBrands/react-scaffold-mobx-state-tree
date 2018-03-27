@@ -35,6 +35,11 @@ describe('BarChart Component', () => {
     expect(wrapper.find('canvas').length).toBe(1);
   })
 
+  it("matches the snapshot", () => {
+    const { wrapper } = setup({});
+    expect(wrapper).toMatchSnapshot();
+  })
+
   it("will create and render the chart config on startup", () => {
     const spy = jest.spyOn(BarChart.prototype, "renderChart")
     const { wrapper, props } = setup({});

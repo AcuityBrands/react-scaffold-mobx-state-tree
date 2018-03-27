@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as Enzyme from 'enzyme';
 import * as Adapter from 'enzyme-adapter-react-16';
-import { DashboardPage } from '../DashboardPage';
+import DashboardPage from '../DashboardPage';
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -25,5 +25,10 @@ describe('DashboardPage Component', () => {
   it("can render", () => {
     const { wrapper } = setup({});
     expect(wrapper.exists()).toBe(true)
+  })
+
+  it("matches the snapshot", () => {
+    const { wrapper } = setup({});
+    expect(wrapper).toMatchSnapshot();
   })
 })

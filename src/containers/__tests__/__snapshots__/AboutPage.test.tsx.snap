@@ -1,0 +1,1947 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AboutPage Component matches the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <AboutPage />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <Row
+        align="middle"
+        gutter={0}
+        justify="center"
+        type="flex"
+      >
+        <Col
+          lg={12}
+          md={18}
+          sm={24}
+        >
+          <div
+            className="card text-center"
+            style={
+              Object {
+                "padding": 80,
+              }
+            }
+          >
+            <h1>
+              About
+            </h1>
+            <h3>
+              Tech Stack Used For This App
+            </h3>
+            <ul
+              className="mt30"
+            >
+              <li>
+                <a
+                  href="https://ant.design/docs/react/introduce"
+                >
+                  Ant Design Components
+                </a>
+              </li>
+              <li>
+                <a
+                  href="http://www.chartjs.org/samples/latest/"
+                >
+                  Chart-JS
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.mapbox.com/mapbox-gl-js/api/"
+                >
+                  MapboxGL
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://reactjs.org/docs/hello-world.html"
+                >
+                  React
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/mobxjs/mobx-state-tree"
+                >
+                  MobX-State-Tree
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.typescriptlang.org/docs/home.html"
+                >
+                  TypeScript
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://webpack.js.org/concepts/"
+                >
+                  WebPack
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://yarnpkg.com/lang/en/docs/"
+                >
+                  Yarn
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://facebook.github.io/jest/docs/en/getting-started.html"
+                >
+                  Jest
+                </a>
+              </li>
+              <li>
+                <a
+                  href="http://airbnb.io/enzyme/docs/api/"
+                >
+                  Enzyme
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://nodejs.org/en/docs/"
+                >
+                  Node
+                </a>
+              </li>
+            </ul>
+            <p
+              className="mt20"
+            >
+              You'll also find interesting features such as persistant state (saving to local storage), browser history and routing, lazy loading, and protected vs unprotected routes.  Check it out!
+            </p>
+            <Button
+              className="mt20"
+              ghost={false}
+              loading={false}
+              prefixCls="ant-btn"
+            >
+              <Link
+                replace={false}
+                to="/dashboard"
+              >
+                Go back to the home page
+              </Link>
+            </Button>
+          </div>
+        </Col>
+      </Row>,
+      "className": "content-wrapper",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "align": "middle",
+        "children": <Col
+          lg={12}
+          md={18}
+          sm={24}
+        >
+          <div
+            className="card text-center"
+            style={
+              Object {
+                "padding": 80,
+              }
+            }
+          >
+            <h1>
+              About
+            </h1>
+            <h3>
+              Tech Stack Used For This App
+            </h3>
+            <ul
+              className="mt30"
+            >
+              <li>
+                <a
+                  href="https://ant.design/docs/react/introduce"
+                >
+                  Ant Design Components
+                </a>
+              </li>
+              <li>
+                <a
+                  href="http://www.chartjs.org/samples/latest/"
+                >
+                  Chart-JS
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.mapbox.com/mapbox-gl-js/api/"
+                >
+                  MapboxGL
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://reactjs.org/docs/hello-world.html"
+                >
+                  React
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/mobxjs/mobx-state-tree"
+                >
+                  MobX-State-Tree
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.typescriptlang.org/docs/home.html"
+                >
+                  TypeScript
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://webpack.js.org/concepts/"
+                >
+                  WebPack
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://yarnpkg.com/lang/en/docs/"
+                >
+                  Yarn
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://facebook.github.io/jest/docs/en/getting-started.html"
+                >
+                  Jest
+                </a>
+              </li>
+              <li>
+                <a
+                  href="http://airbnb.io/enzyme/docs/api/"
+                >
+                  Enzyme
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://nodejs.org/en/docs/"
+                >
+                  Node
+                </a>
+              </li>
+            </ul>
+            <p
+              className="mt20"
+            >
+              You'll also find interesting features such as persistant state (saving to local storage), browser history and routing, lazy loading, and protected vs unprotected routes.  Check it out!
+            </p>
+            <Button
+              className="mt20"
+              ghost={false}
+              loading={false}
+              prefixCls="ant-btn"
+            >
+              <Link
+                replace={false}
+                to="/dashboard"
+              >
+                Go back to the home page
+              </Link>
+            </Button>
+          </div>
+        </Col>,
+        "gutter": 0,
+        "justify": "center",
+        "type": "flex",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <div
+            className="card text-center"
+            style={
+              Object {
+                "padding": 80,
+              }
+            }
+          >
+            <h1>
+              About
+            </h1>
+            <h3>
+              Tech Stack Used For This App
+            </h3>
+            <ul
+              className="mt30"
+            >
+              <li>
+                <a
+                  href="https://ant.design/docs/react/introduce"
+                >
+                  Ant Design Components
+                </a>
+              </li>
+              <li>
+                <a
+                  href="http://www.chartjs.org/samples/latest/"
+                >
+                  Chart-JS
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.mapbox.com/mapbox-gl-js/api/"
+                >
+                  MapboxGL
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://reactjs.org/docs/hello-world.html"
+                >
+                  React
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/mobxjs/mobx-state-tree"
+                >
+                  MobX-State-Tree
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.typescriptlang.org/docs/home.html"
+                >
+                  TypeScript
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://webpack.js.org/concepts/"
+                >
+                  WebPack
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://yarnpkg.com/lang/en/docs/"
+                >
+                  Yarn
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://facebook.github.io/jest/docs/en/getting-started.html"
+                >
+                  Jest
+                </a>
+              </li>
+              <li>
+                <a
+                  href="http://airbnb.io/enzyme/docs/api/"
+                >
+                  Enzyme
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://nodejs.org/en/docs/"
+                >
+                  Node
+                </a>
+              </li>
+            </ul>
+            <p
+              className="mt20"
+            >
+              You'll also find interesting features such as persistant state (saving to local storage), browser history and routing, lazy loading, and protected vs unprotected routes.  Check it out!
+            </p>
+            <Button
+              className="mt20"
+              ghost={false}
+              loading={false}
+              prefixCls="ant-btn"
+            >
+              <Link
+                replace={false}
+                to="/dashboard"
+              >
+                Go back to the home page
+              </Link>
+            </Button>
+          </div>,
+          "lg": 12,
+          "md": 18,
+          "sm": 24,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h1>
+                About
+              </h1>,
+              <h3>
+                Tech Stack Used For This App
+              </h3>,
+              <ul
+                className="mt30"
+              >
+                <li>
+                  <a
+                    href="https://ant.design/docs/react/introduce"
+                  >
+                    Ant Design Components
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="http://www.chartjs.org/samples/latest/"
+                  >
+                    Chart-JS
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.mapbox.com/mapbox-gl-js/api/"
+                  >
+                    MapboxGL
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://reactjs.org/docs/hello-world.html"
+                  >
+                    React
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/mobxjs/mobx-state-tree"
+                  >
+                    MobX-State-Tree
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.typescriptlang.org/docs/home.html"
+                  >
+                    TypeScript
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://webpack.js.org/concepts/"
+                  >
+                    WebPack
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://yarnpkg.com/lang/en/docs/"
+                  >
+                    Yarn
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://facebook.github.io/jest/docs/en/getting-started.html"
+                  >
+                    Jest
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="http://airbnb.io/enzyme/docs/api/"
+                  >
+                    Enzyme
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://nodejs.org/en/docs/"
+                  >
+                    Node
+                  </a>
+                </li>
+              </ul>,
+              <p
+                className="mt20"
+              >
+                You'll also find interesting features such as persistant state (saving to local storage), browser history and routing, lazy loading, and protected vs unprotected routes.  Check it out!
+              </p>,
+              <Button
+                className="mt20"
+                ghost={false}
+                loading={false}
+                prefixCls="ant-btn"
+              >
+                <Link
+                  replace={false}
+                  to="/dashboard"
+                >
+                  Go back to the home page
+                </Link>
+              </Button>,
+            ],
+            "className": "card text-center",
+            "style": Object {
+              "padding": 80,
+            },
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "About",
+              },
+              "ref": null,
+              "rendered": "About",
+              "type": "h1",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Tech Stack Used For This App",
+              },
+              "ref": null,
+              "rendered": "Tech Stack Used For This App",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <li>
+                    <a
+                      href="https://ant.design/docs/react/introduce"
+                    >
+                      Ant Design Components
+                    </a>
+                  </li>,
+                  <li>
+                    <a
+                      href="http://www.chartjs.org/samples/latest/"
+                    >
+                      Chart-JS
+                    </a>
+                  </li>,
+                  <li>
+                    <a
+                      href="https://www.mapbox.com/mapbox-gl-js/api/"
+                    >
+                      MapboxGL
+                    </a>
+                  </li>,
+                  <li>
+                    <a
+                      href="https://reactjs.org/docs/hello-world.html"
+                    >
+                      React
+                    </a>
+                  </li>,
+                  <li>
+                    <a
+                      href="https://github.com/mobxjs/mobx-state-tree"
+                    >
+                      MobX-State-Tree
+                    </a>
+                  </li>,
+                  <li>
+                    <a
+                      href="https://www.typescriptlang.org/docs/home.html"
+                    >
+                      TypeScript
+                    </a>
+                  </li>,
+                  <li>
+                    <a
+                      href="https://webpack.js.org/concepts/"
+                    >
+                      WebPack
+                    </a>
+                  </li>,
+                  <li>
+                    <a
+                      href="https://yarnpkg.com/lang/en/docs/"
+                    >
+                      Yarn
+                    </a>
+                  </li>,
+                  <li>
+                    <a
+                      href="https://facebook.github.io/jest/docs/en/getting-started.html"
+                    >
+                      Jest
+                    </a>
+                  </li>,
+                  <li>
+                    <a
+                      href="http://airbnb.io/enzyme/docs/api/"
+                    >
+                      Enzyme
+                    </a>
+                  </li>,
+                  <li>
+                    <a
+                      href="https://nodejs.org/en/docs/"
+                    >
+                      Node
+                    </a>
+                  </li>,
+                ],
+                "className": "mt30",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <a
+                      href="https://ant.design/docs/react/introduce"
+                    >
+                      Ant Design Components
+                    </a>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Ant Design Components",
+                      "href": "https://ant.design/docs/react/introduce",
+                    },
+                    "ref": null,
+                    "rendered": "Ant Design Components",
+                    "type": "a",
+                  },
+                  "type": "li",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <a
+                      href="http://www.chartjs.org/samples/latest/"
+                    >
+                      Chart-JS
+                    </a>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Chart-JS",
+                      "href": "http://www.chartjs.org/samples/latest/",
+                    },
+                    "ref": null,
+                    "rendered": "Chart-JS",
+                    "type": "a",
+                  },
+                  "type": "li",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <a
+                      href="https://www.mapbox.com/mapbox-gl-js/api/"
+                    >
+                      MapboxGL
+                    </a>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "MapboxGL",
+                      "href": "https://www.mapbox.com/mapbox-gl-js/api/",
+                    },
+                    "ref": null,
+                    "rendered": "MapboxGL",
+                    "type": "a",
+                  },
+                  "type": "li",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <a
+                      href="https://reactjs.org/docs/hello-world.html"
+                    >
+                      React
+                    </a>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "React",
+                      "href": "https://reactjs.org/docs/hello-world.html",
+                    },
+                    "ref": null,
+                    "rendered": "React",
+                    "type": "a",
+                  },
+                  "type": "li",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <a
+                      href="https://github.com/mobxjs/mobx-state-tree"
+                    >
+                      MobX-State-Tree
+                    </a>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "MobX-State-Tree",
+                      "href": "https://github.com/mobxjs/mobx-state-tree",
+                    },
+                    "ref": null,
+                    "rendered": "MobX-State-Tree",
+                    "type": "a",
+                  },
+                  "type": "li",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <a
+                      href="https://www.typescriptlang.org/docs/home.html"
+                    >
+                      TypeScript
+                    </a>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "TypeScript",
+                      "href": "https://www.typescriptlang.org/docs/home.html",
+                    },
+                    "ref": null,
+                    "rendered": "TypeScript",
+                    "type": "a",
+                  },
+                  "type": "li",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <a
+                      href="https://webpack.js.org/concepts/"
+                    >
+                      WebPack
+                    </a>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "WebPack",
+                      "href": "https://webpack.js.org/concepts/",
+                    },
+                    "ref": null,
+                    "rendered": "WebPack",
+                    "type": "a",
+                  },
+                  "type": "li",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <a
+                      href="https://yarnpkg.com/lang/en/docs/"
+                    >
+                      Yarn
+                    </a>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Yarn",
+                      "href": "https://yarnpkg.com/lang/en/docs/",
+                    },
+                    "ref": null,
+                    "rendered": "Yarn",
+                    "type": "a",
+                  },
+                  "type": "li",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <a
+                      href="https://facebook.github.io/jest/docs/en/getting-started.html"
+                    >
+                      Jest
+                    </a>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Jest",
+                      "href": "https://facebook.github.io/jest/docs/en/getting-started.html",
+                    },
+                    "ref": null,
+                    "rendered": "Jest",
+                    "type": "a",
+                  },
+                  "type": "li",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <a
+                      href="http://airbnb.io/enzyme/docs/api/"
+                    >
+                      Enzyme
+                    </a>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Enzyme",
+                      "href": "http://airbnb.io/enzyme/docs/api/",
+                    },
+                    "ref": null,
+                    "rendered": "Enzyme",
+                    "type": "a",
+                  },
+                  "type": "li",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <a
+                      href="https://nodejs.org/en/docs/"
+                    >
+                      Node
+                    </a>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Node",
+                      "href": "https://nodejs.org/en/docs/",
+                    },
+                    "ref": null,
+                    "rendered": "Node",
+                    "type": "a",
+                  },
+                  "type": "li",
+                },
+              ],
+              "type": "ul",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "You'll also find interesting features such as persistant state (saving to local storage), browser history and routing, lazy loading, and protected vs unprotected routes.  Check it out!",
+                "className": "mt20",
+              },
+              "ref": null,
+              "rendered": "You'll also find interesting features such as persistant state (saving to local storage), browser history and routing, lazy loading, and protected vs unprotected routes.  Check it out!",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <Link
+                  replace={false}
+                  to="/dashboard"
+                >
+                  Go back to the home page
+                </Link>,
+                "className": "mt20",
+                "ghost": false,
+                "loading": false,
+                "prefixCls": "ant-btn",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Go back to the home page",
+                  "replace": false,
+                  "to": "/dashboard",
+                },
+                "ref": null,
+                "rendered": "Go back to the home page",
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+        "type": [Function],
+      },
+      "type": [Function],
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <Row
+          align="middle"
+          gutter={0}
+          justify="center"
+          type="flex"
+        >
+          <Col
+            lg={12}
+            md={18}
+            sm={24}
+          >
+            <div
+              className="card text-center"
+              style={
+                Object {
+                  "padding": 80,
+                }
+              }
+            >
+              <h1>
+                About
+              </h1>
+              <h3>
+                Tech Stack Used For This App
+              </h3>
+              <ul
+                className="mt30"
+              >
+                <li>
+                  <a
+                    href="https://ant.design/docs/react/introduce"
+                  >
+                    Ant Design Components
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="http://www.chartjs.org/samples/latest/"
+                  >
+                    Chart-JS
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.mapbox.com/mapbox-gl-js/api/"
+                  >
+                    MapboxGL
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://reactjs.org/docs/hello-world.html"
+                  >
+                    React
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/mobxjs/mobx-state-tree"
+                  >
+                    MobX-State-Tree
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.typescriptlang.org/docs/home.html"
+                  >
+                    TypeScript
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://webpack.js.org/concepts/"
+                  >
+                    WebPack
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://yarnpkg.com/lang/en/docs/"
+                  >
+                    Yarn
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://facebook.github.io/jest/docs/en/getting-started.html"
+                  >
+                    Jest
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="http://airbnb.io/enzyme/docs/api/"
+                  >
+                    Enzyme
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://nodejs.org/en/docs/"
+                  >
+                    Node
+                  </a>
+                </li>
+              </ul>
+              <p
+                className="mt20"
+              >
+                You'll also find interesting features such as persistant state (saving to local storage), browser history and routing, lazy loading, and protected vs unprotected routes.  Check it out!
+              </p>
+              <Button
+                className="mt20"
+                ghost={false}
+                loading={false}
+                prefixCls="ant-btn"
+              >
+                <Link
+                  replace={false}
+                  to="/dashboard"
+                >
+                  Go back to the home page
+                </Link>
+              </Button>
+            </div>
+          </Col>
+        </Row>,
+        "className": "content-wrapper",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "align": "middle",
+          "children": <Col
+            lg={12}
+            md={18}
+            sm={24}
+          >
+            <div
+              className="card text-center"
+              style={
+                Object {
+                  "padding": 80,
+                }
+              }
+            >
+              <h1>
+                About
+              </h1>
+              <h3>
+                Tech Stack Used For This App
+              </h3>
+              <ul
+                className="mt30"
+              >
+                <li>
+                  <a
+                    href="https://ant.design/docs/react/introduce"
+                  >
+                    Ant Design Components
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="http://www.chartjs.org/samples/latest/"
+                  >
+                    Chart-JS
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.mapbox.com/mapbox-gl-js/api/"
+                  >
+                    MapboxGL
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://reactjs.org/docs/hello-world.html"
+                  >
+                    React
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/mobxjs/mobx-state-tree"
+                  >
+                    MobX-State-Tree
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.typescriptlang.org/docs/home.html"
+                  >
+                    TypeScript
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://webpack.js.org/concepts/"
+                  >
+                    WebPack
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://yarnpkg.com/lang/en/docs/"
+                  >
+                    Yarn
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://facebook.github.io/jest/docs/en/getting-started.html"
+                  >
+                    Jest
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="http://airbnb.io/enzyme/docs/api/"
+                  >
+                    Enzyme
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://nodejs.org/en/docs/"
+                  >
+                    Node
+                  </a>
+                </li>
+              </ul>
+              <p
+                className="mt20"
+              >
+                You'll also find interesting features such as persistant state (saving to local storage), browser history and routing, lazy loading, and protected vs unprotected routes.  Check it out!
+              </p>
+              <Button
+                className="mt20"
+                ghost={false}
+                loading={false}
+                prefixCls="ant-btn"
+              >
+                <Link
+                  replace={false}
+                  to="/dashboard"
+                >
+                  Go back to the home page
+                </Link>
+              </Button>
+            </div>
+          </Col>,
+          "gutter": 0,
+          "justify": "center",
+          "type": "flex",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <div
+              className="card text-center"
+              style={
+                Object {
+                  "padding": 80,
+                }
+              }
+            >
+              <h1>
+                About
+              </h1>
+              <h3>
+                Tech Stack Used For This App
+              </h3>
+              <ul
+                className="mt30"
+              >
+                <li>
+                  <a
+                    href="https://ant.design/docs/react/introduce"
+                  >
+                    Ant Design Components
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="http://www.chartjs.org/samples/latest/"
+                  >
+                    Chart-JS
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.mapbox.com/mapbox-gl-js/api/"
+                  >
+                    MapboxGL
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://reactjs.org/docs/hello-world.html"
+                  >
+                    React
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/mobxjs/mobx-state-tree"
+                  >
+                    MobX-State-Tree
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.typescriptlang.org/docs/home.html"
+                  >
+                    TypeScript
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://webpack.js.org/concepts/"
+                  >
+                    WebPack
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://yarnpkg.com/lang/en/docs/"
+                  >
+                    Yarn
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://facebook.github.io/jest/docs/en/getting-started.html"
+                  >
+                    Jest
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="http://airbnb.io/enzyme/docs/api/"
+                  >
+                    Enzyme
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://nodejs.org/en/docs/"
+                  >
+                    Node
+                  </a>
+                </li>
+              </ul>
+              <p
+                className="mt20"
+              >
+                You'll also find interesting features such as persistant state (saving to local storage), browser history and routing, lazy loading, and protected vs unprotected routes.  Check it out!
+              </p>
+              <Button
+                className="mt20"
+                ghost={false}
+                loading={false}
+                prefixCls="ant-btn"
+              >
+                <Link
+                  replace={false}
+                  to="/dashboard"
+                >
+                  Go back to the home page
+                </Link>
+              </Button>
+            </div>,
+            "lg": 12,
+            "md": 18,
+            "sm": 24,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h1>
+                  About
+                </h1>,
+                <h3>
+                  Tech Stack Used For This App
+                </h3>,
+                <ul
+                  className="mt30"
+                >
+                  <li>
+                    <a
+                      href="https://ant.design/docs/react/introduce"
+                    >
+                      Ant Design Components
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="http://www.chartjs.org/samples/latest/"
+                    >
+                      Chart-JS
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.mapbox.com/mapbox-gl-js/api/"
+                    >
+                      MapboxGL
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://reactjs.org/docs/hello-world.html"
+                    >
+                      React
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://github.com/mobxjs/mobx-state-tree"
+                    >
+                      MobX-State-Tree
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.typescriptlang.org/docs/home.html"
+                    >
+                      TypeScript
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://webpack.js.org/concepts/"
+                    >
+                      WebPack
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://yarnpkg.com/lang/en/docs/"
+                    >
+                      Yarn
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://facebook.github.io/jest/docs/en/getting-started.html"
+                    >
+                      Jest
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="http://airbnb.io/enzyme/docs/api/"
+                    >
+                      Enzyme
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://nodejs.org/en/docs/"
+                    >
+                      Node
+                    </a>
+                  </li>
+                </ul>,
+                <p
+                  className="mt20"
+                >
+                  You'll also find interesting features such as persistant state (saving to local storage), browser history and routing, lazy loading, and protected vs unprotected routes.  Check it out!
+                </p>,
+                <Button
+                  className="mt20"
+                  ghost={false}
+                  loading={false}
+                  prefixCls="ant-btn"
+                >
+                  <Link
+                    replace={false}
+                    to="/dashboard"
+                  >
+                    Go back to the home page
+                  </Link>
+                </Button>,
+              ],
+              "className": "card text-center",
+              "style": Object {
+                "padding": 80,
+              },
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "About",
+                },
+                "ref": null,
+                "rendered": "About",
+                "type": "h1",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Tech Stack Used For This App",
+                },
+                "ref": null,
+                "rendered": "Tech Stack Used For This App",
+                "type": "h3",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <li>
+                      <a
+                        href="https://ant.design/docs/react/introduce"
+                      >
+                        Ant Design Components
+                      </a>
+                    </li>,
+                    <li>
+                      <a
+                        href="http://www.chartjs.org/samples/latest/"
+                      >
+                        Chart-JS
+                      </a>
+                    </li>,
+                    <li>
+                      <a
+                        href="https://www.mapbox.com/mapbox-gl-js/api/"
+                      >
+                        MapboxGL
+                      </a>
+                    </li>,
+                    <li>
+                      <a
+                        href="https://reactjs.org/docs/hello-world.html"
+                      >
+                        React
+                      </a>
+                    </li>,
+                    <li>
+                      <a
+                        href="https://github.com/mobxjs/mobx-state-tree"
+                      >
+                        MobX-State-Tree
+                      </a>
+                    </li>,
+                    <li>
+                      <a
+                        href="https://www.typescriptlang.org/docs/home.html"
+                      >
+                        TypeScript
+                      </a>
+                    </li>,
+                    <li>
+                      <a
+                        href="https://webpack.js.org/concepts/"
+                      >
+                        WebPack
+                      </a>
+                    </li>,
+                    <li>
+                      <a
+                        href="https://yarnpkg.com/lang/en/docs/"
+                      >
+                        Yarn
+                      </a>
+                    </li>,
+                    <li>
+                      <a
+                        href="https://facebook.github.io/jest/docs/en/getting-started.html"
+                      >
+                        Jest
+                      </a>
+                    </li>,
+                    <li>
+                      <a
+                        href="http://airbnb.io/enzyme/docs/api/"
+                      >
+                        Enzyme
+                      </a>
+                    </li>,
+                    <li>
+                      <a
+                        href="https://nodejs.org/en/docs/"
+                      >
+                        Node
+                      </a>
+                    </li>,
+                  ],
+                  "className": "mt30",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <a
+                        href="https://ant.design/docs/react/introduce"
+                      >
+                        Ant Design Components
+                      </a>,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Ant Design Components",
+                        "href": "https://ant.design/docs/react/introduce",
+                      },
+                      "ref": null,
+                      "rendered": "Ant Design Components",
+                      "type": "a",
+                    },
+                    "type": "li",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <a
+                        href="http://www.chartjs.org/samples/latest/"
+                      >
+                        Chart-JS
+                      </a>,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Chart-JS",
+                        "href": "http://www.chartjs.org/samples/latest/",
+                      },
+                      "ref": null,
+                      "rendered": "Chart-JS",
+                      "type": "a",
+                    },
+                    "type": "li",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <a
+                        href="https://www.mapbox.com/mapbox-gl-js/api/"
+                      >
+                        MapboxGL
+                      </a>,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "MapboxGL",
+                        "href": "https://www.mapbox.com/mapbox-gl-js/api/",
+                      },
+                      "ref": null,
+                      "rendered": "MapboxGL",
+                      "type": "a",
+                    },
+                    "type": "li",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <a
+                        href="https://reactjs.org/docs/hello-world.html"
+                      >
+                        React
+                      </a>,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "React",
+                        "href": "https://reactjs.org/docs/hello-world.html",
+                      },
+                      "ref": null,
+                      "rendered": "React",
+                      "type": "a",
+                    },
+                    "type": "li",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <a
+                        href="https://github.com/mobxjs/mobx-state-tree"
+                      >
+                        MobX-State-Tree
+                      </a>,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "MobX-State-Tree",
+                        "href": "https://github.com/mobxjs/mobx-state-tree",
+                      },
+                      "ref": null,
+                      "rendered": "MobX-State-Tree",
+                      "type": "a",
+                    },
+                    "type": "li",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <a
+                        href="https://www.typescriptlang.org/docs/home.html"
+                      >
+                        TypeScript
+                      </a>,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "TypeScript",
+                        "href": "https://www.typescriptlang.org/docs/home.html",
+                      },
+                      "ref": null,
+                      "rendered": "TypeScript",
+                      "type": "a",
+                    },
+                    "type": "li",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <a
+                        href="https://webpack.js.org/concepts/"
+                      >
+                        WebPack
+                      </a>,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "WebPack",
+                        "href": "https://webpack.js.org/concepts/",
+                      },
+                      "ref": null,
+                      "rendered": "WebPack",
+                      "type": "a",
+                    },
+                    "type": "li",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <a
+                        href="https://yarnpkg.com/lang/en/docs/"
+                      >
+                        Yarn
+                      </a>,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Yarn",
+                        "href": "https://yarnpkg.com/lang/en/docs/",
+                      },
+                      "ref": null,
+                      "rendered": "Yarn",
+                      "type": "a",
+                    },
+                    "type": "li",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <a
+                        href="https://facebook.github.io/jest/docs/en/getting-started.html"
+                      >
+                        Jest
+                      </a>,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Jest",
+                        "href": "https://facebook.github.io/jest/docs/en/getting-started.html",
+                      },
+                      "ref": null,
+                      "rendered": "Jest",
+                      "type": "a",
+                    },
+                    "type": "li",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <a
+                        href="http://airbnb.io/enzyme/docs/api/"
+                      >
+                        Enzyme
+                      </a>,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Enzyme",
+                        "href": "http://airbnb.io/enzyme/docs/api/",
+                      },
+                      "ref": null,
+                      "rendered": "Enzyme",
+                      "type": "a",
+                    },
+                    "type": "li",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <a
+                        href="https://nodejs.org/en/docs/"
+                      >
+                        Node
+                      </a>,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Node",
+                        "href": "https://nodejs.org/en/docs/",
+                      },
+                      "ref": null,
+                      "rendered": "Node",
+                      "type": "a",
+                    },
+                    "type": "li",
+                  },
+                ],
+                "type": "ul",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "You'll also find interesting features such as persistant state (saving to local storage), browser history and routing, lazy loading, and protected vs unprotected routes.  Check it out!",
+                  "className": "mt20",
+                },
+                "ref": null,
+                "rendered": "You'll also find interesting features such as persistant state (saving to local storage), browser history and routing, lazy loading, and protected vs unprotected routes.  Check it out!",
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <Link
+                    replace={false}
+                    to="/dashboard"
+                  >
+                    Go back to the home page
+                  </Link>,
+                  "className": "mt20",
+                  "ghost": false,
+                  "loading": false,
+                  "prefixCls": "ant-btn",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Go back to the home page",
+                    "replace": false,
+                    "to": "/dashboard",
+                  },
+                  "ref": null,
+                  "rendered": "Go back to the home page",
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+            ],
+            "type": "div",
+          },
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

@@ -34,6 +34,11 @@ describe('SparkChart Component', () => {
     expect(wrapper.exists()).toBe(true);
   })
 
+  it("matches the snapshot", () => {
+    const { wrapper } = setup({});
+    expect(wrapper).toMatchSnapshot();
+  })
+
   it("will create a canvas element for the chart", () => {
     const { wrapper, props } = setup({});
     expect(wrapper.find('canvas').length).toBe(1);

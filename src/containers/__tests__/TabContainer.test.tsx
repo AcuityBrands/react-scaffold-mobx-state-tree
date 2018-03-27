@@ -36,6 +36,11 @@ describe('TabContainer Component', () => {
     expect(wrapper.exists()).toBe(true)
   })
 
+  it("matches the snapshot", () => {
+    const { wrapper } = setup({});
+    expect(wrapper).toMatchSnapshot();
+  })
+
   it("contains a root Tab component", () => {
     const { wrapper, tabs } = setup({});
     expect(tabs.length).toBe(1);

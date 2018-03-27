@@ -35,6 +35,11 @@ describe('TodoPage Component', () => {
     expect(wrapper.exists()).toBe(true)
   })
 
+  it("matches the snapshot", () => {
+    const { wrapper } = setup({});
+    expect(wrapper).toMatchSnapshot();
+  })
+
   it("can undo actions when the undo button is clicked", () => {
     const { wrapper, props } = setup({});
     const spy = jest.spyOn(props.appStore.todoStore, "undo")

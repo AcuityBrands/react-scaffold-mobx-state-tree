@@ -31,6 +31,11 @@ describe('Main Navigation Component', () => {
     expect(wrapper.exists()).toBe(true);
   })
 
+  it("matches the snapshot", () => {
+    const { wrapper } = setup({});
+    expect(wrapper).toMatchSnapshot();
+  })
+
   it("always renders a Menu", () => {
     const { wrapper } = setup({});
     const menu = wrapper.find("Menu");

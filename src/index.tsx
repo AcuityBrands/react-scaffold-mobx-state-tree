@@ -1,10 +1,9 @@
-import './polyfill'; // Import cherry picked polyfills
+import "regenerator-runtime/runtime";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom"
 import { onSnapshot } from 'mobx-state-tree';
 import { Provider } from "mobx-react";
-import { TodoStore, ITodoStore } from './stores/TodoStore';
 import { AppStore, IAppStore } from './stores/AppStore';
 import Routes from './Routes';
 
@@ -53,11 +52,11 @@ onSnapshot(appStore, snapshot => {
 // Render application
 function renderApp() {
   ReactDOM.render(
-    <Router>
-      <Provider appStore={appStore}>
+    <Provider appStore={appStore}>
+      <Router>
         <Routes />
-      </Provider>
-    </Router>,
+      </Router>
+    </Provider>,
     document.getElementById('root')
   );
 }

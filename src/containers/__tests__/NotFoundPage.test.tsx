@@ -20,4 +20,9 @@ describe('NotFoundPage Component', () => {
     const { wrapper } = setup({});
     expect(wrapper.exists()).toBe(true)
   })
+
+  it("matches the snapshot", () => {
+    const { wrapper } = setup({});
+    expect(wrapper).toMatchSnapshot();
+  })
 })

@@ -13,7 +13,7 @@ interface IDashboardProps {
 }
 
 @inject("appStore") @observer
-export class DashboardPage extends React.Component<IDashboardProps, undefined> {
+export default class DashboardPage extends React.Component<IDashboardProps, undefined> {
 
   @observable sliderValue = 1000;
   private mapComponent:any;

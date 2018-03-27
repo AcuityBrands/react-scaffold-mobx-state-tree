@@ -1,0 +1,1995 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoPage Component matches the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <TodoPage
+    appStore={
+      Object {
+        "todoStore": Object {
+          "add": [MockFunction],
+          "getSuggestions": [MockFunction],
+          "redo": [MockFunction],
+          "todos": Array [],
+          "undo": [MockFunction],
+        },
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <Row
+        gutter={0}
+      >
+        <Col
+          span={16}
+        >
+          <div
+            className="card"
+          >
+            <div
+              className="card-header"
+            >
+              <h2>
+                Your Tasks
+              </h2>
+              <ButtonGroup>
+                <Button
+                  className="todo-undo-button"
+                  ghost={false}
+                  loading={false}
+                  onClick={[MockFunction]}
+                  prefixCls="ant-btn"
+                >
+                  <Icon
+                    type="left"
+                  />
+                   Undo
+                </Button>
+                <Button
+                  className="todo-redo-button"
+                  ghost={false}
+                  loading={false}
+                  onClick={[MockFunction]}
+                  prefixCls="ant-btn"
+                >
+                  Redo 
+                  <Icon
+                    type="right"
+                  />
+                </Button>
+              </ButtonGroup>
+            </div>
+            <p
+              className="mb30"
+            >
+              Vestibulum in nibh nec odio lobortis tempus sed in dolor. Aenean viverra interdum ante, 
+              <strong>
+                vel consectetur lorem eleifend
+              </strong>
+               eget. Vestibulum fringilla 
+              <a
+                href="#"
+              >
+                magna lorem.
+              </a>
+            </p>
+            <Search
+              className="todo-input"
+              enterButton="Add Task"
+              inputPrefixCls="ant-input"
+              onChange={[Function]}
+              onSearch={[Function]}
+              placeholder="create new task"
+              prefixCls="ant-input-search"
+              size="large"
+              value=""
+            />
+            <TodoList
+              todoStore={
+                Object {
+                  "add": [MockFunction],
+                  "getSuggestions": [MockFunction],
+                  "redo": [MockFunction],
+                  "todos": Array [],
+                  "undo": [MockFunction],
+                }
+              }
+            />
+            <div
+              className="text-center"
+            >
+              <div
+                className="mt20"
+              >
+                <Button
+                  className="todo-get-suggestions"
+                  ghost={false}
+                  loading={false}
+                  onClick={[Function]}
+                  prefixCls="ant-btn"
+                >
+                  Suggest Tasks
+                </Button>
+                <InputNumber
+                  defaultValue={5}
+                  max={100}
+                  min={1}
+                  onChange={[Function]}
+                  prefixCls="ant-input-number"
+                  step={1}
+                  style={
+                    Object {
+                      "marginLeft": "5px",
+                    }
+                  }
+                />
+              </div>
+            </div>
+          </div>
+        </Col>
+        <Col
+          offset={1}
+          span={6}
+        >
+          <h3
+            className="mt20"
+          >
+            Managing Tasks
+          </h3>
+          <p
+            className="mt10 light"
+          >
+            Tasks are automatically saved to your local storage (assuming it's available) by using a nifty feature of mobx-state-tree called snapshotting.
+          </p>
+          <p
+            className="mt10 light"
+          >
+            Create new tasks by typing a task title into the input box.  Complete the task by clicking the task title.  If you run out of work, simply click the "Suggest Tasks" button.
+          </p>
+          <h3
+            className="mt30"
+          >
+            Undo / Redo
+          </h3>
+          <p
+            className="mt20 light"
+          >
+            This widget features the ability to undo/redo activities. Once you branch your undo history, you will no longer be able to redo past actions.
+          </p>
+        </Col>
+      </Row>,
+      "className": "content-wrapper",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <Col
+            span={16}
+          >
+            <div
+              className="card"
+            >
+              <div
+                className="card-header"
+              >
+                <h2>
+                  Your Tasks
+                </h2>
+                <ButtonGroup>
+                  <Button
+                    className="todo-undo-button"
+                    ghost={false}
+                    loading={false}
+                    onClick={[MockFunction]}
+                    prefixCls="ant-btn"
+                  >
+                    <Icon
+                      type="left"
+                    />
+                     Undo
+                  </Button>
+                  <Button
+                    className="todo-redo-button"
+                    ghost={false}
+                    loading={false}
+                    onClick={[MockFunction]}
+                    prefixCls="ant-btn"
+                  >
+                    Redo 
+                    <Icon
+                      type="right"
+                    />
+                  </Button>
+                </ButtonGroup>
+              </div>
+              <p
+                className="mb30"
+              >
+                Vestibulum in nibh nec odio lobortis tempus sed in dolor. Aenean viverra interdum ante, 
+                <strong>
+                  vel consectetur lorem eleifend
+                </strong>
+                 eget. Vestibulum fringilla 
+                <a
+                  href="#"
+                >
+                  magna lorem.
+                </a>
+              </p>
+              <Search
+                className="todo-input"
+                enterButton="Add Task"
+                inputPrefixCls="ant-input"
+                onChange={[Function]}
+                onSearch={[Function]}
+                placeholder="create new task"
+                prefixCls="ant-input-search"
+                size="large"
+                value=""
+              />
+              <TodoList
+                todoStore={
+                  Object {
+                    "add": [MockFunction],
+                    "getSuggestions": [MockFunction],
+                    "redo": [MockFunction],
+                    "todos": Array [],
+                    "undo": [MockFunction],
+                  }
+                }
+              />
+              <div
+                className="text-center"
+              >
+                <div
+                  className="mt20"
+                >
+                  <Button
+                    className="todo-get-suggestions"
+                    ghost={false}
+                    loading={false}
+                    onClick={[Function]}
+                    prefixCls="ant-btn"
+                  >
+                    Suggest Tasks
+                  </Button>
+                  <InputNumber
+                    defaultValue={5}
+                    max={100}
+                    min={1}
+                    onChange={[Function]}
+                    prefixCls="ant-input-number"
+                    step={1}
+                    style={
+                      Object {
+                        "marginLeft": "5px",
+                      }
+                    }
+                  />
+                </div>
+              </div>
+            </div>
+          </Col>,
+          <Col
+            offset={1}
+            span={6}
+          >
+            <h3
+              className="mt20"
+            >
+              Managing Tasks
+            </h3>
+            <p
+              className="mt10 light"
+            >
+              Tasks are automatically saved to your local storage (assuming it's available) by using a nifty feature of mobx-state-tree called snapshotting.
+            </p>
+            <p
+              className="mt10 light"
+            >
+              Create new tasks by typing a task title into the input box.  Complete the task by clicking the task title.  If you run out of work, simply click the "Suggest Tasks" button.
+            </p>
+            <h3
+              className="mt30"
+            >
+              Undo / Redo
+            </h3>
+            <p
+              className="mt20 light"
+            >
+              This widget features the ability to undo/redo activities. Once you branch your undo history, you will no longer be able to redo past actions.
+            </p>
+          </Col>,
+        ],
+        "gutter": 0,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <div
+              className="card"
+            >
+              <div
+                className="card-header"
+              >
+                <h2>
+                  Your Tasks
+                </h2>
+                <ButtonGroup>
+                  <Button
+                    className="todo-undo-button"
+                    ghost={false}
+                    loading={false}
+                    onClick={[MockFunction]}
+                    prefixCls="ant-btn"
+                  >
+                    <Icon
+                      type="left"
+                    />
+                     Undo
+                  </Button>
+                  <Button
+                    className="todo-redo-button"
+                    ghost={false}
+                    loading={false}
+                    onClick={[MockFunction]}
+                    prefixCls="ant-btn"
+                  >
+                    Redo 
+                    <Icon
+                      type="right"
+                    />
+                  </Button>
+                </ButtonGroup>
+              </div>
+              <p
+                className="mb30"
+              >
+                Vestibulum in nibh nec odio lobortis tempus sed in dolor. Aenean viverra interdum ante, 
+                <strong>
+                  vel consectetur lorem eleifend
+                </strong>
+                 eget. Vestibulum fringilla 
+                <a
+                  href="#"
+                >
+                  magna lorem.
+                </a>
+              </p>
+              <Search
+                className="todo-input"
+                enterButton="Add Task"
+                inputPrefixCls="ant-input"
+                onChange={[Function]}
+                onSearch={[Function]}
+                placeholder="create new task"
+                prefixCls="ant-input-search"
+                size="large"
+                value=""
+              />
+              <TodoList
+                todoStore={
+                  Object {
+                    "add": [MockFunction],
+                    "getSuggestions": [MockFunction],
+                    "redo": [MockFunction],
+                    "todos": Array [],
+                    "undo": [MockFunction],
+                  }
+                }
+              />
+              <div
+                className="text-center"
+              >
+                <div
+                  className="mt20"
+                >
+                  <Button
+                    className="todo-get-suggestions"
+                    ghost={false}
+                    loading={false}
+                    onClick={[Function]}
+                    prefixCls="ant-btn"
+                  >
+                    Suggest Tasks
+                  </Button>
+                  <InputNumber
+                    defaultValue={5}
+                    max={100}
+                    min={1}
+                    onChange={[Function]}
+                    prefixCls="ant-input-number"
+                    step={1}
+                    style={
+                      Object {
+                        "marginLeft": "5px",
+                      }
+                    }
+                  />
+                </div>
+              </div>
+            </div>,
+            "span": 16,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="card-header"
+                >
+                  <h2>
+                    Your Tasks
+                  </h2>
+                  <ButtonGroup>
+                    <Button
+                      className="todo-undo-button"
+                      ghost={false}
+                      loading={false}
+                      onClick={[MockFunction]}
+                      prefixCls="ant-btn"
+                    >
+                      <Icon
+                        type="left"
+                      />
+                       Undo
+                    </Button>
+                    <Button
+                      className="todo-redo-button"
+                      ghost={false}
+                      loading={false}
+                      onClick={[MockFunction]}
+                      prefixCls="ant-btn"
+                    >
+                      Redo 
+                      <Icon
+                        type="right"
+                      />
+                    </Button>
+                  </ButtonGroup>
+                </div>,
+                <p
+                  className="mb30"
+                >
+                  Vestibulum in nibh nec odio lobortis tempus sed in dolor. Aenean viverra interdum ante, 
+                  <strong>
+                    vel consectetur lorem eleifend
+                  </strong>
+                   eget. Vestibulum fringilla 
+                  <a
+                    href="#"
+                  >
+                    magna lorem.
+                  </a>
+                </p>,
+                <Search
+                  className="todo-input"
+                  enterButton="Add Task"
+                  inputPrefixCls="ant-input"
+                  onChange={[Function]}
+                  onSearch={[Function]}
+                  placeholder="create new task"
+                  prefixCls="ant-input-search"
+                  size="large"
+                  value=""
+                />,
+                <TodoList
+                  todoStore={
+                    Object {
+                      "add": [MockFunction],
+                      "getSuggestions": [MockFunction],
+                      "redo": [MockFunction],
+                      "todos": Array [],
+                      "undo": [MockFunction],
+                    }
+                  }
+                />,
+                <div
+                  className="text-center"
+                >
+                  <div
+                    className="mt20"
+                  >
+                    <Button
+                      className="todo-get-suggestions"
+                      ghost={false}
+                      loading={false}
+                      onClick={[Function]}
+                      prefixCls="ant-btn"
+                    >
+                      Suggest Tasks
+                    </Button>
+                    <InputNumber
+                      defaultValue={5}
+                      max={100}
+                      min={1}
+                      onChange={[Function]}
+                      prefixCls="ant-input-number"
+                      step={1}
+                      style={
+                        Object {
+                          "marginLeft": "5px",
+                        }
+                      }
+                    />
+                  </div>
+                </div>,
+              ],
+              "className": "card",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <h2>
+                      Your Tasks
+                    </h2>,
+                    <ButtonGroup>
+                      <Button
+                        className="todo-undo-button"
+                        ghost={false}
+                        loading={false}
+                        onClick={[MockFunction]}
+                        prefixCls="ant-btn"
+                      >
+                        <Icon
+                          type="left"
+                        />
+                         Undo
+                      </Button>
+                      <Button
+                        className="todo-redo-button"
+                        ghost={false}
+                        loading={false}
+                        onClick={[MockFunction]}
+                        prefixCls="ant-btn"
+                      >
+                        Redo 
+                        <Icon
+                          type="right"
+                        />
+                      </Button>
+                    </ButtonGroup>,
+                  ],
+                  "className": "card-header",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Your Tasks",
+                    },
+                    "ref": null,
+                    "rendered": "Your Tasks",
+                    "type": "h2",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "children": Array [
+                        <Button
+                          className="todo-undo-button"
+                          ghost={false}
+                          loading={false}
+                          onClick={[MockFunction]}
+                          prefixCls="ant-btn"
+                        >
+                          <Icon
+                            type="left"
+                          />
+                           Undo
+                        </Button>,
+                        <Button
+                          className="todo-redo-button"
+                          ghost={false}
+                          loading={false}
+                          onClick={[MockFunction]}
+                          prefixCls="ant-btn"
+                        >
+                          Redo 
+                          <Icon
+                            type="right"
+                          />
+                        </Button>,
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "children": Array [
+                            <Icon
+                              type="left"
+                            />,
+                            " Undo",
+                          ],
+                          "className": "todo-undo-button",
+                          "ghost": false,
+                          "loading": false,
+                          "onClick": [MockFunction],
+                          "prefixCls": "ant-btn",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "function",
+                            "props": Object {
+                              "type": "left",
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": [Function],
+                          },
+                          " Undo",
+                        ],
+                        "type": [Function],
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "children": Array [
+                            "Redo ",
+                            <Icon
+                              type="right"
+                            />,
+                          ],
+                          "className": "todo-redo-button",
+                          "ghost": false,
+                          "loading": false,
+                          "onClick": [MockFunction],
+                          "prefixCls": "ant-btn",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          "Redo ",
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "function",
+                            "props": Object {
+                              "type": "right",
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": [Function],
+                          },
+                        ],
+                        "type": [Function],
+                      },
+                    ],
+                    "type": [Function],
+                  },
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Vestibulum in nibh nec odio lobortis tempus sed in dolor. Aenean viverra interdum ante, ",
+                    <strong>
+                      vel consectetur lorem eleifend
+                    </strong>,
+                    " eget. Vestibulum fringilla ",
+                    <a
+                      href="#"
+                    >
+                      magna lorem.
+                    </a>,
+                  ],
+                  "className": "mb30",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Vestibulum in nibh nec odio lobortis tempus sed in dolor. Aenean viverra interdum ante, ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "vel consectetur lorem eleifend",
+                    },
+                    "ref": null,
+                    "rendered": "vel consectetur lorem eleifend",
+                    "type": "strong",
+                  },
+                  " eget. Vestibulum fringilla ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "magna lorem.",
+                      "href": "#",
+                    },
+                    "ref": null,
+                    "rendered": "magna lorem.",
+                    "type": "a",
+                  },
+                ],
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "className": "todo-input",
+                  "enterButton": "Add Task",
+                  "inputPrefixCls": "ant-input",
+                  "onChange": [Function],
+                  "onSearch": [Function],
+                  "placeholder": "create new task",
+                  "prefixCls": "ant-input-search",
+                  "size": "large",
+                  "value": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "todoStore": Object {
+                    "add": [MockFunction],
+                    "getSuggestions": [MockFunction],
+                    "redo": [MockFunction],
+                    "todos": Array [],
+                    "undo": [MockFunction],
+                  },
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <div
+                    className="mt20"
+                  >
+                    <Button
+                      className="todo-get-suggestions"
+                      ghost={false}
+                      loading={false}
+                      onClick={[Function]}
+                      prefixCls="ant-btn"
+                    >
+                      Suggest Tasks
+                    </Button>
+                    <InputNumber
+                      defaultValue={5}
+                      max={100}
+                      min={1}
+                      onChange={[Function]}
+                      prefixCls="ant-input-number"
+                      step={1}
+                      style={
+                        Object {
+                          "marginLeft": "5px",
+                        }
+                      }
+                    />
+                  </div>,
+                  "className": "text-center",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <Button
+                        className="todo-get-suggestions"
+                        ghost={false}
+                        loading={false}
+                        onClick={[Function]}
+                        prefixCls="ant-btn"
+                      >
+                        Suggest Tasks
+                      </Button>,
+                      <InputNumber
+                        defaultValue={5}
+                        max={100}
+                        min={1}
+                        onChange={[Function]}
+                        prefixCls="ant-input-number"
+                        step={1}
+                        style={
+                          Object {
+                            "marginLeft": "5px",
+                          }
+                        }
+                      />,
+                    ],
+                    "className": "mt20",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "Suggest Tasks",
+                        "className": "todo-get-suggestions",
+                        "ghost": false,
+                        "loading": false,
+                        "onClick": [Function],
+                        "prefixCls": "ant-btn",
+                      },
+                      "ref": null,
+                      "rendered": "Suggest Tasks",
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "defaultValue": 5,
+                        "max": 100,
+                        "min": 1,
+                        "onChange": [Function],
+                        "prefixCls": "ant-input-number",
+                        "step": 1,
+                        "style": Object {
+                          "marginLeft": "5px",
+                        },
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": [Function],
+                    },
+                  ],
+                  "type": "div",
+                },
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <h3
+                className="mt20"
+              >
+                Managing Tasks
+              </h3>,
+              <p
+                className="mt10 light"
+              >
+                Tasks are automatically saved to your local storage (assuming it's available) by using a nifty feature of mobx-state-tree called snapshotting.
+              </p>,
+              <p
+                className="mt10 light"
+              >
+                Create new tasks by typing a task title into the input box.  Complete the task by clicking the task title.  If you run out of work, simply click the "Suggest Tasks" button.
+              </p>,
+              <h3
+                className="mt30"
+              >
+                Undo / Redo
+              </h3>,
+              <p
+                className="mt20 light"
+              >
+                This widget features the ability to undo/redo activities. Once you branch your undo history, you will no longer be able to redo past actions.
+              </p>,
+            ],
+            "offset": 1,
+            "span": 6,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Managing Tasks",
+                "className": "mt20",
+              },
+              "ref": null,
+              "rendered": "Managing Tasks",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Tasks are automatically saved to your local storage (assuming it's available) by using a nifty feature of mobx-state-tree called snapshotting.",
+                "className": "mt10 light",
+              },
+              "ref": null,
+              "rendered": "Tasks are automatically saved to your local storage (assuming it's available) by using a nifty feature of mobx-state-tree called snapshotting.",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Create new tasks by typing a task title into the input box.  Complete the task by clicking the task title.  If you run out of work, simply click the \\"Suggest Tasks\\" button.",
+                "className": "mt10 light",
+              },
+              "ref": null,
+              "rendered": "Create new tasks by typing a task title into the input box.  Complete the task by clicking the task title.  If you run out of work, simply click the \\"Suggest Tasks\\" button.",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Undo / Redo",
+                "className": "mt30",
+              },
+              "ref": null,
+              "rendered": "Undo / Redo",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "This widget features the ability to undo/redo activities. Once you branch your undo history, you will no longer be able to redo past actions.",
+                "className": "mt20 light",
+              },
+              "ref": null,
+              "rendered": "This widget features the ability to undo/redo activities. Once you branch your undo history, you will no longer be able to redo past actions.",
+              "type": "p",
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <Row
+          gutter={0}
+        >
+          <Col
+            span={16}
+          >
+            <div
+              className="card"
+            >
+              <div
+                className="card-header"
+              >
+                <h2>
+                  Your Tasks
+                </h2>
+                <ButtonGroup>
+                  <Button
+                    className="todo-undo-button"
+                    ghost={false}
+                    loading={false}
+                    onClick={[MockFunction]}
+                    prefixCls="ant-btn"
+                  >
+                    <Icon
+                      type="left"
+                    />
+                     Undo
+                  </Button>
+                  <Button
+                    className="todo-redo-button"
+                    ghost={false}
+                    loading={false}
+                    onClick={[MockFunction]}
+                    prefixCls="ant-btn"
+                  >
+                    Redo 
+                    <Icon
+                      type="right"
+                    />
+                  </Button>
+                </ButtonGroup>
+              </div>
+              <p
+                className="mb30"
+              >
+                Vestibulum in nibh nec odio lobortis tempus sed in dolor. Aenean viverra interdum ante, 
+                <strong>
+                  vel consectetur lorem eleifend
+                </strong>
+                 eget. Vestibulum fringilla 
+                <a
+                  href="#"
+                >
+                  magna lorem.
+                </a>
+              </p>
+              <Search
+                className="todo-input"
+                enterButton="Add Task"
+                inputPrefixCls="ant-input"
+                onChange={[Function]}
+                onSearch={[Function]}
+                placeholder="create new task"
+                prefixCls="ant-input-search"
+                size="large"
+                value=""
+              />
+              <TodoList
+                todoStore={
+                  Object {
+                    "add": [MockFunction],
+                    "getSuggestions": [MockFunction],
+                    "redo": [MockFunction],
+                    "todos": Array [],
+                    "undo": [MockFunction],
+                  }
+                }
+              />
+              <div
+                className="text-center"
+              >
+                <div
+                  className="mt20"
+                >
+                  <Button
+                    className="todo-get-suggestions"
+                    ghost={false}
+                    loading={false}
+                    onClick={[Function]}
+                    prefixCls="ant-btn"
+                  >
+                    Suggest Tasks
+                  </Button>
+                  <InputNumber
+                    defaultValue={5}
+                    max={100}
+                    min={1}
+                    onChange={[Function]}
+                    prefixCls="ant-input-number"
+                    step={1}
+                    style={
+                      Object {
+                        "marginLeft": "5px",
+                      }
+                    }
+                  />
+                </div>
+              </div>
+            </div>
+          </Col>
+          <Col
+            offset={1}
+            span={6}
+          >
+            <h3
+              className="mt20"
+            >
+              Managing Tasks
+            </h3>
+            <p
+              className="mt10 light"
+            >
+              Tasks are automatically saved to your local storage (assuming it's available) by using a nifty feature of mobx-state-tree called snapshotting.
+            </p>
+            <p
+              className="mt10 light"
+            >
+              Create new tasks by typing a task title into the input box.  Complete the task by clicking the task title.  If you run out of work, simply click the "Suggest Tasks" button.
+            </p>
+            <h3
+              className="mt30"
+            >
+              Undo / Redo
+            </h3>
+            <p
+              className="mt20 light"
+            >
+              This widget features the ability to undo/redo activities. Once you branch your undo history, you will no longer be able to redo past actions.
+            </p>
+          </Col>
+        </Row>,
+        "className": "content-wrapper",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <Col
+              span={16}
+            >
+              <div
+                className="card"
+              >
+                <div
+                  className="card-header"
+                >
+                  <h2>
+                    Your Tasks
+                  </h2>
+                  <ButtonGroup>
+                    <Button
+                      className="todo-undo-button"
+                      ghost={false}
+                      loading={false}
+                      onClick={[MockFunction]}
+                      prefixCls="ant-btn"
+                    >
+                      <Icon
+                        type="left"
+                      />
+                       Undo
+                    </Button>
+                    <Button
+                      className="todo-redo-button"
+                      ghost={false}
+                      loading={false}
+                      onClick={[MockFunction]}
+                      prefixCls="ant-btn"
+                    >
+                      Redo 
+                      <Icon
+                        type="right"
+                      />
+                    </Button>
+                  </ButtonGroup>
+                </div>
+                <p
+                  className="mb30"
+                >
+                  Vestibulum in nibh nec odio lobortis tempus sed in dolor. Aenean viverra interdum ante, 
+                  <strong>
+                    vel consectetur lorem eleifend
+                  </strong>
+                   eget. Vestibulum fringilla 
+                  <a
+                    href="#"
+                  >
+                    magna lorem.
+                  </a>
+                </p>
+                <Search
+                  className="todo-input"
+                  enterButton="Add Task"
+                  inputPrefixCls="ant-input"
+                  onChange={[Function]}
+                  onSearch={[Function]}
+                  placeholder="create new task"
+                  prefixCls="ant-input-search"
+                  size="large"
+                  value=""
+                />
+                <TodoList
+                  todoStore={
+                    Object {
+                      "add": [MockFunction],
+                      "getSuggestions": [MockFunction],
+                      "redo": [MockFunction],
+                      "todos": Array [],
+                      "undo": [MockFunction],
+                    }
+                  }
+                />
+                <div
+                  className="text-center"
+                >
+                  <div
+                    className="mt20"
+                  >
+                    <Button
+                      className="todo-get-suggestions"
+                      ghost={false}
+                      loading={false}
+                      onClick={[Function]}
+                      prefixCls="ant-btn"
+                    >
+                      Suggest Tasks
+                    </Button>
+                    <InputNumber
+                      defaultValue={5}
+                      max={100}
+                      min={1}
+                      onChange={[Function]}
+                      prefixCls="ant-input-number"
+                      step={1}
+                      style={
+                        Object {
+                          "marginLeft": "5px",
+                        }
+                      }
+                    />
+                  </div>
+                </div>
+              </div>
+            </Col>,
+            <Col
+              offset={1}
+              span={6}
+            >
+              <h3
+                className="mt20"
+              >
+                Managing Tasks
+              </h3>
+              <p
+                className="mt10 light"
+              >
+                Tasks are automatically saved to your local storage (assuming it's available) by using a nifty feature of mobx-state-tree called snapshotting.
+              </p>
+              <p
+                className="mt10 light"
+              >
+                Create new tasks by typing a task title into the input box.  Complete the task by clicking the task title.  If you run out of work, simply click the "Suggest Tasks" button.
+              </p>
+              <h3
+                className="mt30"
+              >
+                Undo / Redo
+              </h3>
+              <p
+                className="mt20 light"
+              >
+                This widget features the ability to undo/redo activities. Once you branch your undo history, you will no longer be able to redo past actions.
+              </p>
+            </Col>,
+          ],
+          "gutter": 0,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": <div
+                className="card"
+              >
+                <div
+                  className="card-header"
+                >
+                  <h2>
+                    Your Tasks
+                  </h2>
+                  <ButtonGroup>
+                    <Button
+                      className="todo-undo-button"
+                      ghost={false}
+                      loading={false}
+                      onClick={[MockFunction]}
+                      prefixCls="ant-btn"
+                    >
+                      <Icon
+                        type="left"
+                      />
+                       Undo
+                    </Button>
+                    <Button
+                      className="todo-redo-button"
+                      ghost={false}
+                      loading={false}
+                      onClick={[MockFunction]}
+                      prefixCls="ant-btn"
+                    >
+                      Redo 
+                      <Icon
+                        type="right"
+                      />
+                    </Button>
+                  </ButtonGroup>
+                </div>
+                <p
+                  className="mb30"
+                >
+                  Vestibulum in nibh nec odio lobortis tempus sed in dolor. Aenean viverra interdum ante, 
+                  <strong>
+                    vel consectetur lorem eleifend
+                  </strong>
+                   eget. Vestibulum fringilla 
+                  <a
+                    href="#"
+                  >
+                    magna lorem.
+                  </a>
+                </p>
+                <Search
+                  className="todo-input"
+                  enterButton="Add Task"
+                  inputPrefixCls="ant-input"
+                  onChange={[Function]}
+                  onSearch={[Function]}
+                  placeholder="create new task"
+                  prefixCls="ant-input-search"
+                  size="large"
+                  value=""
+                />
+                <TodoList
+                  todoStore={
+                    Object {
+                      "add": [MockFunction],
+                      "getSuggestions": [MockFunction],
+                      "redo": [MockFunction],
+                      "todos": Array [],
+                      "undo": [MockFunction],
+                    }
+                  }
+                />
+                <div
+                  className="text-center"
+                >
+                  <div
+                    className="mt20"
+                  >
+                    <Button
+                      className="todo-get-suggestions"
+                      ghost={false}
+                      loading={false}
+                      onClick={[Function]}
+                      prefixCls="ant-btn"
+                    >
+                      Suggest Tasks
+                    </Button>
+                    <InputNumber
+                      defaultValue={5}
+                      max={100}
+                      min={1}
+                      onChange={[Function]}
+                      prefixCls="ant-input-number"
+                      step={1}
+                      style={
+                        Object {
+                          "marginLeft": "5px",
+                        }
+                      }
+                    />
+                  </div>
+                </div>
+              </div>,
+              "span": 16,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <div
+                    className="card-header"
+                  >
+                    <h2>
+                      Your Tasks
+                    </h2>
+                    <ButtonGroup>
+                      <Button
+                        className="todo-undo-button"
+                        ghost={false}
+                        loading={false}
+                        onClick={[MockFunction]}
+                        prefixCls="ant-btn"
+                      >
+                        <Icon
+                          type="left"
+                        />
+                         Undo
+                      </Button>
+                      <Button
+                        className="todo-redo-button"
+                        ghost={false}
+                        loading={false}
+                        onClick={[MockFunction]}
+                        prefixCls="ant-btn"
+                      >
+                        Redo 
+                        <Icon
+                          type="right"
+                        />
+                      </Button>
+                    </ButtonGroup>
+                  </div>,
+                  <p
+                    className="mb30"
+                  >
+                    Vestibulum in nibh nec odio lobortis tempus sed in dolor. Aenean viverra interdum ante, 
+                    <strong>
+                      vel consectetur lorem eleifend
+                    </strong>
+                     eget. Vestibulum fringilla 
+                    <a
+                      href="#"
+                    >
+                      magna lorem.
+                    </a>
+                  </p>,
+                  <Search
+                    className="todo-input"
+                    enterButton="Add Task"
+                    inputPrefixCls="ant-input"
+                    onChange={[Function]}
+                    onSearch={[Function]}
+                    placeholder="create new task"
+                    prefixCls="ant-input-search"
+                    size="large"
+                    value=""
+                  />,
+                  <TodoList
+                    todoStore={
+                      Object {
+                        "add": [MockFunction],
+                        "getSuggestions": [MockFunction],
+                        "redo": [MockFunction],
+                        "todos": Array [],
+                        "undo": [MockFunction],
+                      }
+                    }
+                  />,
+                  <div
+                    className="text-center"
+                  >
+                    <div
+                      className="mt20"
+                    >
+                      <Button
+                        className="todo-get-suggestions"
+                        ghost={false}
+                        loading={false}
+                        onClick={[Function]}
+                        prefixCls="ant-btn"
+                      >
+                        Suggest Tasks
+                      </Button>
+                      <InputNumber
+                        defaultValue={5}
+                        max={100}
+                        min={1}
+                        onChange={[Function]}
+                        prefixCls="ant-input-number"
+                        step={1}
+                        style={
+                          Object {
+                            "marginLeft": "5px",
+                          }
+                        }
+                      />
+                    </div>
+                  </div>,
+                ],
+                "className": "card",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <h2>
+                        Your Tasks
+                      </h2>,
+                      <ButtonGroup>
+                        <Button
+                          className="todo-undo-button"
+                          ghost={false}
+                          loading={false}
+                          onClick={[MockFunction]}
+                          prefixCls="ant-btn"
+                        >
+                          <Icon
+                            type="left"
+                          />
+                           Undo
+                        </Button>
+                        <Button
+                          className="todo-redo-button"
+                          ghost={false}
+                          loading={false}
+                          onClick={[MockFunction]}
+                          prefixCls="ant-btn"
+                        >
+                          Redo 
+                          <Icon
+                            type="right"
+                          />
+                        </Button>
+                      </ButtonGroup>,
+                    ],
+                    "className": "card-header",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Your Tasks",
+                      },
+                      "ref": null,
+                      "rendered": "Your Tasks",
+                      "type": "h2",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "children": Array [
+                          <Button
+                            className="todo-undo-button"
+                            ghost={false}
+                            loading={false}
+                            onClick={[MockFunction]}
+                            prefixCls="ant-btn"
+                          >
+                            <Icon
+                              type="left"
+                            />
+                             Undo
+                          </Button>,
+                          <Button
+                            className="todo-redo-button"
+                            ghost={false}
+                            loading={false}
+                            onClick={[MockFunction]}
+                            prefixCls="ant-btn"
+                          >
+                            Redo 
+                            <Icon
+                              type="right"
+                            />
+                          </Button>,
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "class",
+                          "props": Object {
+                            "children": Array [
+                              <Icon
+                                type="left"
+                              />,
+                              " Undo",
+                            ],
+                            "className": "todo-undo-button",
+                            "ghost": false,
+                            "loading": false,
+                            "onClick": [MockFunction],
+                            "prefixCls": "ant-btn",
+                          },
+                          "ref": null,
+                          "rendered": Array [
+                            Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "function",
+                              "props": Object {
+                                "type": "left",
+                              },
+                              "ref": null,
+                              "rendered": null,
+                              "type": [Function],
+                            },
+                            " Undo",
+                          ],
+                          "type": [Function],
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "class",
+                          "props": Object {
+                            "children": Array [
+                              "Redo ",
+                              <Icon
+                                type="right"
+                              />,
+                            ],
+                            "className": "todo-redo-button",
+                            "ghost": false,
+                            "loading": false,
+                            "onClick": [MockFunction],
+                            "prefixCls": "ant-btn",
+                          },
+                          "ref": null,
+                          "rendered": Array [
+                            "Redo ",
+                            Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "function",
+                              "props": Object {
+                                "type": "right",
+                              },
+                              "ref": null,
+                              "rendered": null,
+                              "type": [Function],
+                            },
+                          ],
+                          "type": [Function],
+                        },
+                      ],
+                      "type": [Function],
+                    },
+                  ],
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Vestibulum in nibh nec odio lobortis tempus sed in dolor. Aenean viverra interdum ante, ",
+                      <strong>
+                        vel consectetur lorem eleifend
+                      </strong>,
+                      " eget. Vestibulum fringilla ",
+                      <a
+                        href="#"
+                      >
+                        magna lorem.
+                      </a>,
+                    ],
+                    "className": "mb30",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Vestibulum in nibh nec odio lobortis tempus sed in dolor. Aenean viverra interdum ante, ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "vel consectetur lorem eleifend",
+                      },
+                      "ref": null,
+                      "rendered": "vel consectetur lorem eleifend",
+                      "type": "strong",
+                    },
+                    " eget. Vestibulum fringilla ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "magna lorem.",
+                        "href": "#",
+                      },
+                      "ref": null,
+                      "rendered": "magna lorem.",
+                      "type": "a",
+                    },
+                  ],
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "className": "todo-input",
+                    "enterButton": "Add Task",
+                    "inputPrefixCls": "ant-input",
+                    "onChange": [Function],
+                    "onSearch": [Function],
+                    "placeholder": "create new task",
+                    "prefixCls": "ant-input-search",
+                    "size": "large",
+                    "value": "",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "todoStore": Object {
+                      "add": [MockFunction],
+                      "getSuggestions": [MockFunction],
+                      "redo": [MockFunction],
+                      "todos": Array [],
+                      "undo": [MockFunction],
+                    },
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <div
+                      className="mt20"
+                    >
+                      <Button
+                        className="todo-get-suggestions"
+                        ghost={false}
+                        loading={false}
+                        onClick={[Function]}
+                        prefixCls="ant-btn"
+                      >
+                        Suggest Tasks
+                      </Button>
+                      <InputNumber
+                        defaultValue={5}
+                        max={100}
+                        min={1}
+                        onChange={[Function]}
+                        prefixCls="ant-input-number"
+                        step={1}
+                        style={
+                          Object {
+                            "marginLeft": "5px",
+                          }
+                        }
+                      />
+                    </div>,
+                    "className": "text-center",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <Button
+                          className="todo-get-suggestions"
+                          ghost={false}
+                          loading={false}
+                          onClick={[Function]}
+                          prefixCls="ant-btn"
+                        >
+                          Suggest Tasks
+                        </Button>,
+                        <InputNumber
+                          defaultValue={5}
+                          max={100}
+                          min={1}
+                          onChange={[Function]}
+                          prefixCls="ant-input-number"
+                          step={1}
+                          style={
+                            Object {
+                              "marginLeft": "5px",
+                            }
+                          }
+                        />,
+                      ],
+                      "className": "mt20",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "children": "Suggest Tasks",
+                          "className": "todo-get-suggestions",
+                          "ghost": false,
+                          "loading": false,
+                          "onClick": [Function],
+                          "prefixCls": "ant-btn",
+                        },
+                        "ref": null,
+                        "rendered": "Suggest Tasks",
+                        "type": [Function],
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "defaultValue": 5,
+                          "max": 100,
+                          "min": 1,
+                          "onChange": [Function],
+                          "prefixCls": "ant-input-number",
+                          "step": 1,
+                          "style": Object {
+                            "marginLeft": "5px",
+                          },
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": [Function],
+                      },
+                    ],
+                    "type": "div",
+                  },
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <h3
+                  className="mt20"
+                >
+                  Managing Tasks
+                </h3>,
+                <p
+                  className="mt10 light"
+                >
+                  Tasks are automatically saved to your local storage (assuming it's available) by using a nifty feature of mobx-state-tree called snapshotting.
+                </p>,
+                <p
+                  className="mt10 light"
+                >
+                  Create new tasks by typing a task title into the input box.  Complete the task by clicking the task title.  If you run out of work, simply click the "Suggest Tasks" button.
+                </p>,
+                <h3
+                  className="mt30"
+                >
+                  Undo / Redo
+                </h3>,
+                <p
+                  className="mt20 light"
+                >
+                  This widget features the ability to undo/redo activities. Once you branch your undo history, you will no longer be able to redo past actions.
+                </p>,
+              ],
+              "offset": 1,
+              "span": 6,
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Managing Tasks",
+                  "className": "mt20",
+                },
+                "ref": null,
+                "rendered": "Managing Tasks",
+                "type": "h3",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Tasks are automatically saved to your local storage (assuming it's available) by using a nifty feature of mobx-state-tree called snapshotting.",
+                  "className": "mt10 light",
+                },
+                "ref": null,
+                "rendered": "Tasks are automatically saved to your local storage (assuming it's available) by using a nifty feature of mobx-state-tree called snapshotting.",
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Create new tasks by typing a task title into the input box.  Complete the task by clicking the task title.  If you run out of work, simply click the \\"Suggest Tasks\\" button.",
+                  "className": "mt10 light",
+                },
+                "ref": null,
+                "rendered": "Create new tasks by typing a task title into the input box.  Complete the task by clicking the task title.  If you run out of work, simply click the \\"Suggest Tasks\\" button.",
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Undo / Redo",
+                  "className": "mt30",
+                },
+                "ref": null,
+                "rendered": "Undo / Redo",
+                "type": "h3",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "This widget features the ability to undo/redo activities. Once you branch your undo history, you will no longer be able to redo past actions.",
+                  "className": "mt20 light",
+                },
+                "ref": null,
+                "rendered": "This widget features the ability to undo/redo activities. Once you branch your undo history, you will no longer be able to redo past actions.",
+                "type": "p",
+              },
+            ],
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

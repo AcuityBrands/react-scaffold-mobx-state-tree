@@ -27,6 +27,11 @@ describe('Todo List Item Component', () => {
     expect(wrapper.exists()).toBe(true);
   })
 
+  it("matches the snapshot", () => {
+    const { wrapper } = setup({});
+    expect(wrapper).toMatchSnapshot();
+  })
+
   it("will render a li item", () => {
     const { wrapper } = setup({});
     expect(wrapper.find("li").length).toBe(1);

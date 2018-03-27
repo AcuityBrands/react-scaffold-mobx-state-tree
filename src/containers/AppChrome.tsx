@@ -12,7 +12,7 @@ import MainNavigation from '../components/MainNavigation';
 import TabContainer from './TabContainer';
 import { Layout, Input, Menu, Icon, Avatar, Badge, Dropdown } from 'antd';
 
-import { DashboardPage } from './DashboardPage'
+import DashboardPage from './DashboardPage'
 import { LazyAbout } from './LazyAbout'
 import { LazyTodo } from './LazyTodo'
 

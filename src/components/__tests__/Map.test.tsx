@@ -23,6 +23,11 @@ describe('Map Component', () => {
     expect(wrapper.exists()).toBe(true);
   })
 
+  it("matches the snapshot", () => {
+    const { wrapper } = setup({});
+    expect(wrapper).toMatchSnapshot();
+  })
+
   it("creates a root container div", () => {
     const { wrapper } = setup({});
     const div = wrapper.find("div");

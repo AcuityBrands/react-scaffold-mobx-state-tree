@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js build
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js start
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -30,8 +30,8 @@ npm manifest:
       "chart.js": "^2.7.1",
       "compress-webpack-plugin": "^1.0.6",
       "mapbox-gl": "^0.44.1",
-      "mobx": "^3.5.1",
-      "mobx-react": "^4.4.1",
+      "mobx": "^4.1.0",
+      "mobx-react": "^5.0.0",
       "mobx-state-tree": "^2.0.2",
       "react": "^16.2.0",
       "react-dom": "^16.2.0",
@@ -5962,9 +5962,9 @@ Lockfile:
     dependencies:
       minimist "0.0.8"
   
-  mobx-react@^4.4.1:
-    version "4.4.1"
-    resolved "https://registry.yarnpkg.com/mobx-react/-/mobx-react-4.4.1.tgz#7cc793b55bbb7485f1febd18c1913c581c124edc"
+  mobx-react@^5.0.0:
+    version "5.0.0"
+    resolved "https://registry.yarnpkg.com/mobx-react/-/mobx-react-5.0.0.tgz#8d5a33be376fa22b184a6f555d40a6a3a8459a16"
     dependencies:
       hoist-non-react-statics "^2.3.1"
   
@@ -5974,11 +5974,7 @@ Lockfile:
     dependencies:
       mobx "^4.0.2"
   
-  mobx@^3.5.1:
-    version "3.5.1"
-    resolved "https://registry.yarnpkg.com/mobx/-/mobx-3.5.1.tgz#8e682ec535cf44e04005b9e37e2df66acc975a42"
-  
-  mobx@^4.0.2:
+  mobx@^4.0.2, mobx@^4.1.0:
     version "4.1.0"
     resolved "https://registry.yarnpkg.com/mobx/-/mobx-4.1.0.tgz#e4a9679cdafbe215b20e32ef93a7031845b3f1af"
   
@@ -9988,9 +9984,9 @@ Lockfile:
 
 Trace: 
   Error: Command failed.
-  Exit code: 2
+  Exit code: 1
   Command: sh
-  Arguments: -c ./node_modules/.bin/webpack --config webpack.prod.js --mode production
+  Arguments: -c ./node_modules/.bin/webpack-dev-server --config webpack.dev.js --mode development
   Directory: /Users/danielbradshaw/Projects/react-scaffold-mobx-state-tree
   Output:
   

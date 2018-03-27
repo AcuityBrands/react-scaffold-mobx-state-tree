@@ -1,0 +1,374 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Todo List Component matches the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <TodoList
+    todoStore={
+      Object {
+        "completedCount": 1,
+        "todoCount": 2,
+        "todos": Array [
+          Object {
+            "completed": true,
+            "id": 1,
+            "title": "todo1",
+            "userId": 1,
+          },
+          Object {
+            "completed": false,
+            "id": 2,
+            "title": "todo2",
+            "userId": 2,
+          },
+        ],
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": Array [
+        <ul
+          className="todo-list"
+        >
+          <TodoListItem
+            todo={
+              Object {
+                "completed": true,
+                "id": 1,
+                "title": "todo1",
+                "userId": 1,
+              }
+            }
+          />
+          <TodoListItem
+            todo={
+              Object {
+                "completed": false,
+                "id": 2,
+                "title": "todo2",
+                "userId": 2,
+              }
+            }
+          />
+        </ul>,
+        <Progress
+          percent={0}
+          prefixCls="ant-progress"
+          showInfo={true}
+          size="default"
+          trailColor="#f3f3f3"
+          type="line"
+        />,
+        <br />,
+        <div>
+          1
+           of 
+          2
+           completed
+        </div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <TodoListItem
+              todo={
+                Object {
+                  "completed": true,
+                  "id": 1,
+                  "title": "todo1",
+                  "userId": 1,
+                }
+              }
+            />,
+            <TodoListItem
+              todo={
+                Object {
+                  "completed": false,
+                  "id": 2,
+                  "title": "todo2",
+                  "userId": 2,
+                }
+              }
+            />,
+          ],
+          "className": "todo-list",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "1",
+            "nodeType": "class",
+            "props": Object {
+              "todo": Object {
+                "completed": true,
+                "id": 1,
+                "title": "todo1",
+                "userId": 1,
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": "2",
+            "nodeType": "class",
+            "props": Object {
+              "todo": Object {
+                "completed": false,
+                "id": 2,
+                "title": "todo2",
+                "userId": 2,
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "ul",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "percent": 0,
+          "prefixCls": "ant-progress",
+          "showInfo": true,
+          "size": "default",
+          "trailColor": "#f3f3f3",
+          "type": "line",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": "br",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            1,
+            " of ",
+            2,
+            " completed",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          1,
+          " of ",
+          2,
+          " completed",
+        ],
+        "type": "div",
+      },
+    ],
+    "type": Symbol(react.fragment),
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <ul
+            className="todo-list"
+          >
+            <TodoListItem
+              todo={
+                Object {
+                  "completed": true,
+                  "id": 1,
+                  "title": "todo1",
+                  "userId": 1,
+                }
+              }
+            />
+            <TodoListItem
+              todo={
+                Object {
+                  "completed": false,
+                  "id": 2,
+                  "title": "todo2",
+                  "userId": 2,
+                }
+              }
+            />
+          </ul>,
+          <Progress
+            percent={0}
+            prefixCls="ant-progress"
+            showInfo={true}
+            size="default"
+            trailColor="#f3f3f3"
+            type="line"
+          />,
+          <br />,
+          <div>
+            1
+             of 
+            2
+             completed
+          </div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <TodoListItem
+                todo={
+                  Object {
+                    "completed": true,
+                    "id": 1,
+                    "title": "todo1",
+                    "userId": 1,
+                  }
+                }
+              />,
+              <TodoListItem
+                todo={
+                  Object {
+                    "completed": false,
+                    "id": 2,
+                    "title": "todo2",
+                    "userId": 2,
+                  }
+                }
+              />,
+            ],
+            "className": "todo-list",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "1",
+              "nodeType": "class",
+              "props": Object {
+                "todo": Object {
+                  "completed": true,
+                  "id": 1,
+                  "title": "todo1",
+                  "userId": 1,
+                },
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": "2",
+              "nodeType": "class",
+              "props": Object {
+                "todo": Object {
+                  "completed": false,
+                  "id": 2,
+                  "title": "todo2",
+                  "userId": 2,
+                },
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "ul",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "percent": 0,
+            "prefixCls": "ant-progress",
+            "showInfo": true,
+            "size": "default",
+            "trailColor": "#f3f3f3",
+            "type": "line",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "br",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              1,
+              " of ",
+              2,
+              " completed",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            1,
+            " of ",
+            2,
+            " completed",
+          ],
+          "type": "div",
+        },
+      ],
+      "type": Symbol(react.fragment),
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
