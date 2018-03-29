@@ -18,7 +18,7 @@ interface ILineChartProps {
 
 // WARNING: This is a contrived example with limited utility
 
-@observer
+//@observer
 export class SparkChart extends React.Component<ILineChartProps, null> {
   
   chartData: Array<number> = [
@@ -34,7 +34,7 @@ export class SparkChart extends React.Component<ILineChartProps, null> {
   disposer:any;
   
   componentDidMount() {
-    this.renderChart();
+    this.configureChart();
 
     //Randomize the data, update if the rendering speed changes
     this.disposer = autorun(() => this.randomizeData(this.props.renderSpeed));
@@ -44,7 +44,7 @@ export class SparkChart extends React.Component<ILineChartProps, null> {
     this.disposer();
   }
 
-  renderChart() {
+  configureChart() {
     //Chart globals
     Chart.defaults.global.legend.position = "bottom"
     Chart.defaults.global.elements.rectangle.borderWidth = 1;

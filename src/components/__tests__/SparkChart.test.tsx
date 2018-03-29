@@ -24,7 +24,7 @@ describe('SparkChart Component', () => {
   beforeEach(() => {
     // Mock constructing the chart since we don't have full access to 
     // a canvas element with Jest.
-    SparkChart.prototype.renderChart = jest.fn();
+    SparkChart.prototype.configureChart = jest.fn();
     SparkChart.prototype.randomizeData = jest.fn();
   });
 
@@ -45,7 +45,7 @@ describe('SparkChart Component', () => {
   })
 
   it("will create and render the chart config on startup", () => {
-    const spy = jest.spyOn(SparkChart.prototype, "renderChart")
+    const spy = jest.spyOn(SparkChart.prototype, "configureChart")
     const { wrapper, props } = setup({});
     expect(spy).toHaveBeenCalledTimes(1);
     spy.mockClear();

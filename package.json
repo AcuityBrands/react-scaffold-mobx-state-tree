@@ -78,7 +78,7 @@
     ],
     "globals": {
       "ts-jest": {
-        "tsConfigFile": "tsconfig.jest.json"
+        "useBabelrc": true
       }
     }
   }

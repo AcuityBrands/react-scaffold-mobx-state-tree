@@ -24,7 +24,6 @@ export default class DashboardPage extends React.Component<IDashboardProps, unde
 
   render() {
     // TODO: Create a spark card component for the reused layout below
-    
     const { chartStore } = this.props.appStore;
     return (
       <div className="content-wrapper">

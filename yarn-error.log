@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js start
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js jest
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -94,7 +94,7 @@ npm manifest:
       ],
       "globals": {
         "ts-jest": {
-          "tsConfigFile": "tsconfig.jest.json"
+          "useBabelrc": true
         }
       }
     }
@@ -9986,7 +9986,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c ./node_modules/.bin/webpack-dev-server --config webpack.dev.js --mode development
+  Arguments: -c /Users/danielbradshaw/Projects/react-scaffold-mobx-state-tree/node_modules/.bin/jest
   Directory: /Users/danielbradshaw/Projects/react-scaffold-mobx-state-tree
   Output:
   

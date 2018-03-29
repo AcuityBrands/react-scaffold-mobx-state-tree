@@ -1,3 +1,4 @@
+import "regenerator-runtime/runtime";
 import { UserStore, IUserStore } from '../UserStore'
 import * as fetchMock from 'fetch-mock'
 

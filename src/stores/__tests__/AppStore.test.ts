@@ -1,3 +1,4 @@
+import "regenerator-runtime/runtime";
 import { AppStore, IAppStore } from '../AppStore'
 import * as fetchMock from 'fetch-mock'
 

@@ -1,3 +1,4 @@
+import "regenerator-runtime/runtime";
 import * as React from "react";
 import * as Enzyme from 'enzyme';
 import * as Adapter from 'enzyme-adapter-react-16';

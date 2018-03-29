@@ -8,6 +8,7 @@ const FormItem = Form.Item;
 interface ILoginPageProps {
   appStore?: IAppStore
   form: any,
+  history?:any,
   location?: any
 }
 
@@ -17,37 +18,23 @@ interface ILoginPageState {
 
 @inject("appStore")
 class LoginPage extends React.Component<ILoginPageProps, ILoginPageState> {
-  constructor(props) {
-    super(props);
-    this.state = {
-      redirectToReferrer: false
-    };
-  }
 
   login = (e:any) => {
     e.preventDefault();
-    this.props.form.validateFields((err:any, values:Array<any>) => {
+    this.props.form.validateFields(async(err:any, values:Array<any>) => {
       if (!err) {
-        console.log('Received values of form: ', values);
-        this.props.appStore.login().then(()=>{
-          this.setState(() => ({
-            redirectToReferrer: true
-          }))
-        })
+        //console.log('Received values of form: ', values);
+        await this.props.appStore.login();
+        const p = this.props.location.state || { from: { pathname: "/" } };
+        this.props.history.push(p.from.pathname);
       } else {
-        //Do anything?
+        //Todo
       }
     });
   }
 
   render() {
-    const { from } = this.props.location.state || { from: { pathname: "/" } };
-    const { redirectToReferrer } = this.state;
     const { getFieldDecorator } = this.props.form;
-
-    if (redirectToReferrer) {
-      return <Redirect to={from} />;
-    }
 
     return (
       <div className="login-overlay">
@@ -58,14 +45,14 @@ class LoginPage extends React.Component<ILoginPageProps, ILoginPageState> {
               {getFieldDecorator('username', {
                 rules: [{ required: true, message: 'Username is required!' }],
               })(
-                <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Username" />
+                <Input id="username" prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Username" />
               )}
             </FormItem>
             <FormItem>
               {getFieldDecorator('password', {
                 rules: [{ required: true, message: 'Please input your password!' }],
               })(
-                <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />
+                <Input id="password" prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />
               )}
             </FormItem>
             <FormItem>

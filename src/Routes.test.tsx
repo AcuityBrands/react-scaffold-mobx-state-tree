@@ -1,3 +1,4 @@
+import "regenerator-runtime/runtime";
 import * as React from "react";
 import * as Enzyme from 'enzyme';
 import * as Adapter from 'enzyme-adapter-react-16';
@@ -8,8 +9,6 @@ import AppChrome from './containers/AppChrome';
 import DashboardPage from './containers/DashboardPage';
 import LoginPage from './containers/LoginPage';
 import NotFoundPage from './containers/NotFoundPage';
-import { SparkChart } from './components/SparkChart';
-import { BarChart } from './components/BarChart';
 import TodoPage from "./containers/TodoPage";
 import AboutPage from "./containers/AboutPage";
 
@@ -17,8 +16,8 @@ Enzyme.configure({ adapter: new Adapter() });
 
 // Mock the Chart component(s) since they contain a canvas element
 // that doesn't play well with Enzyme's virtual DOM (JSDOM)
-jest.mock("./components/SparkChart");
-jest.mock("./components/BarChart");
+jest.mock('./components/SparkChart', () => ({SparkChart: () => 'SparkChart'}));
+jest.mock('./components/BarChart', () => ({BarChart: () => 'BarChart'}));
 
 const setup = propOverrides => {
   const props = Object.assign({
@@ -43,6 +42,8 @@ const setup = propOverrides => {
     wrapper
   }
 }
+
+const asyncFlush = () => new Promise(resolve => setTimeout(resolve, 100));
 
 describe('Routes [App] Component', () => {
   // Minimal component test confirms component rendered
@@ -74,7 +75,8 @@ describe('Routes [App] Component', () => {
     expect(wrapper.find(DashboardPage)).toHaveLength(1);
   })
 
-  it("should render the todo page (if authenticated)", () => {
+  it("should render the todo page (if authenticated)", async() => {
+    
     const { wrapper } = setup({
       appStore: {
         todoStore: {todos: [{userId: 1, id: 1, title: "test", completed: false}], loading: false},
@@ -84,14 +86,12 @@ describe('Routes [App] Component', () => {
       initialEntries: ['/task']
     });
 
-    // WARNING: If this fails, it will terminate the process prematurely
-    process.nextTick(()=>{
-      wrapper.update(); // Update the wrapper since it has been asynchronously changed
-      expect(wrapper.find(TodoPage)).toHaveLength(1);
-    })
+    await asyncFlush();
+    wrapper.update(); // Update the wrapper since it has been asynchronously changed
+    expect(wrapper.find(TodoPage)).toHaveLength(1);
   })
 
-  it("should render the about page (if authenticated)", () => {
+  it("should render the about page (if authenticated)", async() => {
     const { wrapper } = setup({
       appStore: {
         todoStore: {todos: [{userId: 1, id: 1, title: "test", completed: false}], loading: false},
@@ -101,10 +101,8 @@ describe('Routes [App] Component', () => {
       initialEntries: ['/about']
     });
 
-    // WARNING: If this fails, it will terminate the process prematurely
-    process.nextTick(()=>{
-      wrapper.update(); // Update the wrapper since it has been asynchronously changed
-      expect(wrapper.find(AboutPage)).toHaveLength(1);
-    })
+    await asyncFlush();
+    wrapper.update(); // Update the wrapper since it has been asynchronously changed
+    expect(wrapper.find(AboutPage)).toHaveLength(1);
   })
 })
