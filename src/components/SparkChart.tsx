@@ -18,7 +18,7 @@ interface ILineChartProps {
 
 // WARNING: This is a contrived example with limited utility
 
-//@observer
+@observer
 export class SparkChart extends React.Component<ILineChartProps, null> {
   
   chartData: Array<number> = [
