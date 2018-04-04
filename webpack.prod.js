@@ -51,7 +51,7 @@ module.exports = merge(common, {
 
   plugins: [
     // Analyze bundle
-    new BundleAnalyzerPlugin(),
+    // new BundleAnalyzerPlugin(),
 
     // Set node environment to production
     // this is primarily for React, where this removes 179KB from the bundle
