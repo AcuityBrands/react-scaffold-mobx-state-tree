@@ -12,6 +12,6 @@
     "syntax-dynamic-import",
     "syntax-async-functions",
     "transform-regenerator",
-    ["import", {"libraryName": "antd"}]
+    ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }]
   ]
 }
